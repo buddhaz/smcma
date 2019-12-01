@@ -1,0 +1,49 @@
+% \documentclass[a4paper, 12pt]{article}
+
+% \usepackage[top=2cm, bottom = 2cm, left = 2.5cm, right = 2.5cm]{geometry}
+
+% \usepackage{ctex}
+% \usepackage{amsmath, amsfonts, amssymb}
+% \usepackage{enumerate}
+
+% \begin{document}
+
+\begin{center}
+    {\heiti 练习题 1.4}
+\end{center}
+
+\begin{enumerate}
+    \item 1
+    \item % 2
+        {\heiti 证明}\quad 由题意有
+        \[
+            a_n = \frac{1 + 2 + \cdots + n}{n} = \frac{\frac{n(n+1)}{2}}{n} = \frac{n + 1}{2}.    
+        \]
+        对 $\forall A > 0$, 取 $N = [2A - 1]$, 当 $n > N$ 时, 有 $a_n > A$.即
+        \[
+            \lim\limits_{n\to\infty}\dfrac{1 + 2 + \cdots + n}{n} = +\infty.
+        \]
+    \item % 3
+        {\heiti 证明}\quad 由题意有
+        \begin{align*}
+            a_n = \frac{1^2 + 2^2 + \cdots + n^2}{n^2}
+            = \frac{\frac{n(n+1)(2n+1)}{6}}{n^2} > \frac{\frac{n\cdot n\cdot 2n}{6}}{n^2}
+            = \frac{n}{3}.
+        \end{align*}
+        对 $\forall A > 0$, 取 $N = [3A]$, 当 $n > N$ 时, 有 $a_n > A$. 即
+        \[
+            \lim\limits_{n\to\infty}\frac{1^2 + 2^2 + \cdots + n^2}{n^2} = +\infty.
+        \]
+    \item 4
+    \item % 5
+        {\heiti 证明}\quad 由题意有
+        \begin{align*}
+            a_n = \frac{1}{\sqrt{n+1}} + \frac{1}{\sqrt{n+2}} + \cdots + \frac{1}{\sqrt{n+n}} \geqslant \frac{n}{\sqrt{n+n}} = \sqrt{\frac{n}{2}}.
+        \end{align*}
+        对 $\forall A > 0$, 取 $N = [2A^2]$, 当 $n > N$ 时, 有 $a_n > A$. 即
+        \[
+            \lim\limits_{n\to\infty}\left(\frac{1}{\sqrt{n+1}} + \frac{1}{\sqrt{n+2}} + \cdots + \frac{1}{\sqrt{n+n}}\right) = +\infty.
+        \]
+\end{enumerate}
+
+% \end{document}

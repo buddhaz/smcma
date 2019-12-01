@@ -1,0 +1,194 @@
+% \documentclass[a4paper, 12pt]{article}
+
+% \usepackage[top=2cm, bottom = 2cm, left = 2.5cm, right = 2.5cm]{geometry}
+
+% \usepackage{ctex}
+% \usepackage{amsmath, amsfonts, amssymb}
+% \usepackage{enumerate}
+
+% \begin{document}
+
+\begin{center}
+    {\heiti 练习题 1.3}
+\end{center}
+
+\begin{enumerate}
+    \item 1
+    \item
+        {\heiti 证明}\quad 因为 $\lim\limits_{n\to\infty}a_n = a$, 所以 $\lim\limits_{n\to\infty}\dfrac{1}{a_n} = \dfrac 1a$,
+        由定理 1.3.2 可知 $\left\{\dfrac{1}{a_n}\right\}$ 是有界的, 即 $\dfrac{1}{|a_n|}\leqslant\dfrac{1}{2M}$.
+            
+        对 $\forall \varepsilon > 0$, $\exists N \in \mathrm{N}^*$, 当 $n > N$ 时，有
+        \begin{equation*}
+            |a_n - a| < \frac{M\varepsilon}{2}.
+        \end{equation*}
+        同时有
+        \begin{align*}
+            \left| \frac{a_{n+1}}{a_n} - 1 \right| &= \left| \frac{a_{n+1} - a + a - a_n}{a_n} \right| \\
+                                                   &\leqslant \frac{|a_{n+1} - a| + |a_n - a|}{|a_n|} \\
+                                                   &< \frac{1}{2M}\left( \frac{M\varepsilon}{2} + \frac{M\varepsilon}{2} \right) = \varepsilon.
+        \end{align*}
+        即 $\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n} = 1$.
+    
+        当 $a_n = q^n\ (|q| < 1)$ 时, $\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n} = q$.
+    \item 
+        \begin{enumerate}[(1)]
+            \item
+                $ \lim\limits_{n\to\infty}\dfrac{3^n + (-2)^n}{3^{n+1} + (-2)^{n+1}} = \lim\limits_{n\to\infty}\dfrac{1 + \left(-\dfrac 23\right)^n}{3 - 2\left(-\dfrac 23\right)^{n}} = \dfrac 13 $.
+            \item
+                $ \lim\limits_{n\to\infty}\left( \dfrac{1 + 2 + \cdots + n}{n + 2} - \dfrac n2 \right) = \lim\limits_{n\to\infty}\dfrac{2\cdot\dfrac n2 \left(n + 1\right) - n^2 - 2n}{2\left(n + 2\right)} = -\dfrac 12 $.
+            \item
+                $ \lim\limits_{n\to\infty}\sqrt{n}\left(\sqrt{n + 1} - \sqrt{n}\right) = \lim\limits_{n\to\infty}\dfrac{\sqrt{n}}{\sqrt{n + 1} + \sqrt{n}} = \dfrac 12 $.
+            \item
+                先对通项进行化简,
+                \begin{align*}
+                    (\sqrt{n^2 + n} - n)^{\frac 1n} &= \left(\frac{n}{\sqrt{n^2 +n} + n}\right)^{\frac 1n} \\
+                                                    &= \left(\frac{1}{\sqrt{1 + \frac 1n} + 1}\right)^{\frac 1n}.
+                \end{align*}
+                易知
+                \[
+                    \frac 13 < \frac{1}{\sqrt{1 + \frac 1n} + 1} < \frac 12.    
+                \]
+            
+                由夹逼原理可得 $\lim\limits_{n\to\infty}(\sqrt{n^2 + n} - n)^{\frac 1n} = 1$.
+            \item 
+                根据题意有 $\dfrac 12 \leqslant 1 - \dfrac 1n < 1\ (n \geqslant 2)$.
+                由夹逼原理可得 $\lim\limits_{n\to\infty}\left(1 - \dfrac 1n\right)^{\frac 1n} = 1$.
+            \item 
+                根据题意有 $2 < n^2 - n + 2 = n^2 - (n - 2) \leqslant n^2\ (n \geqslant 2)$.
+                由夹逼原理可得 \[\lim\limits_{n\to\infty}(n^2 - n + 2)^{\frac 1n} = 1.\]
+            \item 
+                因为 $\dfrac{\pi}{4} < \arctan n < \dfrac{\pi}{2}\ (n\in\mathrm{N}^*)$, 所以 $\lim\limits_{n\to\infty}(\arctan n)^{\frac{1}{n}} = 1$.
+            \item 
+                根据题意有 $1 \leqslant (2\sin^2n + \cos^2n) = (\sin^2n + 1) \leqslant 2$.
+                由夹逼原理可得 \[\lim\limits_{n\to\infty}(2\sin^2n + \cos^2n)^{\frac{1}{n}} = 1.\]
+        \end{enumerate}
+    \item
+        \begin{enumerate}[(1)]
+            \item 
+                $\lim\limits_{n\to\infty}\dfrac{\frac{1-a^n}{1-a}}{\frac{1-b^n}{1-b}} = \dfrac{1-b}{1-a}$.
+            \item 
+                先对 $a_n$ 进行化简,
+                \begin{align*}
+                    a_n &= \dfrac{1}{1\cdot2} + \dfrac{1}{2\cdot3} + \cdots + \dfrac{1}{n\left(n+1\right)} \\
+                        &= 1 - \dfrac 12 + \dfrac 12 - \dfrac 13 + \cdots + \dfrac 1n - \dfrac{1}{n+1} \\
+                        &= 1 - \dfrac{1}{n+1}.
+                \end{align*}
+                即 $\lim\limits_{n\to\infty}a_n = 1$.
+            \item
+                先对 $a_n$ 进行化简,
+                \begin{align*}
+                    a_n &= \left(1-\frac{1}{2^2}\right)\left(1-\frac{1}{3^2}\right)\cdots\left(1-\frac{1}{n^2}\right) \\
+                        &= \frac{2^2-1}{2^2} \cdot \frac{3^2-1}{3^2} \cdot \cdots \cdot \frac{n^2-1}{n^2} \\
+                        &= \frac{(2+1)(3+1)\cdots(n+1)}{n!} \cdot \frac{(2-1)(3-1)\cdots(n-1)}{n!} \\
+                        &= \frac{n+1}{2} \cdot \frac{1}{n} = \frac 12\left(1 + \frac 1n \right).
+                \end{align*}
+                即 $\lim\limits_{n\to\infty}a_n = \dfrac 12$.
+            \item
+                先对通项进行化简,
+                \begin{align*}
+                        & \left(1 - \frac{1}{1+2}\right)\left(1 - \frac{1}{1+2+3}\right)\cdots\left(1-\frac{1}{1+2+\cdots+n}\right) \\
+                    ={} & \left(\frac{2}{3}\right)\left(\frac{5}{6}\right) \left(\frac{9}{10}\right) \cdots\left(1-\frac{2}{n(n+1)}\right) \\
+                    ={} & \left(\frac{4}{6}\right) \left(\frac{10}{12}\right) \left(\frac{18}{20}\right) \cdots \left(\frac{(n-1)(n+2)}{n(n+1)}\right) \\
+                    ={} & \left(\frac12 \cdot \frac43\right) \left(\frac23\cdot\frac54\right) \left(\frac34\cdot\frac65\right) \cdots \left(\frac{n-1}{n} \cdot \frac{n+2}{n+1}\right) \\
+                    ={} & \left(\frac12 \cdot \frac23 \cdot \frac34 \cdot \cdots \cdot \frac{n-1}{n} \right)\left(\frac43 \cdot \frac54 \cdot \frac65 \cdot \cdots \cdots \frac{n+2}{n+1} \right) \\
+                    ={} & \frac{1}{n} \cdot \frac{n+2}{3} = \frac 13 \left(1 + \frac 2n\right).
+                \end{align*}
+                因此
+                \begin{equation*}
+                    \lim\limits_{n\to\infty}\left(1 - \frac{1}{1+2}\right)\left(1 - \frac{1}{1+2+3}\right)\cdots\left(1-\frac{1}{1+2+\cdots+n}\right) = \frac13.
+                \end{equation*}
+            \item 
+                因为 $\dfrac{n}{2} \leqslant |1-2+3-4+\cdots+(-1)^{n-1}n| \leqslant \dfrac{n+1}{2}$, 所以
+                \[
+                    \lim\limits_{n\to\infty}\frac{|1 - 2 + 3 - 4 + \cdots + (-1)^{n-1}n|}{n} = \frac 12.
+                \]
+            \item
+                先对通项进行化简,
+                \begin{align*}
+                        & (1 + x)(1 + x^2) \cdots (1+x^{2^{n-1}}) \\
+                    ={} & \frac{1}{1-x}(1 - x)(1 + x)(1 + x^2) \cdots (1 + x^{2^{n-1}}) \\
+                    ={} & \frac{1}{1-x}(1 - x^{2^{n-1}}).
+                \end{align*}
+                因此
+                \[
+                    \lim\limits_{n\to\infty}(1 + x)(1 + x^2)\cdots(1 + x^{2^{n-1}}) = \frac{1}{1-x}.
+                \]
+        \end{enumerate}
+    \item 5
+    \item
+        {\heiti 证明}\quad 利用不等式 $a - 1 < [a] \leqslant a$, 则有
+        \begin{equation*}
+            a_n - \frac 1n = \frac{na_n - 1}{n} < \frac{[na_n]}{n} \leqslant \frac{na_n}{n} = a_n,
+        \end{equation*}
+        两边取极限，即可得 $\lim\limits_{n\to\infty}\dfrac{[na_n]}{n} = a$.
+    \item 
+        {\heiti 证明}\quad 利用不等式
+        \[\frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}} \leqslant \sqrt[n]{a_1a_2\cdots a_n} \leqslant \frac{a_1 + a_2 + \cdots + a_n}{n}.\]
+        先看右边, 由例 4 可知 $\lim\limits_{n\to\infty}\dfrac{a_1 + a_2 + \cdots + a_n}{n} = a$. 再看左边, 将例 4 中的 $a_n$ 换为 $\dfrac{1}{a_n}$, 则有 $\lim\limits_{n\to\infty}\dfrac{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}}{n} = \dfrac 1a$, 即 $\lim\limits_{n\to\infty}\dfrac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}} = a$.
+    
+        由夹逼原理可得 $\lim\limits_{n\to\infty}\sqrt[n]{a_1a_2\cdots a_n} = a$.
+    \item
+        \begin{enumerate}[(1)]
+            \item 
+                {\heiti 证明}\quad 记 $b_n = \dfrac{a_{n+1}}{a_n}$, 即 $\lim\limits_{n\to\infty}b_n = a$, 则有
+                \begin{align*}
+                    \lim_{n\to\infty}\sqrt[n]{a_n} &= \lim_{n\to\infty}\sqrt[n]{\frac{a_n}{a_1}} \\
+                                                   &= \lim_{n\to\infty}\sqrt[n]{\frac{a_2}{a_1} \frac{a_3}{a_2} \cdots \frac{a_n}{a_{n-1}}} \\
+                                                   &= \lim_{n\to\infty}\sqrt[n]{b_1 b_2 \cdots b_n} = a.
+                \end{align*}
+            \item 
+                {\heiti 证明}\quad 对数列 $\{a_n\}$, 设 $a_1 = a$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
+            \item 
+                {\heiti 证明}\quad 对数列 $\{a_n\}$, 设 $a_1 = n$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
+            \item 
+                {\heiti 证明}\quad 设 $a_n = \dfrac{1}{n}$, 即 $\lim\limits_{n\to\infty}a_n = 0$, 则有
+                \begin{align*}
+                    \lim_{n\to\infty}(n!)^{-\frac{1}{n}} &= \lim_{n\to\infty}\left(\frac{1}{n!}\right)^\frac{1}{n} \\
+                                                         &= \lim_{n\to\infty}\sqrt[n]{\frac{1}{1} \cdot \frac{1}{2} \cdot \cdots \cdot \frac{1}{n}} \\
+                                                         &= \lim_{n\to\infty}\sqrt[n]{a_1 a_2 \cdots a_n} = 0.
+                \end{align*}
+        \end{enumerate}
+    \item
+        {\heiti 证明}\quad 利用不等式
+        \[
+            \frac{\frac 1n + \frac 1n + \cdots \frac 1n}{n} \leqslant \frac{1 + \frac 12 + \cdots + \frac 1n}{n} \leqslant \sqrt{\frac{1 + \frac{1}{2^2} + \cdots + \frac{1}{n^2}}{n}}.    
+        \]
+        其中
+        \begin{align*}
+            1 + \frac{1}{2^2} + \cdots + \frac{1}{n^2} &\leqslant 1 + \frac{1}{1 \cdot 2} + \cdots + \frac{1}{(n-1) \cdot n} \\
+            &= 1 + 1 - \frac 12 + \cdots + \frac{1}{n - 1} - \frac 1n \\
+            &= 2 - \frac 1n < 2.
+        \end{align*}
+        则有 $\dfrac 1n \leqslant \dfrac{1 + \frac 12 + \cdots + \frac 1n}{n} < \sqrt{\dfrac 2n}$.
+
+        由夹逼原理可得 $\lim\limits_{n\to\infty}\dfrac{1 + \frac 12 + \cdots + \frac 1n}{n} = 0$.
+    \item %10
+        {\heiti 证明}\quad 设 $a_n = a_0\sqrt{n} + \cdots + a_p\sqrt{n}$, $b_n = a_0\sqrt{n + p} + \cdots + a_p\sqrt{n + p}$. 则有
+        \[
+            a_n \leqslant a_0\sqrt{n} + a_1\sqrt{n + 1} + \cdots + a_p\sqrt{n + p} \leqslant b_n.
+        \]
+        而 $\lim\limits_{n\to\infty}a_n = \lim\limits_{n\to\infty}a_n = 0$, 因此由夹逼原理可得
+        \[
+            \lim\limits_{n\to\infty}(a_0\sqrt{n} + a_1\sqrt{n + 1} + \cdots + a_p\sqrt{n + p}) = 0.    
+        \]
+    \item 11
+    \item %12
+        {\heiti 证明}\quad 先对 $a_n$ 进行化简,
+        \begin{align*}
+            a_n &= \sum_{i=1}^n\left( \sqrt{1 + \frac{i}{n^2}} - 1 \right) \\
+            &= \sqrt{1 + \frac{1}{n^2}} - 1 + \sqrt{1 + \frac{2}{n^2}} - 1 + \cdots + \sqrt{1 + \frac{1}{n}} - 1 \\
+            &= \frac{\frac{1}{n^2}}{\sqrt{1 + \frac{1}{n^2}} + 1} + \frac{\frac{2}{n^2}}{\sqrt{1 + \frac{2}{n^2}} + 1} + \cdots + \frac{\frac{1}{n}}{\sqrt{1 + \frac{1}{n}} + 1}.
+        \end{align*}
+        显然有
+        \begin{equation*}
+            \frac{\frac{1}{n^2} \cdot \frac{n(n+1)}{2}}{\sqrt{1 + \frac{1}{n}} + 1} \leqslant a_n \leqslant \frac{\frac{1}{n^2} \cdot \frac{n(n+1)}{2}}{\sqrt{1 + \frac{1}{n^2}} + 1}.
+        \end{equation*}
+        由夹逼原理可得 $\lim\limits_{n\to\infty}a_n = \dfrac 14$.
+    \item 13
+    \item 14
+    \item 15
+    \item 16
+\end{enumerate}
+
+% \end{document}
