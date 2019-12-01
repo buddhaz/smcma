@@ -1,0 +1,80 @@
+% %@author 张书宁
+% %@date 2019-12-01
+
+% \documentclass[12pt, a4paper]{article}
+
+% \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+% \usepackage{ctex}
+% \usepackage{amsmath, amssymb}
+% \usepackage{enumerate}
+
+% \begin{document}
+
+% \pagestyle{empty}
+
+\begin{center}
+    {\heiti 练习题 1.7}
+\end{center}
+
+\begin{enumerate}
+    \item 1
+    \item 2
+    \item 
+        \begin{enumerate}[(1)]
+            \item {\heiti 证明}\quad 对 $\forall p \in \mathrm{N}^*$, 有
+                \begin{align*}
+                    |a_{n+p} - a_n| &= \left|(-1)^n\frac{1}{(n+1)^2} + (-1)^{n+1}\frac{1}{(n+2)^2} + \cdots + (-1)^{n+p-1}\frac{1}{(n+p)^2}\right| \\
+                                    &\leqslant \frac{1}{(n+1)^2} + \frac{1}{(n+2)^2} + \cdots + \frac{1}{(n+p)^2} \\
+                                    &< \frac1n \cdot \frac{1}{n+1} + \frac{1}{n+1} \cdot \frac{1}{n+2} + \cdots + \frac{1}{n+p-1} \cdot \frac{1}{n+p} \\
+                                    &= \frac1n - \frac{1}{n+1} + \frac{1}{n+1} - \frac{1}{n+2} + \cdots + \frac{1}{n+p-1} - \frac{1}{n+p} \\
+                                    &= \frac1n - \frac{1}{n+p} < \frac1n.
+                \end{align*}
+                因此只需 $n > N = [1/\varepsilon]$, 即可得出 $\{a_n\}$ 是基本列.
+            \item {\heiti 证明}\quad 当 $q = 0$ 时, $\{b_n\}$ 显然收敛到 $a_0$, 所以 $\{b_n\}$ 是基本列. 现设 $0 < |q| < 1$, 对 $\forall p \in \mathrm{N}^*$, 有
+                \begin{align*}
+                    |b_{n+p} - b_n| &= |a_{n+1}q^{n+1} + a_{n+2}q^{n+2} + \cdots + a_{n+p}q^{n+p}| \\
+                                    &= |q|^{n+1} \cdot |a_{n+1} + a_{n+2}q + \cdots + a_{n+p}q^{p-1}| \\
+                                    &\leqslant |q|^{n+1}(|a_{n+1}| + |a_{n+2}||q| + \cdots + |a_{n+p}||q|^{p-1}) \\
+                                    &\leqslant |q|^{n+1}M (1 + |q| + \cdots + |q|^{p-1}) \\
+                                    &=|q|^{n+1}M\frac{1-|q|^p}{1-|q|} \\
+                                    &< \frac{|q|^nM}{1-|q|},
+                \end{align*}
+                其中 $|a_n| \leqslant M\ (n \in \mathrm{N}^*)$. 当 $n$ 满足
+                \[
+                    n > N = \left[\frac{\ln\frac{(1-|q|)\varepsilon}{M}}{\ln|q|}\right]    
+                \]
+                的条件时, 即可得出 $\{b_n\}$ 是基本列.
+            \item {\heiti 证明}\quad 对 $\forall p \in \mathrm{N}^*$, 有
+                \begin{align*}
+                    |a_{n+p} - a_n| &= \left| \frac{\sin(n+1)x}{(n+1)^2} + \frac{\sin(n+2)x}{(n+2)^2} + \cdots + \frac{\sin(n+p)x}{(n+p)^2} \right| \\
+                                    &\leqslant \frac{|\sin(n+1)x|}{(n+1)^2} + \frac{|\sin(n+2)x|}{(n+2)^2} + \cdots + \frac{|\sin(n+p)x|}{(n+p)^2} \\
+                                    &\leqslant \frac{1}{(n+1)^2} + \frac{1}{(n+2)^2} + \cdots + \frac{1}{(n+p)^2} \\
+                                    &< \frac1n \cdot \frac{1}{n+1} + \frac{1}{n+1} \cdot \frac{1}{n+2} + \cdots + \frac{1}{n+p-1} \cdot \frac{1}{n+p} \\
+                                    &= \frac1n - \frac{1}{n+1} + \frac{1}{n+1} - \frac{1}{n+2} + \cdots + \frac{1}{n+p-1} - \frac{1}{n+p} \\
+                                    &= \frac1n - \frac{1}{n+p} < \frac1n.
+                \end{align*}
+                因此只需 $n > N = [1/\varepsilon]$, 即可得出 $\{a_n\}$ 是基本列.
+            \item {\heiti 证明}\quad 对 $\forall p \in \mathrm{N}^*$, 有
+                \begin{align*}
+                    |a_{n+p} - a_n| &= \left| \frac{\sin(n+1)x}{(n+1)((n+1) + \sin(n+1)x)} + \cdots + \frac{\sin(n+p)x}{(n+p)((n+p) + \sin(n+p)x)} \right| \\
+                                    &= \left| \frac{1}{n+1} - \frac{1}{(n+1) + \sin(n+1)x} + \cdots + \frac{1}{n+p} + \frac{1}{(n+p) + \sin(n+p)x} \right| \\
+                                    &\leqslant \left| \frac{1}{n+1} - \frac{1}{n+2} + \cdots + \frac{1}{n+p} - \frac{1}{n+p+1} \right| \\
+                                    &= \left| \frac{1}{n+1} - \frac{1}{n+p+1} \right| \\
+                                    &< \frac{1}{n+1}.
+                \end{align*}
+                因此只需 $n > N = [1/\varepsilon - 1]$, 即可得出 $\{a_n\}$ 是基本列.
+        \end{enumerate}
+    \item {\heiti 证明}\quad 考察 $a_{n+1} - a_n$, 那么有
+        \begin{align*}
+            a_{n+1} - a_n &= \left(|a_2-a_1| + \cdots + |a_{n+1}-a_n|\right) - \left(|a_2-a_1| + \cdots + |a_n-a_{n-1}|\right) \\
+                          &= |a_{n+1}-a_n| \geqslant 0,
+        \end{align*}
+        所以 $\{a_n\}$ 是单调递增的. 又因 $\{a_n\}$ 是有界的, 由定理 1.5.1 可得到 $\{a_n\}$ 收敛.
+    \item $\exists M > 0$, 对 $\forall N \in \mathrm{N}^*$, 当 $m, n > N$ 时, 有
+        \[
+            |a_m - a_n| \geqslant M.   
+        \]
+    \item 6
+\end{enumerate}
+% \end{document}

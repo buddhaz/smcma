@@ -1,0 +1,89 @@
+% %@author 张书宁
+
+% \documentclass[12pt]{article}
+
+% \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+% \usepackage{ctex}
+% \usepackage{amsmath, amssymb}
+% \usepackage{enumerate}
+
+% \begin{document}
+
+% \pagestyle{empty}
+
+\begin{center}
+    {\heiti 练习题 1.5}
+\end{center}
+
+\begin{enumerate}
+    \item 
+        \begin{enumerate}[(1)]
+            \item {\heiti 证明}\quad 显然数列 $\{x_n\}$ 有下界 $0$. 现证明 $\{x_n\}$ 是递减的. 考察 $x_n / x_{n+1}$, 即
+                \[
+                    \frac{x_n}{x_{n+1}} = \frac{\frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}}{\frac{10}{1}\cdot\frac{11}{3}\cdots\frac{n+9}{2n-1}\cdot\frac{n+10}{2n+1}} = \frac{2n+1}{n+10}.    
+                \]
+                当 $n \geqslant 9$ 时, 有 $(2n+1)/(n+10) \geqslant 1$, 即 $x_n \geqslant x_{n+1}$. 由定理 1.5.1 可知 $\{x_n\}$ 的极限存在.
+            \item {\heiti 证明}\quad 先对通项 $x_n$ 进行化简,
+                \begin{align*}
+                    x_n &= \left(1 - \frac12\right)\left(1 - \frac13\right)\cdots\left(1 - \frac{1}{n+1}\right) \\
+                        &= \frac12 \times \frac23 \times \cdots \times \frac{n}{n+1} \\
+                        &= \frac{n!}{(n+1)!} \\
+                        &= \frac{1}{n+1}.    
+                \end{align*}
+                显然 $x_n > 0$, 考察 $x_n/x_{n+1}$, 则有
+                \[
+                    \left. \frac{x_n}{x_{n+1}} = \frac{1}{n+1} \right/ \frac{1}{n+2} = \frac{n+2}{n+1} > 1.    
+                \]
+                即 $x_n > x_{n+1}$. 由定理 1.5.1 可知 $\{x_n\}$ 的极限存在.
+        \end{enumerate}
+    \item {\heiti 证明}\quad 由题意显然知道 $\{x_n\}$ 是一个递增数列. 现在来证明 $\{x_n\}$ 是有上界的.
+        已知 $x_1 = \sqrt{2} < 2$. 现假设 $x_{n - 1} < 2$, 那么
+        \[
+            x_n = \sqrt{2 + \sqrt{x_{n-1}}} < \sqrt{2 + 2} = 2.    
+        \]
+        由数学归纳法可知 $x_n < 2$ 成立, 即 2 是数列 $\{x_n\}$ 的一个上界. 由定理 1.5.1 可知 $\{x_n\}$ 的极限存在.
+    \item {\heiti 证明}\quad 设递增数列 $\{a_n\}$ 有一子列 $\{a_{m_n}\}$ 收敛.
+        我们有 $\forall \varepsilon > 0$, $\exists N \in \mathrm{N}^*$, 当 $m_n \geqslant n > N$ 时, 有
+        \[
+            |a_{m_n} - a| < \varepsilon.    
+        \]
+        又因数列 $\{a_n\}$ 是递增的, 则有 $a_n \leqslant a_{m_n}$, 因此
+        \[
+            |a_n - a| \leqslant |a_{m_n} - a| < \varepsilon.    
+        \]
+        这样就证明了数列 $\{a_n\}$ 也是收敛的.
+
+        若数列 $\{a_n\}$ 是递减的, 那么 $\{-a_n\}$ 就是递增的, 同理可证 $\{-a_n\}$ 存在极限 $a$,
+        即 $-a$ 就是 $\{a_n\}$ 的极限.
+    \item {\heiti 证明}\quad 考察 $a_n(1 - a_n)$, 则有
+        \begin{align*}
+            a_n(1 - a_n) &= a_n - a_n^2 + \frac14 - \frac14 \\
+                         &= \frac14 - \left(a_n^2 - a_n + \frac14\right) \\
+                         &= \frac14 - \left(a_n - \frac12\right)^2 \leqslant \frac14. 
+        \end{align*}
+        再结合已知条件, 则有 $a_n(1 - a_n) \leqslant 1/4 < a_{n+1}(1 - a_n)$, 即 $a_n < a_{n+1}$.
+        又因 $0 < a_n < 1$, 所以数列 $\{a_n\}$ 的极限存在.
+
+        现设 $\{a_n\}$ 的极限为 $a$. 已知不等式
+        \[
+            a_n(1 - a_n) \leqslant \frac14 < a_{n+1}(1 - a_n)    
+        \]
+        成立, 由夹逼原理可以得到 $a(1 - a) = 1/4$, 解这个一元二次方程, 即可得到 $a = 1/2$.
+
+    \item {\heiti 证明}\quad 根据均值不等式
+        \[
+            \frac{n}{1 + \frac12 + \cdots + \frac1n} \leqslant \sqrt[n]{n!} = a_n,    
+        \]
+        则有
+        \begin{align*}
+            a_{n+1} - a_n &\geqslant \frac{n+1}{1 + \frac12 + \cdots + \frac{1}{n+1}} - \frac{n}{1 + \frac12 + \cdots + \frac1n} \\
+                          &= \frac{(n+1)\left(1 + \frac12 + \cdots \frac1n\right) - n\left(1 + \frac12 + \cdots + \frac{1}{n+1}\right)}{\left(1 + \cdots + \frac1n\right)\left(1 + \cdots + \frac{1}{n+1}\right)} \\
+                          &= \frac{\left(n + \frac n2 + \cdots + 1\right) + \left(1 + \frac12 + \cdots + \frac1n\right) - \left(n + \frac n2 + \cdots + 1\right) - \frac{n}{n+1}}{\left(1 + \cdots + \frac1n\right)\left(1 + \cdots + \frac{1}{n+1}\right)} \\
+                          &= \frac{\left(1 + \frac12 + \cdots + \frac1n\right) - \frac{n}{n+1}}{\left(1 + \cdots + \frac1n\right)\left(1 + \cdots + \frac{1}{n+1}\right)} \\
+                          &= \frac{\left(1 - \frac{1}{n+1}\right) + \left(\frac12 - \frac{1}{n+1}\right) + \cdots + \left(\frac1n - \frac{1}{n+1}\right)}{\left(1 + \cdots + \frac1n\right)\left(1 + \cdots + \frac{1}{n+1}\right)} > 0. \\
+        \end{align*}
+        因此 $\{(n!)^{1/n}\}$ 是递增数列.
+    \item 6
+\end{enumerate}
+% \end{document}
