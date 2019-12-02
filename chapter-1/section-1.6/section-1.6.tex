@@ -153,9 +153,25 @@
         \[
             \lim\limits_{n\to\infty}\frac{\sqrt[n]{n!}}{n} = \frac{1}{\mathrm{e}}.    
         \]
-    \item 13.
-    \item 14.
-    \item 15.
-    \item {\heiti 证明}\quad.
+    \item 13
+    \item 14
+    \item % 15
+        {\heiti 证明}\quad 利用第 9 题的结论, 则有
+        \[
+            1 + \frac12 + \cdots + \frac1n = \ln n + \gamma + \varepsilon_n.    
+        \]
+        那么
+        \[
+            1 + \frac12 + \cdots + \frac{1}{2n} = \ln 2n + \gamma + \varepsilon_{2n}.    
+        \]
+        两式相减, 得到
+        \[
+            \frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{n + n} = \ln 2n - \ln n + \varepsilon_{2n} - \varepsilon_n = \ln2 + \varepsilon_{2n} - \varepsilon_n.     
+        \]
+        对上式取极限, 便可得到
+        \[
+            \lim_{n\to\infty} \left(\frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{n+n}\right) = \ln2.    
+        \]
+    \item 16
 \end{enumerate}
 % \end{document}
