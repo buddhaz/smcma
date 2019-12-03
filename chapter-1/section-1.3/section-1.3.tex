@@ -13,10 +13,10 @@
 \end{center}
 
 \begin{enumerate}
-    \item 1
+    \item 略.
     \item
-        {\heiti 证明}\quad 因为 $\lim\limits_{n\to\infty}a_n = a$, 所以 $\lim\limits_{n\to\infty}1/a_n = 1/a$,
-        由定理 1.3.2 可知 $\{1/a_n\}$ 是有界的, 即
+        {\heiti 证明}\quad 因为 $\lim\limits_{n\to\infty}a_n = a$, 所以 $\lim\limits_{n\to\infty}\dfrac{1}{a_n} = \dfrac1a$,
+        由定理 1.3.2 可知 $\left\{\dfrac{1}{a_n}\right\}$ 是有界的, 即
         \[
             \frac{1}{|a_n|}\leqslant\frac1M.
         \]
@@ -30,9 +30,9 @@
                                                    &\leqslant \frac{|a_{n+1} - a| + |a_n - a|}{|a_n|} \\
                                                    &< \frac1M\left( \frac{M\varepsilon}{2} + \frac{M\varepsilon}{2} \right) = \varepsilon.
         \end{align*}
-        这便证明了 $\lim\limits_{n\to\infty}a_{n+1}/a_n = 1$.
+        这便证明了 $\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n} = 1$.
     
-        当 $a_n = q^n\ (0 < |q| < 1)$ 时, $\lim\limits_{n\to\infty}a_{n+1}/a_n = q$.
+        当 $a_n = q^n\ (0 < |q| < 1)$ 时, $\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n} = q$.
     \item 
         \begin{enumerate}[(1)]
             \item
@@ -70,22 +70,22 @@
             \item 
                 $\lim\limits_{n\to\infty}\dfrac{\frac{1-a^n}{1-a}}{\frac{1-b^n}{1-b}} = \dfrac{1-b}{1-a}$.
             \item 
-                先对 $a_n$ 进行化简,
+                令 $a_n = \dfrac{1}{1\cdot2} + \dfrac{1}{2\cdot3} + \cdots + \dfrac{1}{n\left(n+1\right)}$, 对 $a_n$ 进行化简, 则有
                 \begin{align*}
                     a_n &= \dfrac{1}{1\cdot2} + \dfrac{1}{2\cdot3} + \cdots + \dfrac{1}{n\left(n+1\right)} \\
                         &= 1 - \dfrac 12 + \dfrac 12 - \dfrac 13 + \cdots + \dfrac 1n - \dfrac{1}{n+1} \\
                         &= 1 - \dfrac{1}{n+1}.
                 \end{align*}
-                即 $\lim\limits_{n\to\infty}a_n = 1$.
+                因此 $\lim\limits_{n\to\infty}a_n = 1$.
             \item
-                先对 $a_n$ 进行化简,
+                令 $a_n = (1-1/2^2)(1-1/3^2)\cdots(1-1/n^2)$, 对 $a_n$ 进行化简, 则有
                 \begin{align*}
                     a_n &= \left(1-\frac{1}{2^2}\right)\left(1-\frac{1}{3^2}\right)\cdots\left(1-\frac{1}{n^2}\right) \\
                         &= \frac{2^2-1}{2^2} \cdot \frac{3^2-1}{3^2} \cdot \cdots \cdot \frac{n^2-1}{n^2} \\
                         &= \frac{(2+1)(3+1)\cdots(n+1)}{n!} \cdot \frac{(2-1)(3-1)\cdots(n-1)}{n!} \\
                         &= \frac{n+1}{2} \cdot \frac{1}{n} = \frac 12\left(1 + \frac 1n \right).
                 \end{align*}
-                即 $\lim\limits_{n\to\infty}a_n = \dfrac 12$.
+                因此 $\lim\limits_{n\to\infty}a_n = 1/2$.
             \item
                 先对通项进行化简,
                 \begin{align*}
@@ -101,7 +101,11 @@
                     \lim\limits_{n\to\infty}\left(1 - \frac{1}{1+2}\right)\left(1 - \frac{1}{1+2+3}\right)\cdots\left(1-\frac{1}{1+2+\cdots+n}\right) = \frac13.
                 \end{equation*}
             \item 
-                因为 $\dfrac{n}{2} \leqslant |1-2+3-4+\cdots+(-1)^{n-1}n| \leqslant \dfrac{n+1}{2}$, 所以
+                因为
+                \[
+                    \frac{n}{2} \leqslant |1 - 2 + 3 - 4 + \cdots + (-1)^{n-1}n| \leqslant \frac{n+1}{2},
+                \]
+                由夹逼原理即可得到
                 \[
                     \lim\limits_{n\to\infty}\frac{|1 - 2 + 3 - 4 + \cdots + (-1)^{n-1}n|}{n} = \frac 12.
                 \]
@@ -117,38 +121,70 @@
                     \lim\limits_{n\to\infty}(1 + x)(1 + x^2)\cdots(1 + x^{2^{n-1}}) = \frac{1}{1-x}.
                 \]
         \end{enumerate}
-    \item 5
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+                因为 $0 \leqslant a^n \leqslant b^n$, 所以 $b^n \leqslant a^n + b^n \leqslant 2b^n$, 那么
+                \[
+                    b \leqslant (a^n + b^n)^{1/n} \leqslant 2^{1/n} b.
+                \]
+                由夹逼原理即可得到 $\lim\limits_{n\to\infty}(a^n + b^n)^{1/n} = b$.
+            \item % 5.2
+                设 $a_j = \max(a_1, a_2, \cdots, a_m)$, 则有
+                \[
+                    0 \leqslant \underbrace{a_1^2 + a_2^2 + \cdots + a_{j-1}^2 + a_{j+1}^2 + \cdots + a_m^2}_{\text{$m-1$ 项}} \leqslant (m-1)a_j^n,    
+                \]
+                那么
+                \[
+                    a_j^n \leqslant a_1^n + a_2^n + \cdots + a_m^n \leqslant ma_j^n.    
+                \]
+                由夹逼原理即可得到
+                \[
+                    \lim_{n\to\infty}(a_1^n + a_2^n + \cdots + a_m^n)^{1/n} = a_j = \max(a_1, a_2, \cdots, a_m).
+                \]
+        \end{enumerate}
     \item
         {\heiti 证明}\quad 利用不等式 $a - 1 < [a] \leqslant a$, 则有
         \begin{equation*}
             a_n - \frac 1n = \frac{na_n - 1}{n} < \frac{[na_n]}{n} \leqslant \frac{na_n}{n} = a_n,
         \end{equation*}
-        两边取极限，即可得 $\lim\limits_{n\to\infty}\dfrac{[na_n]}{n} = a$.
+        由夹逼原理即可得到 $\lim\limits_{n\to\infty}\dfrac{[na_n]}{n} = a$.
     \item 
-        {\heiti 证明}\quad 利用不等式
+        {\heiti 证明}\quad 利用均值不等式
         \[\frac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}} \leqslant \sqrt[n]{a_1a_2\cdots a_n} \leqslant \frac{a_1 + a_2 + \cdots + a_n}{n}.\]
-        先看右边, 由例 4 可知 $\lim\limits_{n\to\infty}\dfrac{a_1 + a_2 + \cdots + a_n}{n} = a$. 再看左边, 将例 4 中的 $a_n$ 换为 $\dfrac{1}{a_n}$, 则有 $\lim\limits_{n\to\infty}\dfrac{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}}{n} = \dfrac 1a$, 即 $\lim\limits_{n\to\infty}\dfrac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}} = a$.
+        先看右边的不等式, 由例 4 可得
+        \[
+            \lim_{n\to\infty}\dfrac{a_1 + a_2 + \cdots + a_n}{n} = a.
+        \]
+        再看左边的不等式, 将例 4 中的 $a_n$ 换为 $1/a_n$, 则有
+        \[
+            \lim_{n\to\infty}\dfrac{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}}{n} = \dfrac 1a,
+        \]
+        那么
+        \[
+            \lim_{n\to\infty}\dfrac{n}{\frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}} = a.
+        \]
     
-        由夹逼原理可得 $\lim\limits_{n\to\infty}\sqrt[n]{a_1a_2\cdots a_n} = a$.
+        因此 $\lim\limits_{n\to\infty}\sqrt[n]{a_1a_2\cdots a_n} = a$.
     \item
         \begin{enumerate}[(1)]
             \item 
-                {\heiti 证明}\quad 记 $b_n = \dfrac{a_{n+1}}{a_n}$, 即 $\lim\limits_{n\to\infty}b_n = a$, 则有
+                {\heiti 证明}\quad 记 $b_n = a_{n+1}/a_n$, 则有 $\lim\limits_{n\to\infty}b_n = a$, 那么
                 \begin{align*}
                     \lim_{n\to\infty}\sqrt[n]{a_n} &= \lim_{n\to\infty}\sqrt[n]{\frac{a_n}{a_1}} \\
-                                                   &= \lim_{n\to\infty}\sqrt[n]{\frac{a_2}{a_1} \frac{a_3}{a_2} \cdots \frac{a_n}{a_{n-1}}} \\
-                                                   &= \lim_{n\to\infty}\sqrt[n]{b_1 b_2 \cdots b_n} = a.
+                                                   &= \lim_{n\to\infty}\sqrt[n]{\frac{a_2}{a_1} \cdot \frac{a_3}{a_2} \cdots \frac{a_n}{a_{n-1}}} \\
+                                                   &= \lim_{n\to\infty}\sqrt[n]{b_1 \cdot b_2 \cdots b_n} = a.
                 \end{align*}
             \item 
-                {\heiti 证明}\quad 对数列 $\{a_n\}$, 设 $a_1 = a$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
+                {\heiti 证明}\quad 对数列 $\{a_n\}$, 令 $a_1 = a$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
             \item 
-                {\heiti 证明}\quad 对数列 $\{a_n\}$, 设 $a_1 = n$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
+                {\heiti 证明}\quad 对数列 $\{a_n\}$, 令 $a_1 = n$, $a_2 = a_3 = \cdots = a_n = 1$ 即可.
             \item 
-                {\heiti 证明}\quad 设 $a_n = \dfrac{1}{n}$, 即 $\lim\limits_{n\to\infty}a_n = 0$, 则有
+                {\heiti 证明}\quad 设 $a_n = 1/n$, 则有 $\lim\limits_{n\to\infty}a_n = 0$, 那么
                 \begin{align*}
                     \lim_{n\to\infty}(n!)^{-\frac{1}{n}} &= \lim_{n\to\infty}\left(\frac{1}{n!}\right)^\frac{1}{n} \\
-                                                         &= \lim_{n\to\infty}\sqrt[n]{\frac{1}{1} \cdot \frac{1}{2} \cdot \cdots \cdot \frac{1}{n}} \\
-                                                         &= \lim_{n\to\infty}\sqrt[n]{a_1 a_2 \cdots a_n} = 0.
+                                                         &= \lim_{n\to\infty}\sqrt[n]{\frac{1}{1} \cdot \frac{1}{2} \cdots \frac{1}{n}} \\
+                                                         &= \lim_{n\to\infty}\sqrt[n]{a_1 \cdot a_2 \cdots a_n} = 0.
                 \end{align*}
         \end{enumerate}
     \item
@@ -156,16 +192,19 @@
         \[
             \frac{\frac 1n + \frac 1n + \cdots \frac 1n}{n} \leqslant \frac{1 + \frac 12 + \cdots + \frac 1n}{n} \leqslant \sqrt{\frac{1 + \frac{1}{2^2} + \cdots + \frac{1}{n^2}}{n}}.    
         \]
-        其中
+        因为
         \begin{align*}
             1 + \frac{1}{2^2} + \cdots + \frac{1}{n^2} &\leqslant 1 + \frac{1}{1 \cdot 2} + \cdots + \frac{1}{(n-1) \cdot n} \\
             &= 1 + 1 - \frac 12 + \cdots + \frac{1}{n - 1} - \frac 1n \\
             &= 2 - \frac 1n < 2.
         \end{align*}
-        则有 $\dfrac 1n \leqslant \dfrac{1 + \frac 12 + \cdots + \frac 1n}{n} < \sqrt{\dfrac 2n}$.
+        所以
+        \[
+            \frac 1n \leqslant \frac{1 + \frac 12 + \cdots + \frac 1n}{n} < \sqrt{\frac 2n}.
+        \]
 
         由夹逼原理可得 $\lim\limits_{n\to\infty}\dfrac{1 + \frac 12 + \cdots + \frac 1n}{n} = 0$.
-    \item %10
+    \item % 10
         {\heiti 证明}\quad 设 $a_n = a_0\sqrt{n} + \cdots + a_p\sqrt{n}$, $b_n = a_0\sqrt{n + p} + \cdots + a_p\sqrt{n + p}$. 则有
         \[
             a_n \leqslant a_0\sqrt{n} + a_1\sqrt{n + 1} + \cdots + a_p\sqrt{n + p} \leqslant b_n.
@@ -174,23 +213,35 @@
         \[
             \lim\limits_{n\to\infty}(a_0\sqrt{n} + a_1\sqrt{n + 1} + \cdots + a_p\sqrt{n + p}) = 0.    
         \]
-    \item 11
-    \item %12
-        {\heiti 证明}\quad 先对 $a_n$ 进行化简,
+    \item % 11
+        {\heiti 证明}\quad 因为
+        \begin{align*}
+                & \lim_{n\to\infty}\frac{a_1 + a_2 + \cdots + a_{2n}}{2n} \\
+            ={} & \frac12\lim_{n\to\infty}\frac{(a_1 + a_3 + \cdots + a_{2n-1}) + (a_2 + a_4 + \cdots + a_{2n})}{n} \\
+            ={} & \frac12\lim_{n\to\infty}\left(\frac{a_1 + a_3 + \cdots + a_{2n-1}}{n} + \frac{a_2 + a_4 + \cdots + a_{2n}}{n}\right) \\
+            ={} & \frac12\left(\lim_{n\to\infty}\frac{a_1 + a_3 + \cdots + a_{2n-1}}{n} + \lim_{n\to\infty}\frac{a_2 + a_4 + \cdots + a_{2n}}{n}\right).
+        \end{align*}
+        已知 $\lim\limits_{n\to\infty}a_{2n-1} = a$, $\lim\limits_{n\to\infty}a_{2n} = b$, 由例 4 可得
+        \begin{gather*}
+            \lim_{n\to\infty}\frac{a_1 + a_3 + \cdots + a_{2n-1}}{n} = a, \\
+            \lim_{n\to\infty}\frac{a_2 + a_4 + \cdots + a_{2n}}{n} = b.
+        \end{gather*}
+        即
+        \[
+            \lim_{n\to\infty}\frac{a_1 + a_2 + \cdots + a_{n}}{n} = \frac{a+b}{2}.   
+        \]
+    \item % 12
+        {\heiti 证明}\quad 令 $a_n = \sum\limits_{i=1}^n( \sqrt{1 + i/n^2} - 1)$, 对 $a_n$ 进行化简, 则有
         \begin{align*}
             a_n &= \sum_{i=1}^n\left( \sqrt{1 + \frac{i}{n^2}} - 1 \right) \\
-            &= \sqrt{1 + \frac{1}{n^2}} - 1 + \sqrt{1 + \frac{2}{n^2}} - 1 + \cdots + \sqrt{1 + \frac{1}{n}} - 1 \\
-            &= \frac{\frac{1}{n^2}}{\sqrt{1 + \frac{1}{n^2}} + 1} + \frac{\frac{2}{n^2}}{\sqrt{1 + \frac{2}{n^2}} + 1} + \cdots + \frac{\frac{1}{n}}{\sqrt{1 + \frac{1}{n}} + 1}.
+                &= \sqrt{1 + \frac{1}{n^2}} - 1 + \sqrt{1 + \frac{2}{n^2}} - 1 + \cdots + \sqrt{1 + \frac{1}{n}} - 1 \\
+                &= \frac{\frac{1}{n^2}}{\sqrt{1 + \frac{1}{n^2}} + 1} + \frac{\frac{2}{n^2}}{\sqrt{1 + \frac{2}{n^2}} + 1} + \cdots + \frac{\frac{1}{n}}{\sqrt{1 + \frac{1}{n}} + 1}.
         \end{align*}
         显然有
         \begin{equation*}
             \frac{\frac{1}{n^2} \cdot \frac{n(n+1)}{2}}{\sqrt{1 + \frac{1}{n}} + 1} \leqslant a_n \leqslant \frac{\frac{1}{n^2} \cdot \frac{n(n+1)}{2}}{\sqrt{1 + \frac{1}{n^2}} + 1}.
         \end{equation*}
-        由夹逼原理可得 $\lim\limits_{n\to\infty}a_n = \dfrac 14$.
-    \item 13
-    \item 14
-    \item 15
-    \item 16
+        因此 $\lim\limits_{n\to\infty}a_n = \dfrac 14$.
 \end{enumerate}
 
 % \end{document}
