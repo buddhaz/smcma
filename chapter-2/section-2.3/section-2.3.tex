@@ -1,0 +1,93 @@
+%@author Shuning Zhang
+%@date 2019-12-03
+
+\documentclass[12pt]{article}
+
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+\usepackage{ctex}
+
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb, amssymb, amsthm}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+    {\heiti 练习题 2.3}
+\end{center}
+
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        {\heiti 证明}\quad 先证明存在性, 用反证法. 假设 $f$ 不存在不动点. 因为 $f \circ f$ 有唯一的不动点 $x$,
+        所以 $f(f(x)) = x$. 又因 $f$ 不存在不动点, 所以 $f(x) = y \ne x$. 那么
+        \[
+            f(y) = f(f(x)) = x,   
+        \]
+        即 $f(y) = x$. 更进一步, 有 $f(f(y)) = f(x) = y$, 即 $y$ 也是 $f \circ f$ 的一个不动点. 这与题意 $f \circ f$ 有唯一的不动点相矛盾.
+        因此 $f$ 必然存在不动点.
+        
+        再证明唯一性, 依然用反证法. 假设 $x$ 和 $y$ 都是 $f$ 的不动点, 并且 $x \neq y$, 则有 $f(x) = x$, $f(y) = y$.
+        那么
+        \begin{gather*}
+            f(f(x)) = f(x) = x, \\
+            f(f(y)) = f(y) = y.
+        \end{gather*}
+        这与题意 $f \circ f$ 有唯一的不动点相矛盾. 因此 $f$ 的不动点是唯一的.
+    \item 3
+    \item 4
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+                $f^n(x) = \dfrac{x}{\sqrt{1 + nx^2}}$;
+            \item % 5.2
+                $f^n(x) = \dfrac{x}{1 + nbx}$.
+        \end{enumerate}
+    \item 6
+    \item 7
+    \item 8
+    \item % 9
+        {\heiti 证明} 设 $f(x)$ 是定义在 $(-a, a)$ 上的函数, 则有
+        \[
+            f(x) = \frac{f(x) + f(-x) + f(x) - f(-x)}{2} = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2}.    
+        \]
+        令 $g(x) = \dfrac{f(x) + f(-x)}{2}$, $h(x) = \dfrac{f(x) - f(-x)}{2}$, 显然有
+        \begin{gather*}
+            g(-x) = g(x), \\
+            h(-x) = -h(x).
+        \end{gather*}
+    \item % 10
+        \begin{enumerate}[(1)]
+            \item % 10.1
+                {\heiti 证明}\quad 对双曲正弦函数, 有
+                \[
+                    \sinh(-x) = \frac{\mathrm{e}^{-x} - \mathrm{e}^x}{2} = -\frac{\mathrm{e}^x - \mathrm{e}^{-x}}{2} = -\sinh x.    
+                \]
+                对双曲余弦函数, 有
+                \[
+                    \cosh(-x) = \frac{\mathrm{e}^{-x} + \mathrm{e}^x}{2} = \frac{\mathrm{e}^x + \mathrm{e}^{-x}}{2} = \cosh x.     
+                \]
+            \item % 10.2
+                {\heiti 证明}\quad 根据题意, 有
+                \begin{align*}
+                    \cosh^2x - \sinh^2x &= \frac{(\mathrm{e}^x + \mathrm{e}^{-x})^2}{4} - \frac{(\mathrm{e}^x - \mathrm{e}^{-x})^2}{4} \\
+                                        &= \frac{\mathrm{e}^{2x} + \mathrm{e}^{-2x} + 2\mathrm{e}^x\mathrm{e}^{-x} - (\mathrm{e}^{2x} + \mathrm{e}^{-2x} - 2\mathrm{e}^x\mathrm{e}^{-x})}{4} \\
+                                        &= \frac{2 \cdot \mathrm{e}^0 + 2 \cdot \mathrm{e}^0}{4} \\
+                                        &= 1.
+                \end{align*}
+        \end{enumerate}
+    \item % 11
+        令 $u = \mathrm{e}^x$, 则有
+        \[
+            u^2 - 2yu - 1 = 0,    
+        \]
+        解得 $u = y \pm \sqrt{y^2 + 1}$. 因为 $u = \mathrm{e}^x > 0$, 所以 $u = y + \sqrt{y^2 + 1}$, 即
+        \[
+            x = \ln(y + \sqrt{y^2 + 1}).    
+        \]
+\end{enumerate}
+
+\end{document}
