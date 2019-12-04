@@ -1,0 +1,152 @@
+%@author Shuning Zhang
+%@date 2019-12-04
+
+\documentclass[12pt]{ctexart}
+
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+\usepackage{enumerate}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+    {\heiti 练习题 2.4}
+\end{center}
+
+\begin{enumerate}
+    \item % 1
+        略.
+    \item 2
+    \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+                {\heiti 证明}\quad 对 $\forall \varepsilon > 0$, $\exists \delta > 0$, 当 $0 < |x - x_0| < \delta$ 时, 有
+                \[
+                    ||f(x)| - |A|| \leqslant |f(x) - A| < \varepsilon.    
+                \]
+                这便证明了 $\lim\limits_{x\to x_0}|f(x)| = |A|$.
+            \item % 3.2
+                {\heiti 证明}\quad 因为 $f(x)$ 的极限存在, 所以 $f(x)$ 是有界的, 即 $|f(x)| \leqslant M$.
+                对 $\forall \varepsilon > 0$, 取 $\delta = \varepsilon/(M + |A|)$, 当 $0 < |x - x_0| < \delta$ 时, 有
+                \[
+                    |f^2(x) - A^2| = |f(x) + A||f(x) - A| \leqslant (|f(x)| + |A|)|f(x) - A| < \varepsilon.
+                \]
+            \item % 3.3
+                略.
+            \item % 3.4
+                略.
+        \end{enumerate}
+    \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                {\heiti 证明}\quad 对 $\forall \varepsilon > 0$, 取 $\delta = \min(1, \varepsilon/19)$, 当 $0 < |x - 2| < \delta$ 时, 有
+                \[
+                    |x^3 - 8| = |x - 2||x^2 + 2x + 2^2| < 19|x - 2| < \varepsilon.   
+                \]
+            \item % 4.2
+                {\heiti 证明}\quad 对 $\forall \varepsilon > 0$, 取 $\delta = \min(1, 30\varepsilon)$, 当 $0 < |x - 3| < \delta$ 时, 有
+                \[
+                    \left|\frac{x-3}{x^2-9} - \frac16\right| = \left|\frac{1}{x+3} - \frac16\right| = \frac{|x-3|}{6|x+3|} < \frac{|x-3|}{30} < \varepsilon.
+                \]
+            \item % 4.3
+                {\heiti 证明}\quad 对 $\forall \varepsilon > 0$, 取 $\delta = \min(1, \varepsilon/11)$, 当 $0 < |x - 1| < \delta$ 时, 有
+                \begin{align*}
+                    \left| \frac{x^4-1}{x-1} - 4 \right| &= |(x^2+1)(x+1) - 4| = |x^3 + x^2 + x - 3| \\
+                                                         &= |x^3 - 1 + x^2 - 1 + x - 1| = |x - 1||x^2 + 2x + 3| < 11|x - 1| < \varepsilon.
+                \end{align*}
+            \item % 4.4
+                略.
+            \item % 4.5
+                略.
+        \end{enumerate}
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+                $f(2+) = 4$, $f(2-) = -2a$;
+            \item % 5.2
+                $a = -2$.
+        \end{enumerate}
+    \item % 6
+        {\heiti 证明}\quad 令 $\lim\limits_{x\to x_0}f(x) = l > a$. 对 $\varepsilon_0 = l - a > 0$, $\exists \delta > 0$, 当 $0 < |x - x_0| < \delta$ 时, 有
+        \[
+            |f(x) - l| < \varepsilon_0,    
+        \]
+        即 $a = l - \varepsilon_0 < f(x)$.
+    \item % 7
+        {\heiti 证明}\quad 对 $\varepsilon_0 = \dfrac{f(x_0+) - f(x_0-)}{2} > 0$, $\exists \delta_1 > 0$, 当 $0 < x_0 - x < \delta_1$ 时, 有
+        \[
+            |f(x) - f(x_0-)| < \varepsilon_0,    
+        \]
+        即 $f(x) < f(x_0-) + \varepsilon_0$. 同时, $\exists \delta_2 > 0$, 当 $0 < y - x_0 < \delta_2$ 时, 有
+        \[
+            |f(y) - f(x_0+)| < \varepsilon_0,    
+        \]
+        即 $f(x_0+) - \varepsilon_0 < f(y)$. 现取 $\delta = \min(\delta_1, \delta_2)$, 当 $0 < x_0 - x < \delta$, $0 < y - x_0 < \delta$ 时, 有
+        \[
+            f(x) < f(x_0-) + \varepsilon_0 = f(x_0+) - \varepsilon_0 < f(y).
+        \]
+    \item 8
+    \item % 9
+        存在一个 $\varepsilon_0 > 0$, 对任意的 $\delta > 0$, 即使 $0 < |x - x_0| < \delta$, 依然有
+        \[
+            |f(x) - l| \geqslant \varepsilon_0.
+        \]
+    \item 10
+    \item % 11
+        \begin{enumerate}[(1)]
+            \item % 11.1
+                $-1$;
+            \item % 11.2
+                $0$;
+            \item % 11.3
+                $\lim\limits_{n\to1}\dfrac{x^m-1}{x-1} = \lim\limits_{n\to1}\dfrac{1-x^m}{1-x} = \lim\limits_{n\to1}(1 + x + \cdots + x^{m-1}) = m$;
+            \item % 11.4
+                $\lim\limits_{n\to1}\dfrac{x^m-1}{x^n-1} = \lim\limits_{n\to1}\dfrac{(1-x^m)/(1-x)}{(1-x^n)/(1-x)} = \dfrac mn$;
+            \item % 11.5
+                $1/2$;
+            \item % 11.6
+                $1$;
+            \item % 11.7
+                $1/m$;
+            \item % 11.8
+                $\dfrac{m(m+1)}{2}$.
+        \end{enumerate}
+    \item % 12
+        \begin{enumerate}[(1)]
+            \item % 12.1
+                $a/b$;
+            \item % 12.2
+                $2$;
+            \item % 12.3
+                $1$;
+            \item % 12.4
+                $1$;
+            \item % 12.5
+                $\sin x$;
+            \item % 12.6
+                $\cos x$;
+            \item % 12.7
+                $\dfrac{n(n+1)(2n+1)}{12}$;
+            \item % 12.8
+                $\dfrac{\sin x}{x}$.
+        \end{enumerate}
+    \item % 13
+        \begin{enumerate}[(1)]
+            \item % 13.1
+                $1$;
+            \item % 13.2
+                $0$;
+            \item % 13.3
+                $5/8$;
+            \item % 13.4
+                $3/2$.
+        \end{enumerate}
+    \item 14
+    \item 15
+    \item 16
+\end{enumerate}
+
+\end{document}
