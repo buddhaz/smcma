@@ -1,18 +1,16 @@
-%@author Shuning Zhang
-%@date 2019-12-03
+% %@author Shuning Zhang
+% %@date 2019-12-03
 
-\documentclass[12pt]{article}
+% \documentclass[12pt]{ctexart}
 
-\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+% \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
 
-\usepackage{ctex}
+% \usepackage{enumerate}
+% \usepackage{amsmath, amssymb, amsfonts, amsthm}
 
-\usepackage{enumerate}
-\usepackage{amsmath, amssymb, amssymb, amsthm}
+% \begin{document}
 
-\begin{document}
-
-\pagestyle{empty}
+% \pagestyle{empty}
 
 \begin{center}
     {\heiti 练习题 2.3}
@@ -46,11 +44,30 @@
             \item % 5.2
                 $f^n(x) = \dfrac{x}{1 + nbx}$.
         \end{enumerate}
-    \item 6
-    \item 7
+    \item % 6
+        {\heiti 证明}\quad 根据题意, 有 $f(1) = f(1 + 0) = f(1) + f(0)$, 因此 $f(0) = 0$. 进一步, 有
+        \[
+            0 = f(0) = f(x - x) = f(x) + f(-x),    
+        \]
+        即 $f(-x) = -f(x)$. 说明 $f$ 是一个奇函数. 因此只需在 $[0, +\infty)$ 上进行讨论.
+        
+        令有理数 $x = p/q \geqslant 0$, 即 $p = qx$, 则有
+        \[
+            f(p) = f(qx) = f(\underbrace{x + x + \cdots + x}_{\text{$q$ 项}}) = qf(x).
+        \]
+        那么
+        \[
+            f(x) = \frac{f(p)}{q} = \frac{f(\overbrace{1 + 1 + \cdots + 1}^{\text{$p$ 项}})}{q} = \frac{pf(1)}{q} = \frac pq f(1) = xf(1).    
+        \]
+    \item % 7
+        {\heiti 证明} 根据题意, 对 $\forall y > 0$, 有
+        \[
+            f(x + y) = f(x).    
+        \]
+        这正表明 $f$ 在 $\mathrm{R}$ 上对任意的两点 $x$, $x + y$ 有相同的函数值. 因此 $f$ 必是一个常值函数.  
     \item 8
     \item % 9
-        {\heiti 证明} 设 $f(x)$ 是定义在 $(-a, a)$ 上的函数, 则有
+        {\heiti 证明} 设 $f(x)$ 是定义在 $(-a, a)$ 上的一个函数, 则有
         \[
             f(x) = \frac{f(x) + f(-x) + f(x) - f(-x)}{2} = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2}.    
         \]
@@ -80,7 +97,7 @@
                 \end{align*}
         \end{enumerate}
     \item % 11
-        令 $u = \mathrm{e}^x$, 则有
+        对双曲正弦函数, 令 $u = \mathrm{e}^x$, 则有
         \[
             u^2 - 2yu - 1 = 0,    
         \]
@@ -88,6 +105,7 @@
         \[
             x = \ln(y + \sqrt{y^2 + 1}).    
         \]
+        同理, 可求得双曲余弦的反函数为 $x = \ln(y + \sqrt{y^2 - 1})$.
 \end{enumerate}
 
-\end{document}
+% \end{document}
