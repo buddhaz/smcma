@@ -1,0 +1,87 @@
+%@author Shuning Zhang
+%@date 2019-12-05
+
+\documentclass[12pt]{ctexart}
+
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+
+\usepackage{enumerate}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+    {\heiti 练习题 2.6}
+\end{center}
+
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                略.
+            \item % 1.2
+                略.
+            \item % 1.3
+                略.
+            \item % 1.4
+                略.
+            \item % 1.5
+                略.
+            \item % 1.6
+                略.
+            \item % 1.7
+                略.
+            \item % 1.8
+                $\lim\limits_{x\to0}\dfrac{\sqrt{x^2 + x^{1/3}}}{x^{1/6}} = \lim\limits_{x\to0}\sqrt{1 + x^{5/3}} = 1$.
+            \item % 1.9
+                $\lim\limits_{x\to\infty}\dfrac{\sqrt{x^2 + x^{1/3}}}{x} = \lim\limits_{x\to\infty}\sqrt{1 + x^{-5/3}} = 1$.
+            \item % 1.10
+                $\lim\limits_{x\to0}\dfrac{\sqrt{1+x} - \sqrt{1-x}}{x} = \lim\limits_{x\to0} \dfrac{2x}{x(\sqrt{1+x} + \sqrt{1-x})} = 1$.
+            \item % 1.11
+                $\lim\limits_{x\to0^+}\dfrac{\sqrt{1+\sqrt{1+\sqrt{x}}} - \sqrt{2}}{\sqrt{x}} = \lim\limits_{x\to0^+} \dfrac{\sqrt{1 + \sqrt{x}} - 1}{\sqrt{x}\left(\sqrt{1+\sqrt{1+\sqrt{x}}} + \sqrt{2}\right)} = \dfrac{1}{4\sqrt{2}}$.
+            \item 1.12
+
+            \item % 1.13
+                $\lim\limits_{x\to\infty}\dfrac{\sqrt{x + \sqrt{x + \sqrt{x}}}}{\sqrt{x}} = \lim\limits_{x\to\infty}\sqrt{1 + \sqrt{1/x + \sqrt{1/x^3}}} = 1$.
+            \item 1.14
+        \end{enumerate}
+    \item % 2
+        \begin{enumerate}[(1)]
+            \item % 2.1
+                略.
+            \item % 2.2
+                略.
+            \item % 2.3
+                略.
+            \item % 2.4
+                {\heiti 证明}\quad 根据题意, 有
+                \[
+                    \frac1\alpha\left(\frac{1}{1+\alpha} - (1-\alpha)\right) = o(1).    
+                \]
+                对等式的左边进行化简, 则有
+                \[
+                    \frac1\alpha\left(\frac{1}{1+\alpha} - (1-\alpha)\right) = \frac1\alpha \cdot \frac{\alpha^2}{1+\alpha} = \frac{\alpha}{1 + \alpha}.
+                \]
+                当 $x \to x_0$ 时, 显然有
+                \[
+                    \frac{\alpha}{1 + \alpha} = 0 = o(1).  
+                \]
+        \end{enumerate}
+    \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+                $2$;
+            \item % 3.2
+                $1$;
+            \item % 3.3
+                $0$;
+            \item % 3.4
+                $1$;
+            \item % 3.5
+                $\dfrac{1}{2n}$.
+        \end{enumerate}
+\end{enumerate}
+
+\end{document}
