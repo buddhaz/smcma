@@ -70,8 +70,35 @@
             \item % 6.4
                 $e^{x+2}$.
         \end{enumerate}
-    \item 7
-    \item 8
+    \item % 7
+        根据题意, 有
+        \begin{align*}
+            f(x) &= \lim_{n\to\infty}n^x\left(\left(1+\frac1n\right)^{n+1} - \left(1+\frac1n\right)^n\right) \\
+                 &= \lim_{n\to\infty} n^{x-1} \left(1+\frac1n\right)^n \\
+                 &= \mathrm{e} \lim_{n\to\infty} n^{x-1}.
+        \end{align*}
+        因此
+        \[
+            f(x) =
+                \begin{cases}
+                    0, & x < 1; \\
+                    \mathrm{e}, & x = 1. \\
+                \end{cases}
+        \]
+        当 $x > 1$ 时, $f(x)$ 不存在.
+    \item % 8
+        {\heiti 证明}\quad 由题目已知条件 $\left|\sum\limits_{i=1}^n a_i\sin ix\right| \leqslant |\sin x|$, 有
+        \[
+            \frac{\left|\sum\limits_{i=1}^n a_i\sin ix\right|}{|\sin x|} \leqslant 1,   
+        \]
+        那么
+        \[
+            \left| \frac{a_1\sin x}{x}\cdot\frac{x}{\sin x} + \frac{a_2\sin2x}{2x}\cdot\frac{2x}{\sin x} + \cdots + \frac{a_n\sin x}{nx}\cdot\frac{nx}{\sin x} \right| \leqslant 1.
+        \]
+        对上面的不等式取极限, 令 $x \to 0$, 即可得到
+        \[
+            |a_1 + 2a_2 + \cdots + na_n| \leqslant 1.
+        \]
     \item % 9
         {\heiti 证明}\quad 先证明必要性. 设 $\lim\limits_{x\to+\infty}f(x) = l$. 对 $\forall \varepsilon/2 > 0$, $\exists A_1 > 0$, 当 $x_1 > A_1$ 时, 有
         \[
@@ -87,7 +114,7 @@
                               &\leqslant |f(x_1) - l| + |f(x_2) - l| \\
                               &< \frac\varepsilon2 + \frac\varepsilon2 = \varepsilon.
         \end{align*}
-        再证明充分性. 考察任一数列 $\{x_n\}$. 因为 $x_n\rightarrow+\infty\ (n\to\infty)$, 所以对 $\forall A > 0$, $\exists N \in \mathrm{N}^*$, 当 $n > N$ 时, 有
+        再证明充分性. 考察任一发散到 $+\infty$ 的数列 $\{x_n\}$. 因为 $x_n\rightarrow+\infty\ (n\to\infty)$, 所以对 $\forall A > 0$, $\exists N \in \mathrm{N}^*$, 当 $n > N$ 时, 有
         \[
             x_n > A.    
         \]
@@ -96,7 +123,16 @@
             x_m > A, x_n > A,    
         \]
         那么 $|f(x_m) - f(x_n)| < \varepsilon$. 这表明数列 $\{f(x_n)\}$ 是一个基本列. 因此 $\{f(x_n)\}$ 的极限存在, 即 $\lim\limits_{x\to+\infty}f(x)$ 存在.
-    \item 10
+    \item % 10
+        设 $f(x)$ 的最小正周期为 $T$, 对 $\forall \varepsilon > 0$, $\exists x_0 > 0$, 当 $x \in [x_0, x_0 + T]$, 有
+        \[
+            |f(x)| < \varepsilon.    
+        \]
+        另一方面, 对 $\forall x' \in [x_0 + (n-1)T, x_0 + nT]\ (n \in \mathrm{Z})$, $\exists x \in [x_0, x_0 + T]$, 使得
+        \[
+            f(x) = f(x + (n-1)T) = f(x').    
+        \]
+        而 $\bigcup\limits_{n\in\mathrm{Z}}[x_0 + (n-1)T, x_0 + nT] = \mathrm{R}$. 这表明对 $\forall x \in \mathrm{R}$, 都有 $|f(x)| < \varepsilon$. 因此 $f = 0$.
 \end{enumerate}
 
 % \end{document}
