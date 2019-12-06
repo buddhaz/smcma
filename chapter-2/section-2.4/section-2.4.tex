@@ -18,8 +18,8 @@
 
 \begin{enumerate}
     \item % 1
-        略.
-    \item 2
+        对 $\forall \varepsilon > 0$, $\exists \delta > 0$, 当 $0 < x_0 - x < \delta$ 时, 有 $|f(x) - 1| < \varepsilon$.
+    \item % 2
     \item % 3
         \begin{enumerate}[(1)]
             \item % 3.1
@@ -88,13 +88,10 @@
         \[
             f(x) < f(x_0-) + \varepsilon_0 = f(x_0+) - \varepsilon_0 < f(y).
         \]
-    \item 8
+    \item % 8
     \item % 9
-        存在一个 $\varepsilon_0 > 0$, 对任意的 $\delta > 0$, 即使 $0 < |x - x_0| < \delta$, 依然有
-        \[
-            |f(x) - l| \geqslant \varepsilon_0.
-        \]
-    \item 10
+        存在一个 $\varepsilon_0 > 0$, 对任意的 $\delta > 0$, 即使 $0 < |x - x_0| < \delta$, 依然有 $|f(x) - l| \geqslant \varepsilon_0$.
+    \item % 10
     \item % 11
         \begin{enumerate}[(1)]
             \item % 11.1
@@ -102,9 +99,9 @@
             \item % 11.2
                 $0$;
             \item % 11.3
-                $\lim\limits_{n\to1}\dfrac{x^m-1}{x-1} = \lim\limits_{n\to1}\dfrac{1-x^m}{1-x} = \lim\limits_{n\to1}(1 + x + \cdots + x^{m-1}) = m$;
+                $\lim\limits_{x\to1}\dfrac{x^m-1}{x-1} = \lim\limits_{x\to1}\dfrac{1-x^m}{1-x} = \lim\limits_{x\to1}(1 + x + \cdots + x^{m-1}) = m$;
             \item % 11.4
-                $\lim\limits_{n\to1}\dfrac{x^m-1}{x^n-1} = \lim\limits_{n\to1}\dfrac{(1-x^m)/(1-x)}{(1-x^n)/(1-x)} = \dfrac mn$;
+                $\lim\limits_{x\to1}\dfrac{x^m-1}{x^n-1} = \lim\limits_{x\to1}\dfrac{(1-x^m)/(1-x)}{(1-x^n)/(1-x)} = \dfrac mn$;
             \item % 11.5
                 $1/2$;
             \item % 11.6
@@ -129,9 +126,21 @@
             \item % 12.6
                 $\cos x$;
             \item % 12.7
-                $\dfrac{n(n+1)(2n+1)}{12}$;
+                $\lim\limits_{x\to0}\dfrac{1-\cos x\cos 2x\cdots\cos nx}{x^2}$ \\
+                $= \lim\limits_{x\to0} \dfrac{1 - (\cos 2x\cos 3x\cdots + \cos nx) + (\cos 2x\cos 3x\cdots + \cos nx) -\cos x\cos 2x\cdots\cos nx}{x^2}$ \\
+                $= \lim\limits_{x\to0} \dfrac{1 - \cos 2x\cos 3x\cdots + \cos nx}{x^2} + \lim\limits_{x\to0} (\cos 2x\cos 3x\cdots + \cos nx) \dfrac{1 - \cos x}{x^2}$ \\
+                $= \lim\limits_{x\to0} \dfrac{1 - \cos 3x\cos 4x\cdots + \cos nx}{x^2} + \lim\limits_{x\to0} (\cos 3x\cos 4x\cdots + \cos nx) \dfrac{1 - \cos2x}{x^2} + \dfrac12$ \\
+                $= \lim\limits_{x\to0} \dfrac{1 - \cos nx}{x^2} + \dfrac{(n-1)^2}{2} + \dfrac{(n-2)^2}{2} + \cdots + \dfrac12$ \\
+                $= \dfrac{1 + 2^2 + \cdots + n^2}{2}$ \\
+                $= \dfrac{n(n+1)(2n+1)}{12}$;
             \item % 12.8
-                $\dfrac{\sin x}{x}$.
+                $\lim\limits_{n\to\infty}\cos\dfrac{x}{2}\cos\dfrac{x}{2^2}\cdots\cos\dfrac{x}{2^n}$ \\
+                $= \lim\limits_{n\to\infty}\cos\dfrac{x}{2}\cos\dfrac{x}{2^2}\cdots\cos\dfrac{x}{2^n} \cdot \lim\limits_{n\to\infty} \dfrac{\sin(x/2^n)}{x/2^n}$ \\
+                $= \lim\limits_{n\to\infty} \dfrac{2^{n-1}}{x} \cos\dfrac{x}{2} \cos\dfrac{x}{2^2} \cdots \cos\dfrac{x}{2^{n-1}}\left(2\cos\dfrac{x}{2^n}\sin\dfrac{x}{2^n}\right)$ \\
+                $= \lim\limits_{n\to\infty} \dfrac{2^{n-2}}{x} \cos\dfrac{x}{2} \cos\dfrac{x}{2^2} \cdots \left(2\cos\dfrac{x}{2^{n-1}}\sin\dfrac{x}{2^{n-1}}\right)$ \\
+                $= \lim\limits_{n\to\infty} \dfrac1x\left(2\cos\dfrac{x}{2}\sin\dfrac{x}{2}\right)$ \\
+                $= \lim\limits_{n\to\infty} \dfrac{\sin x}{x}$ \\
+                $= \dfrac{\sin x}{x}$.
         \end{enumerate}
     \item % 13
         \begin{enumerate}[(1)]
@@ -144,10 +153,42 @@
             \item % 13.4
                 $3/2$.
         \end{enumerate}
-    \item 14
+    \item % 14
+        {\heiti 证明}\quad 考察 $n!\mathrm{e}$, 有
+        \[
+            n!\mathrm{e} = n! \sum_{k=0}^\infty\frac{1}{k!} = n!\left(\sum_{k=0}^n\frac{1}{k!} + \sum_{k=n+1}^\infty\frac{1}{k!}\right) = n! \sum_{k=0}^n\frac{1}{k!} + n!\sum_{k=n+1}^\infty\frac{1}{k!} = A + B.
+        \]
+        显然 $A \in \mathrm{N}^*$, 对于 $B$, 则有
+        \[
+            B = n!\sum_{k=n+1}^\infty\frac{1}{k!} = \frac{1}{n+1} + \frac{1}{(n+1)(n+2)} + \cdots.    
+        \]
+        
+        现在来证明 $\dfrac{1}{n+1} < B < \dfrac{1}{n-1}$. 不等式 $\dfrac{1}{n+1} < B$ 是显然成立的, 对于 $B < \dfrac{1}{n-1}$, 有
+        \[
+            B = \frac{1}{n+1} + \frac{1}{(n+1)(n+2)} + \cdots < \frac1n + \frac{1}{n^2} + \cdots = \sum_{i=1}^\infty\left(\frac1n\right)^i,
+        \]
+        其中
+        \[
+            \sum_{i=1}^\infty\left(\frac1n\right)^i = \lim_{m\to\infty}\sum_{i=1}^m\left(\frac1n\right)^i = \lim_{m\to\infty}\frac{\frac1n\left(1 - \left(\frac1n\right)^m\right)}{1 - \frac1n} = \frac{1}{n-1}.   
+        \]
+        
+        现在, 则有
+        \begin{align*}
+            n\sin(2\pi n!\mathrm{e}) &= n\sin\left(2\pi (A+B)\right) \\
+                                     &= n\sin(2A\pi)\cos(2B\pi) + n\sin(2B\pi)\cos(2A\pi) \\
+                                     &= n\sin(2B\pi). 
+        \end{align*}
+        因为 $\dfrac{1}{n+1} < B < \dfrac{1}{n-1}$, 所以 $\lim\limits_{n\to\infty}B = 0$, 那么
+        \[
+            \lim\limits_{n\to\infty} n\sin(2B\pi) = \lim\limits_{n\to\infty} 2\pi nB \frac{\sin(2B\pi)}{2B\pi} = 2\pi\lim\limits_{n\to\infty}nB. 
+        \]
+        因为 $\dfrac{n}{n+1} < nB < \dfrac{n}{n-1}$, 所以 $\lim\limits_{n\to\infty}nB = 1$, 即
+        \[
+            \lim\limits_{n\to\infty} n\sin(2\pi n!\mathrm{e}) = 2\pi.    
+        \]
     \item % 15
         对 $t_0 = 0$ 的任何一个 $B_\eta(t_0)$, 都能找到一个无理数 $p/q \in B_\eta(t_0)$, 使得 $g(p/q) = 1/q = x_0$. 这违背了复合函数求极限的条件.
-    \item 16
+    \item % 16
 \end{enumerate}
 
 % \end{document}
