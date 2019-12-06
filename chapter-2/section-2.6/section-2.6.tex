@@ -1,14 +1,14 @@
-%@author Shuning Zhang
-%@date 2019-12-05
+% %@author Shuning Zhang
+% %@date 2019-12-05
 
-\documentclass[12pt]{ctexart}
+% \documentclass[12pt]{ctexart}
 
-\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+% \usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
 
-\usepackage{enumerate}
-\usepackage{amsmath, amsfonts, amssymb, amsthm}
+% \usepackage{enumerate}
+% \usepackage{amsmath, amsfonts, amssymb, amsthm}
 
-\begin{document}
+% \begin{document}
 
 \pagestyle{empty}
 
@@ -40,12 +40,16 @@
             \item % 1.10
                 $\lim\limits_{x\to0}\dfrac{\sqrt{1+x} - \sqrt{1-x}}{x} = \lim\limits_{x\to0} \dfrac{2x}{x(\sqrt{1+x} + \sqrt{1-x})} = 1$.
             \item % 1.11
-                $\lim\limits_{x\to0^+}\dfrac{\sqrt{1+\sqrt{1+\sqrt{x}}} - \sqrt{2}}{\sqrt{x}} = \lim\limits_{x\to0^+} \dfrac{\sqrt{1 + \sqrt{x}} - 1}{\sqrt{x}\left(\sqrt{1+\sqrt{1+\sqrt{x}}} + \sqrt{2}\right)} = \dfrac{1}{4\sqrt{2}}$.
-            \item 1.12
-
+                $\lim\limits_{x\to0^+}\dfrac{\sqrt{1+\sqrt{1+\sqrt{x}}} - \sqrt{2}}{\sqrt{x}} = \lim\limits_{x\to0^+} \dfrac{\sqrt{1 + \sqrt{x}} - 1}{\sqrt{x}\left(\sqrt{1+\sqrt{1+\sqrt{x}}} + \sqrt{2}\right)}$ \\
+                $= \lim\limits_{x\to0^+} \dfrac{1}{\left(\sqrt{1+\sqrt{1+\sqrt{x}}} + \sqrt{2}\right)\left(\sqrt{1 + \sqrt{x}} + 1\right)} = \dfrac{1}{4\sqrt{2}}$.
+            \item % 1.12
+                $\lim\limits_{x\to0}\dfrac{\sqrt{1+\tan x} - \sqrt{1-\sin x}}{x} = \lim\limits_{x\to0}\dfrac{\tan x + \sin x}{x(\sqrt{1+\tan x} + \sqrt{1-\sin x})}$ \\
+                $= \lim\limits_{x\to0}\dfrac{1/\cos x + 1}{\sqrt{1+\tan x} + \sqrt{1-\sin x}} = 1$.
             \item % 1.13
                 $\lim\limits_{x\to\infty}\dfrac{\sqrt{x + \sqrt{x + \sqrt{x}}}}{\sqrt{x}} = \lim\limits_{x\to\infty}\sqrt{1 + \sqrt{1/x + \sqrt{1/x^3}}} = 1$.
-            \item 1.14
+            \item % 1.14
+                $\lim\limits_{x\to+\infty}\dfrac{(1+x)(1+x^2)\cdots(1+x^n)}{x^{\frac{n(n+1)}{2}}} = \lim\limits_{x\to+\infty} \dfrac{(1+x)(1+x^2) \cdots (1+x^n)}{x \cdot x^2 \cdots x^n}$ \\
+                $= \lim\limits_{x\to+\infty} \left(1 + \dfrac{1}{x}\right)\left(1 + \dfrac{1}{x^2}\right) \cdots \left(1 + \dfrac{1}{x^n}\right) = 1$.
         \end{enumerate}
     \item % 2
         \begin{enumerate}[(1)]
@@ -60,7 +64,7 @@
                 \[
                     \frac1\alpha\left(\frac{1}{1+\alpha} - (1-\alpha)\right) = o(1).    
                 \]
-                对等式的左边进行化简, 则有
+                对上面等式的左边进行化简, 则有
                 \[
                     \frac1\alpha\left(\frac{1}{1+\alpha} - (1-\alpha)\right) = \frac1\alpha \cdot \frac{\alpha^2}{1+\alpha} = \frac{\alpha}{1 + \alpha}.
                 \]
@@ -84,4 +88,4 @@
         \end{enumerate}
 \end{enumerate}
 
-\end{document}
+% \end{document}
