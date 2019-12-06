@@ -51,12 +51,11 @@
         令 $f(n) = \sin(\pi\sqrt{n^2+1})$. 对 $f(n)$ 进行化简, 则有
         \begin{align*}
             f(n) &= \sin(\pi\sqrt{n^2+1}) \\
-                 &= \sin(\pi\sqrt{n^2+1} - \pi + \pi) \\
-                 &= \sin\left(\pi(\sqrt{n^2+1} - 1) + \pi\right) \\
-                 &= \sin\left(\pi(\sqrt{n^2+1} - 1)\right)\cos\pi + \cos\left(\pi(\sqrt{n^2+1} - 1)\right)\sin\pi \\
-                 &= -\sin\left(\pi(\sqrt{n^2+1} - 1)\right) \\
-                 &= -\sin\frac{n^2\pi}{\sqrt{n^2+1} + 1} \\
-                 &= -\sin\frac{\pi}{\sqrt{1+\frac{1}{n^2}} + \frac{1}{n^2}}.
+                 &= \sin(\pi\sqrt{n^2+1} - n\pi + n\pi) \\
+                 &= \sin\left(\pi(\sqrt{n^2+1} - n) + n\pi\right) \\
+                 &= \sin\left(\pi(\sqrt{n^2+1} - n)\right)\cos n\pi + \cos\left(\pi(\sqrt{n^2+1} - n)\right)\sin n\pi \\
+                 &= (-1)^n \sin\left(\pi(\sqrt{n^2+1} - n)\right) \\
+                 &= (-1)^n \sin\frac{\pi}{\sqrt{n^2+1} + n}.
         \end{align*}
         因此 $\lim\limits_{n\to\infty}f(n) = 0$.
     \item % 6
