@@ -28,8 +28,23 @@
         \end{enumerate}
     \item 3
     \item 4
-    \item 5
-    \item 6
+    \item % 5
+        {\heiti 证明}\quad 对 $\varepsilon_0 = f(x_0)/2 > 0$, $\exists \delta_0 > 0$, 当 $|x - x_0| < \delta_0$ 时, 有 $|f(x) - f(x_0)| < \varepsilon_0$, 即
+        \[
+            f(x) > f(x_0) - \varepsilon_0 = \frac{f(x_0)}{2}.    
+        \]
+    \item % 6
+        {\heiti 证明}\quad 对 $|f|$. 利用不等式 $||x| - |y|| \leqslant |x - y|$. 对 $\forall \varepsilon > 0$, $\exists \delta > 0$, 当 $|x - x_0| < \delta$ 时, 有
+        \[
+            ||f(x)| - |f(x_0)|| \leqslant |f(x) - f(x_0)| < \varepsilon.
+        \]
+
+        对 $f^2$. 已知 $f$ 在点 $x_0$ 处连续, 那么 $\lim\limits_{x\to x_0}f(x)$ 存在, 由函数极限的性质可知 $f$ 在点 $x_0$ 的近旁有界, 即 $\exists M > 0$, 使得 $|f| < M$.
+        对任意的 $\varepsilon / (M + |f(x_0)|) > 0$, 存在 $\delta > 0$, 使得当 $|x - x_0| < \delta$ 时, 有
+        \begin{align*}
+            |f^2(x) - f^2(x_0)| &= |f(x) + f(x_0)||f(x) - f(x_0)| \\
+                                &\leqslant (|f(x)| + |f(x_0)|)|f(x) - f(x_0)| < \varepsilon.   
+        \end{align*} 
     \item 7
     \item 8
     \item 9
