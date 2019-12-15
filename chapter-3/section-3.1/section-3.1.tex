@@ -1,0 +1,47 @@
+% author: Shuning Zhang
+% creation date: 2019-12-15
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\pagestyle{empty}
+\begin{enumerate}
+    \item % 1
+        $\lim\limits_{x\to0}\dfrac{f(x)}{x} = \lim\limits_{x\to0}\dfrac{f(x) - f(0)}{x - 0} = f'(0)$.
+    \item 2
+    \item 3
+    \item % 4
+        {\heiti 证明}\quad 已知 $f$ 在 $x_0$ 处可导, 即
+        \[
+            \lim_{h\to0}\frac{f(x_0 + h) - f(x_0)}{h} = f'(x_0),    
+        \]
+        那么
+        \begin{align*}
+            \lim_{h\to0}\frac{f(x_0+h) - f(x_0-h)}{2h} &= \lim_{h\to0}\frac{f(x_0+h) - f(x_0) + f(x_0) - f(x_0 - h)}{2h} \\
+                                                         &= \frac12\lim_{h\to0}\left(\frac{f(x_0+h) - f(x_0)}{h} + \frac{f(x_0 - h) - f(x_0)}{-h}\right) \\
+                                                         &= \frac{f'(x_0) + f'(x_0)}{2} = f'(x_0).
+        \end{align*}
+
+        考察 $f(x) = |x|$, 则有
+        \[
+            \lim_{h\to0}\frac{f(0+h) - f(0-h)}{2h} = \lim_{h\to0}\frac{|0+h| - |0-h|}{2h} = 0.
+        \]
+        但是 $f(x)$ 在 $x = 0$ 处不可导.
+    \item 5
+    \item % 6
+        {\heiti 证明}\quad 先求抛物线 $y = x^2$ 在点 $(x_1, x_1^2)$ 切线的斜率, 则有
+        \[
+            \lim_{h\to0}\frac{(x_1+h)^2 - x_1^2}{h} = \lim_{h\to0}\frac{x_1^2 + 2x_1h + h^2 - x_1^2}{h} = \lim_{h\to0}(2x_1 + h) = 2x_1.    
+        \]
+        同理, 可求出点 $(x_2, x_2^2)$ 切线的斜率为 $2x_2$. 在平面解析几何中, 两直线垂直, 其斜率的乘积为 $-1$, 则有
+        \[
+            2x_1\cdot2x_2 = -1,    
+        \]
+        即 $4x_1x_2 + 1 = 0$.
+    \item 7
+    \item 8
+    \item 9
+    \item 10
+\end{enumerate}
+\end{document}
