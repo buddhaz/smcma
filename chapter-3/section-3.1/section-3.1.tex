@@ -30,18 +30,36 @@
         但是 $f(x)$ 在 $x = 0$ 处不可导.
     \item 5
     \item % 6
-        {\heiti 证明}\quad 先求抛物线 $y = x^2$ 在点 $(x_1, x_1^2)$ 切线的斜率, 则有
+        {\heiti 证明}\quad 先求抛物线 $y = x^2$ 在点 $(x_1, x_1^2)$ 处切线的斜率, 则有
         \[
             \lim_{h\to0}\frac{(x_1+h)^2 - x_1^2}{h} = \lim_{h\to0}\frac{x_1^2 + 2x_1h + h^2 - x_1^2}{h} = \lim_{h\to0}(2x_1 + h) = 2x_1.    
         \]
-        同理, 可求出点 $(x_2, x_2^2)$ 切线的斜率为 $2x_2$. 在平面解析几何中, 两直线垂直, 其斜率的乘积为 $-1$, 则有
+        同理, 可求出 $y$ 在点 $(x_2, x_2^2)$ 处切线的斜率为 $2x_2$. 在平面解析几何中, 两直线垂直, 其斜率的乘积为 $-1$, 则有
         \[
             2x_1\cdot2x_2 = -1,    
         \]
         即 $4x_1x_2 + 1 = 0$.
-    \item 7
+    \item % 7
+        $
+            \lim\limits_{n\to\infty}\left(\dfrac{f(a + \frac1n)}{f(a)}\right)^n
+            = \lim\limits_{n\to\infty}\left(\dfrac{f(a + \frac1n) - f(a) + f(a)}{f(a)}\right)^n
+            = \lim\limits_{n\to\infty}\left(1 + \dfrac{f(a + \frac1n) - f(a)}{f(a)}\right)^n \\
+            = \lim\limits_{n\to\infty}\left(1 + \dfrac{f(a + \frac1n) - f(a)}{\frac1n} \cdot \dfrac{1}{nf(a)}\right)^n
+            = \lim\limits_{n\to\infty}\left(1 + \dfrac{f'(a)}{nf(a)}\right)^n
+            = \mathrm{e}^{\frac{f'(a)}{f(a)}}.
+        $
     \item 8
-    \item 9
-    \item 10
+    \item % 9
+        $f'(0) = \lim\limits_{x\to0}\dfrac{f(x) - f(0)}{x - 0} = \lim\limits_{x\to0}\dfrac{x(x-1)^2(x-2)^3}{x} = -8$;
+
+        $f'(1) = \lim\limits_{x\to1}\dfrac{f(x) - f(1)}{x - 1} = \lim\limits_{x\to0}\dfrac{x(x-1)^2(x-2)^3}{x-1} = 0$;
+
+        $f'(2) = \lim\limits_{x\to2}\dfrac{f(x) - f(2)}{x - 2} = \lim\limits_{x\to1}\dfrac{x(x-1)^2(x-2)^3}{x - 2} = 0$.
+    \item % 10
+        {\heiti 证明} 考察极限
+        \[
+            \lim_{x\to0}\frac{f(x) - f(0)}{x - 0} = \lim_{x\to0}\frac{x^\lambda\sin\dfrac1x}{x} = \lim_{x\to0}x^{\lambda - 1}\sin\frac1x.    
+        \]
+        显然, 当 $\lambda > 1$ 时, 极限 $\lim\limits_{x\to0}x^{\lambda - 1}\sin\dfrac1x = 0$; 当 $\lambda \leqslant 1$ 时, 极限 $\lim\limits_{x\to0}x^{\lambda - 1}\sin\dfrac1x$ 不存在.
 \end{enumerate}
 \end{document}
