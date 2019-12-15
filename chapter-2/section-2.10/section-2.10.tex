@@ -12,10 +12,32 @@
     \item 3
     \item 4
     \item 5
-    \item 6
-        {\heiti 证明}\quad 令 $f(x) = x^3 + 2x - 1$. 先证明存在性. 因为 $f(x)$ 是 $[0, 1]$ 上的连续函数, 且 $f(0)f(1) < 0$, 所以存在一点 $x_0 \in (0, 1)$, 使得 $f(x_0) = 0$.
-        再证明唯一性. 用反证法. 假设存在 $x_1, x_2 \in (0, 1)$
-    \item 7
+    \item % 6
+        {\heiti 证明}\quad 令 $f(x) = x^3 + 2x - 1$. 先证明存在性. 因为 $f(x)$ 是 $[0, 1]$ 上的连续函数, 且 $f(0)f(1) < 0$, 所以存在一点 $x_0 \in (0, 1)$, 使得 $f(x_0) = 0$,
+        即 $x_0$ 是方程 $x^3 + 2x - 1$ 的一个实根.
+        再证明唯一性. 用反证法. 假设存在 $x_1, x_2 \in (0, 1)$, 且 $x_1 < x_2$, 使得 $f(x_1) = f(x_2) = 0$, 则有
+        \[
+            0 = f(x_2) - f(x_1) = x_2^3 - x_1^3 + 2(x_2 - x_1) > 0.    
+        \]
+        显然与假设相矛盾, 因此方程 $x^3 + 2x - 1$ 只存在唯一的实根.
+    \item % 7
+        令 $f(x) = x^n + \varphi(x)$, 即 $f(x) = x^n(1 + \varphi(x)/x^n)$.
+        \begin{enumerate}[(1)]
+            \item % 7.1
+                {\heiti 证明}\quad 当 $n$ 为奇数时, 有
+                \begin{gather*}
+                    \lim_{x\to+\infty}f(x) = \lim_{x\to+\infty}x^n\left(1 + \frac{\varphi(x)}{x^n}\right) = +\infty, \\
+                    \lim_{x\to-\infty}f(x) = \lim_{x\to+\infty}x^n\left(1 + \frac{\varphi(x)}{x^n}\right) = -\infty.
+                \end{gather*}
+                这表明一定存在一个 $(a, b) \subset \mathrm{R}$, 使得 $f(a) < 0$, $f(b) > 0$. 根据零值定理, 至少存在一点 $c \in (a, b)$, 使得 $f(c) = 0$,
+                即 $c$ 是方程 $x^n + \varphi(x)$ 的一个实根.
+                        
+            \item 7.2
+                % {\heiti 证明}\quad 当 $n$ 为偶数时, 有
+                % \[
+                %     \lim_{x\to+\infty} f(x)= \lim_{x\to-\infty} f(x) = +\infty.    
+                % \]
+        \end{enumerate}
     \item 8
     \item 9
     \item 10
