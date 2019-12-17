@@ -18,8 +18,29 @@
             \item 2.3
         \end{enumerate}
     \item 3
-    \item 4
-    \item 5
+    \item % 4
+        {\heiti 证明}\quad 设 $T$ 是 $f$ 的最小正周期, 即 $f(x + T) = f(x)$. 那么
+        \begin{align*}
+            f'(x + T) &= \lim_{h\to0}\frac{f(x+T+h) - f(x+T)}{h} \\
+                      &= \lim_{h\to0}\frac{f(x+h) - f(x)}{h} \\
+                      &= f'(x).    
+        \end{align*}
+        因此, $f'$ 也是周期函数.
+    \item % 5
+        {\heiti 证明}\quad 若 $f$ 是可导的奇函数, 则有
+        \begin{align*}
+            f'(-x) &= \lim_{h\to0}\frac{f(-x+h) - f(-x)}{h} \\
+                   &= \lim_{h\to0}\frac{-f(x-h) + f(x)}{h} \\
+                   &= \lim_{h\to0}\frac{f(x-h) - f(x)}{-h} \\
+                   &= f'(x).  
+        \end{align*}
+        若 $f$ 是可导的偶函数, 则有
+        \begin{align*}
+            f'(-x) &= \lim_{h\to0}\frac{f(-x+h) - f(-x)}{h} \\
+                   &= \lim_{h\to0}\frac{f(x-h) - f(x)}{h} \\
+                   &= -\lim_{h\to0}\frac{f(x-h) - f(x)}{-h} \\
+                   &= -f'(x).
+        \end{align*}
     \item 6
     \item 7
     \item 8
