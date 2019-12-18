@@ -14,7 +14,8 @@
         \begin{enumerate}[(1)]
             \item % 2.1
                 $1 + 2x + \cdots + nx^{n-1} = f'(x) = \dfrac{nx^{n+1} - (n+1)x^n + 1}{(1-x)^2}$;
-            \item 2.2
+            \item % 2.2
+                $\sum\limits_{i=1}^n\dfrac{i}{2^{i-1}} = f'(1/2) = \dfrac{n}{2^{n-1}} - \dfrac{n+1}{2^{n-2}} + 4$.
             \item 2.3
         \end{enumerate}
     \item 3
@@ -43,6 +44,20 @@
         \end{align*}
     \item 6
     \item 7
+        {\heiti 证明}\quad 根据题意, 有
+        \begin{align*}
+            f'_+(a)f'_-(b) &= \lim_{h\to0^+}\frac{f(a+h) - f(a)}{h}\cdot\lim_{h\to0^-}\frac{f(b+h) - f(b)}{h} \\
+                           &= \lim_{h\to0^+}\frac{\left(f(a+h) - f(a)\right)\left(f(b-h) - f(b)\right)}{-h^2} \\
+                           &= \lim_{h\to0^+}\frac{f(a+h)f(b-h)}{-h^2} > 0.
+        \end{align*}
+        上式表明, 存在一个 $h>0$, 使得当 $x_1\in(a, a+h)$, $x_2\in(b-h, b)$ 时, 有
+        \[
+            f(x_1)f(x_2) < 0.    
+        \]
+        考虑区间 $[x_1, x_2] \subset [a, b]$, 由零值定理可知, 存在一点 $c \in (x_1, x_2)$, 使得
+        \[
+            f(c) = 0.    
+        \]
     \item 8
     \item 9
     \item 10
