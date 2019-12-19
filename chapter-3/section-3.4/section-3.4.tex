@@ -1,0 +1,54 @@
+% author: Shuning Zhang
+% creation date: 2019-12-18
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\pagestyle{empty}
+\begin{enumerate}
+    \item % 1
+        {\heiti 证明}\quad 用反证法. 令 $f(x) = x^3 - 3x + c$. 假设方程存在两个相异的实根 $x_1, x_2 \in [0, 1]$, 即 $f(x_1) = f(x_2)$.
+        根据 Rolle 定理存在一点 $\xi \in (x_1, x_2)$, 使得 $f'(\xi) = 0$. 而 $f'(x) = 3x^2 - 3$, 解得方程的根为 $\pm 1$, $\xi \neq \pm 1$.
+    \item % 2
+        略.
+    \item 3
+    \item % 4
+        {\heiti 证明}\quad 设 $p(x) = a_0x^n + \cdots + a_{n-1}x + a_n$, 则有 $p^{(n)}(x) = a_0n!$, 同时, 令 $F(x) = f(x) - p(x)$.
+        不妨假设 $x_0 < x_1 < \cdots < x_n$, 因此, 有 $F(x_0) = F(x_1) = \cdots = F(x_n) = 0$, 根据 Rolle 定理, 存在
+        $y_0 \in (x_0, x_1), y_1 \in (x_1, x_2), \cdots, y_{n-1} \in (x_{n-1}, x_n)$, 使得 $F'(y_0) = \cdots = F'(y_{n-1}) = 0$.
+        然后再在区间 $[y_0, y_1], \cdots, [y_{n-2}, y_{n-1}]$ 上做同样的操作, 重复这样的讨论, 直到 $F^{(n-1)}(z_0) = F^{n-1}(z_1) = 0$.
+        在区间 $[z_0, z_1]$ 上, 存在一点 $\xi \in (z_0, z_1)$, 使得 $F^{(n)}(\xi) = 0$, 那么
+        \[
+            F^{(n)}(\xi) = f^{(n)}(\xi) - p^{(n)}(\xi) = f^{(n)}(\xi) - a_0n! = 0,   
+        \]
+        即
+        \[
+            a_0 = \frac{f^{(n)}(\xi)}{n!}.    
+        \]
+    \item % 5
+        {\heiti 证明}\quad 令 $f(x) = \dfrac{a_0}{n+1}x^{n+1} + \dfrac{a_1}{n}x^n + \cdots + a_n x$, 即 $f'(x) = a_0x^n + a_1x^{n-1} + \cdots + a_n$.
+        显然有 $f(0) = f(1) = 0$, 根据 Rolle 定理, 存在一点 $c$, 使得 $f'(c) = 0$, 即 $c$ 就是 $a_0x^n + a_1x^{n-1} + \cdots + a_n$ 的一个零点.
+    \item % 6
+        {\heiti 证明}\quad 对任意的 $x \in (0, a/2)$, 考虑区间 $[x, a/2]$, 根据 Lagrange 中值定理, 存在 $y \in (x, a/2)$, 使得
+        \[
+            f'(y) = \frac{f(\frac{a}{2}) - f(x)}{\frac{a}{2} - x}.    
+        \]
+        已知 $\lim\limits_{x\to0^+}f(x) = +\infty$, 即对 $\forall A > 0$, $\delta > 0$, 当 $0 < x - 0 < \delta$ 时, 有 $f(x) > \frac{a}{2}A + f(\frac{a}{2})$.
+        \[
+            f'(y) = \frac{f(\frac{a}{2}) - f(x)}{\frac{a}{2} - x} < -\frac{\frac{a}{2}}{\frac{a}{2} - x}A < -A.  
+        \]
+    \item % 7
+        {\heiti 证明}\quad 令 $F(x) = f(x)/x$, 再使用推论 3.4.1 即可.
+    \item % 8
+        {\heiti 证明}\quad 令 $g(x) = f(x)/x$, $h(x) = 1/x$, 再使用 Cauchy 定理即可.
+    \item 9
+    \item % 10
+        略.
+    \item % 11
+        略.
+    \item % 12
+        {\heiti 证明}\quad 因为 $f$ 在 $(-r, r)$ 上有 $n$ 阶导数, 所以存在 $\delta \in \mathrm{R}$, 且 $0 < \delta < r$, 使得 $f^{(n-1)}$ 在 $[-r+\delta, r-\delta]$ 上可导.
+        根据 Darboux 定理, 可知 $f^{(n)}(0) = l$, 且 $f^{(n)}(-r+\delta) < l < f^{(n)}(r-\delta)$. 
+\end{enumerate}
+\end{document}
