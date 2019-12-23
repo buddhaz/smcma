@@ -1,0 +1,123 @@
+% author: Shuning Zhang
+% creation date: 2019-12-23
+\documentclass[a4paper, 10pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\pagestyle{empty}
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        略.
+    \item % 3
+    \item % 4
+        {\heiti 证明}\quad 因为 $F(0) = F(1) = 0$, 所以存在一点 $x_1 \in (0, 1)$, 使得 $F'(x_1) = 0$.
+        又因 $F'(0) = F'(x_1) = 0$, 所以存在一点 $x_2 \in (0, x_1)$, 使得 $F''(x_2) = 0$. 再考虑在 $[0, x_2]$ 上的 $F''$,
+        依然有 $F''(0) = F''(x_2) = 0$, 因此存在一点 $\xi \in (0, x_2) \subset (0, 1)$, 使得 $F'''(\xi) = 0$.
+    \item % 5
+        {\heiti 证明}\quad 令 $F(x) = f(x)/x$, 那么
+        \[
+            F'(x) = \frac{xf'(x) - f(x)}{x^2}.    
+        \]
+        再令 $g(x) = xf'(x) - f(x)$, 那么
+        \[
+            g'(x) = f'(x) + xf''(x) - f'(x) = xf''(x).    
+        \]
+        因为 $f'$ 严格递增, 所以 $f'' > 0$, 即 $g' > 0$.
+    \item % 6
+        {\heiti 证明}\quad 因为 $f'' \geqslant 0$, 所以 $f'$ 是 $\mathrm{R}$ 上的递增函数.
+        因此, 存在一点 $x_0$, 使得当 $x \geqslant x_0$ 时, 有
+        \[
+            f'(x) \geqslant 0,
+        \]
+        即 $f$ 是 $[x_0, +\infty)$ 上的递增函数. 又因 $f$ 在 $\mathrm{R}$ 上有界, 所以 $f' = 0$, 即 $f$ 是 $\mathrm{R}$ 上的常值函数.
+    \item % 7
+        {\heiti 证明}\quad 令 $h(x) = g(x) - f(x)$, 则有 $h'(x) = g'(x) - f'(x) \geqslant 0$, 因此 $h'$ 是 $[a, +\infty)$ 上的递增函数, 那么
+        \[
+            g(x) - f(x) = h(x) \geqslant h(a) = g(a) - f(a),
+        \]
+        即
+        \[
+            g(x) - g(a) \geqslant f(x) - f(a).    
+        \]
+        再令 $H(x) = g(x) + f(x)$, 同样有 $H'(x) = g'(x) + f'(x) \geqslant 0$, 因此 $H'$ 也是 $[a, +\infty)$ 上的递增函数, 那么
+        \[
+            g(x) + f(x) = H(x) \geqslant H(a) = g(a) + f(a),    
+        \]
+        即
+        \[
+            g(x) - g(a) \geqslant -(f(x) - f(a)).     
+        \]
+        这样就证明了 $g(x) - g(a) \geqslant |f(x) - f(a)|$.
+    \item % 8
+    \item % 9
+    \item % 10
+    \item % 11
+    \item % 12
+    \item % 13
+    \item % 14
+    \item % 15
+        令 $f(x) = \sum\limits_{i=1}^n(x-x_i)^2$, 那么 $f'(x) = 2\left(nx - \sum\limits_{i=1}^n x_i\right)$.
+        在 $(-\infty, (x_1 + x_2 + \cdots + x_n)/n)$ 上, $f'(x) < 0$; 在 $((x_1 + x_2 + \cdots + x_n)/n, +\infty)$ 上, $f' > 0$.
+        因此, $x = (x_1 + x_2 + \cdots + x_n)/n$ 是 $f$ 极小值点, 同时也是最小值点, 即
+        \[
+            x^* = \frac{x_1 + x_2 + \cdots + x_n}{n}.    
+        \]
+    \item % 16
+        对不等式的两边取对数, 则有 $x\ln a \geqslant a\ln x$, 即
+        \[
+            \frac{\ln a}{a} \geqslant \frac{\ln x}{x}.
+        \]
+        令 $f(x) = \ln x / x$, 求出 $f$ 在 $x = \mathrm{e}$ 处取得最大值, 因此 $a$ 的取值范围为 $[\mathrm{e}, +\infty)$.
+    \item % 17
+        {\heiti 证明}\quad 因为 $f'$ 在 $(a, b)$ 上递增, 所以 $f$ 是 $[a, b]$ 上的凸函数.
+        现在令
+        \[
+            \lambda_1 = \frac{b - x}{b - a}, \lambda_1 = \frac{x - a}{b - a},    
+        \]
+        显然有 $\lambda_1, \lambda_2 > 0$ 且 $\lambda_1 + \lambda_2 = 1$. 根据凸函数的定义, 则有
+        \[
+            f(\lambda_1a + \lambda_2b) \leqslant \lambda_1f(a) + \lambda_2f(b),    
+        \]
+        即
+        \[
+            f(x) \leqslant \frac{b-x}{b-a}f(a) + \frac{x-a}{b-a}f(b).    
+        \]
+    \item % 18
+        略.
+    \item % 19
+        \begin{enumerate}[(1)]
+            \item % 19.1
+                {\heiti 证明}\quad 设 $f(x) = a^x$ ($a > 0$ 且 $a \neq 1$), 那么 $f'(x) = a^x\ln a$, $f''(x) = a^x(\ln a)^2$. 显然 $f'' > 0$, 因此 $f$ 是 $\mathrm{R}$ 上的凸函数.
+                对任意的 $x_1, x_2, \dots, x_n \in \mathrm{R}$, 令 $\lambda_1 = \lambda_2 = \cdots = \lambda_n = 1/n$, 根据定理 3.5.7, 则有
+                \[
+                    f(\lambda_1x_1 + \lambda_2x_2 + \cdots + \lambda_nx_n) \leqslant \lambda_1f(x_1) + \lambda_2f(x_2) + \cdots + \lambda_nf(x_n),
+                \]
+                即
+                \[
+                    a^\frac{x_1 + x_2 + \cdots + x_n}{n} \leqslant \frac{a^{x_1} + a^{x_2} \cdots + a^{x_n}}{n}.    
+                \]
+            \item % 19.2
+                {\heiti 证明}\quad 设 $f(x) = x\ln x$ 即可.
+            \item % 19.3
+        \end{enumerate}
+    \item % 20
+        {\heiti 证明}\quad 设 $f(x)$, $g(x)$ 是区间 $I$ 上的凸函数, 令 $h(x) = f(x) + h(x)$, 那么
+        \[
+            h''(x) = f''(x) + g''(x) \geqslant 0.    
+        \]
+        因此, $g$ 也是 $I$ 上的凸函数.
+    \item % 21
+    \item % 22
+    \item % 23
+        {\heiti 证明}\quad 根据 Lagrange 中值定理, 存在 $x_1 \in (a, c)$, $x_2 \in (c, b)$, 使得
+        \begin{gather*}
+            \frac{f(c) - f(a)}{c - a} = f'(x_1) > 0, \\
+            \frac{f(b) - f(c)}{b - c} = f'(x_2) < 0.    
+        \end{gather*}
+        因此, 在 $[x_1, x_2]$ 上, $f'$ 是递减函数, 根据定理 3.5.10 可知在 $(x_1, x_2)$ 上, $f$ 不是凸函数.
+        再根据定理 3.5.11 可得出存在一点 $\xi \in (x_1, x_2)$, 使得 $f''(\xi) < 0$.
+\end{enumerate}
+\end{document}
