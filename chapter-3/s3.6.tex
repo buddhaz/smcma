@@ -17,5 +17,19 @@
             \lim_{x\to+\infty}f(x) = \lim_{x\to+\infty}\frac{f(x)\ln x}{\ln x} = \lim_{x\to+\infty}\frac{f'(x)\ln x + f(x)\frac1x}{\frac1x} = \lim_{x\to+\infty}(f(x) + xf'(x)\ln x) = l.    
         \]
     \item % 5
+        {\heiti 证明}\quad 一方面, 有
+        \begin{align*}
+            \lim_{x\to+\infty}f(x) &= \lim_{x\to+\infty}\frac{\mathrm{e}^xf(x)}{\mathrm{e}^x} \\
+                                   &= \lim_{x\to+\infty}\frac{\mathrm{e}^xf(x) + \mathrm{e}^xf'(x)}{\mathrm{e}^x} \\
+                                   &= \lim_{x\to+\infty}\frac{\mathrm{e}^xf(x) + \mathrm{e}^xf'(x) + \mathrm{e}^xf'(x) + \mathrm{e}^xf''(x)}{\mathrm{e}^x} \\
+                                   &= \lim_{x\to+\infty}(f(x) + 2f'(x) + f''(x)) = l.
+        \end{align*}
+        由此可知 $\lim\limits_{x\to+\infty}(2f'(x) + f''(x)) = 0$. 另一方面, 有
+        \begin{align*}
+            \lim_{x\to+\infty}f'(x) &= \lim_{x\to+\infty}\frac{\mathrm{e}^{2x}f'(x)}{\mathrm{e}^{2x}} \\
+                                    &= \lim_{x\to+\infty}\frac{2\mathrm{e}^{2x}f'(x) + \mathrm{e}^{2x}f''(x)}{2\mathrm{e}^{2x}} \\
+                                    &= \lim_{x\to+\infty}\frac{2f'(x) + f''(x)}{2} = 0.
+        \end{align*}
+        因此 $\lim\limits_{x\to+\infty}f'(x) = 0$, 进一步, 可得出 $\lim\limits_{x\to+\infty}f''(x) = 0$.
 \end{enumerate}
 \end{document}
