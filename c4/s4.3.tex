@@ -11,7 +11,26 @@
     \item % 1
     \item % 2
     \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+            \item % 3.2
+            \item % 3.3
+                $e\left(x + \dfrac{(x-1)^2}{2} + \dfrac{(x-1)^3}{3!} + \cdots + \dfrac{(x-1)^n}{n!}\right)$;
+            \item % 3.4
+                $\ln2 + \dfrac{x-2}{2} - \dfrac{(x-2)^2}{8} + \dfrac{(x-2)^3}{24} - \cdots + (-1)^{n-1}\dfrac{(x-2)^n}{n2^n}$;
+            \item % 3.5
+        \end{enumerate}
     \item % 4
     \item % 5
+        {\heiti 证明}\quad 先证明左边的不等式. 根据 Taylor 定理, 则有
+        \[
+            \ln(1 + x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots - \frac{x^{2n}}{2n} + \frac{x^{2n+1}}{(2n+1)(1+\xi)^{2n+1}},   
+        \]
+        其中 $0 < \xi < x$. 因此
+        \[
+            \ln(1 + x) > x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots - \frac{x^{2n}}{2n}. 
+        \]
+
+        同理可证右边的不等式.
 \end{enumerate}
 \end{document}
