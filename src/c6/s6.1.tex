@@ -1,0 +1,134 @@
+% author: Shuning Zhang
+% creation date: 2019-01-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\newcommand{\dif}{\mathrm{d}}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                $\dfrac{\pi(b-a)^2}{8}$;
+            \item % 1.2
+                $\dfrac{(b-a)^2}{4}$.
+        \end{enumerate}
+    \item % 2
+        对分割 $\pi$ 作积分和
+        \[
+            \sum_{i=1}^nf(\xi_i)\Delta x_i.
+        \]
+        现取 $\eta_i = \sqrt{\dfrac{x_{i-1}^2 + x_{i-1}x_i + x_i^2}{3}}$, 那么
+        \[
+            \sum_{i=1}^nf(\xi_i)\Delta x_i = \sum_{i=1}^nf(\eta_i)\Delta x_i + \sum_{i=1}^n(f(\xi_i) - f(\eta_i))\Delta x_i.   
+        \]
+        考察 $\sum\limits_{i=1}^nf(\eta_i)\Delta x_i$, 则有
+        \begin{align*}
+            \sum_{i=1}^nf(\eta_i)\Delta x_i &= \sum_{i=1}^n\frac{x_{i-1}^2 + x_{i-1}x_i + x_i^2}{3}(x_i - x_{i-1}) \\
+                                            &= \frac13\sum_{i=1}^n(x_i^3 - x_{i-1}^3) \\
+                                            &= \frac{b^3-a^3}{3}.    
+        \end{align*}
+        另一方面, 有
+        \begin{align*}
+            \left|\sum_{i=1}^nf(\xi_i)\Delta x_i - \frac{b^3-a^3}{3}\right| &= \left|\sum_{i=1}^nf(\xi_i)\Delta x_i - \sum_{i=1}^nf(\eta_i)\Delta x_i\right| \\
+                                                                        &= \left|\sum_{i=1}^n(f(\xi_i) - f(\eta_i))\Delta x_i\right| \\
+                                                                        &\leqslant \sum_{i=1}^n\left|f(\xi_i) - f(\eta_i)\right|\Delta x_i.    
+        \end{align*}
+        因为 $f(x)$ 在 $[a, b]$ 上一致连续, 所以 $\forall\,\dfrac{\varepsilon}{b-a} > 0$, $\exists\,\delta > 0$, 当 $|\xi_i - \eta_i| < \delta$ 时, 有
+        \[
+            \left|f(\xi_i) - f(\eta_i)\right| < \frac{\varepsilon}{b-a}.  
+        \]
+        对 $\sum\limits_{i=1}^n\left|f(\xi_i) - f(\eta_i)\right|\Delta x_i$, 取同样的 $\delta$, 当 $|\xi_i - \eta_i| \leqslant |x_i - x_{i-1}| \leqslant \|\pi\| < \delta$ 时, 有
+        \[
+            \sum_{i=1}^n\left|f(\xi_i) - f(\eta_i)\right|\Delta x_i < \frac{\varepsilon}{b-a}\sum_{i=1}^n\Delta x_i = \frac{\varepsilon}{b-a}(b-a) = \varepsilon,    
+        \]
+        即
+        \[
+            \left|\sum_{i=1}^nf(\xi_i)\Delta x_i - \frac{b^3-a^3}{3}\right| < \varepsilon.    
+        \]
+        因此 $\displaystyle{\int_a^b x^2}\,\dif x = \frac{b^3-a^3}{3}$.
+    \item % 3
+        略.
+    \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                $2-\dfrac\pi2$;
+            \item % 4.2
+            \item % 4.3
+        \end{enumerate}
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+                对 $\displaystyle{\int_0^1\frac{x^n}{1+x}\,\dif x}$, 显然有如下不等式
+                \[
+                    0 \leqslant \int_0^1\frac{x^n}{1+x}\,\dif x \leqslant \int_0^1x^n\,\dif x   
+                \]
+                成立, 并且易知 $\displaystyle{\int_0^1x^n\,\dif x = \frac{1}{n+1}}$. 再由夹逼原理即可得到
+                \[
+                    \lim_{n\to\infty}\int_0^1\frac{x^n}{1+x}\,\dif x = 0.   
+                \]
+            \item % 5.2
+                对 $e^{-nx^2}\ (a<x<b)$, 则有 \[
+                    e^{-nb^2} < e^{-nx^2} < e^{-na^2},
+                \] 并且 $\displaystyle{
+                    \lim_{n\to\infty}\int_a^b e^{-nb^2}\,\dif x = \lim_{n\to\infty}\int_a^b e^{-na^2}\,\dif x = 0
+                }$. 因此
+                \[
+                    \lim_{n\to\infty}\int_a^b e^{-nx^2}\,\dif x = 0.  
+                \]
+        \end{enumerate}
+    \item % 6
+        \begin{enumerate}[(1)]
+            \item % 6.1
+                {\heiti 证明}\quad 易求出 $\dfrac{x}{x^3 + 16}$ 在 $[0, 10]$ 上的最大值是 $\dfrac{1}{12}$, 那么
+                \[
+                    \int_0^{10}\frac{x}{x^3+16}\,\dif x \leqslant \int_0^{10}\frac{1}{12}\,\dif x = \frac56.    
+                \]
+            \item % 6.2
+                {\heiti 证明}\quad 易求出 $e^{x^2-x}$ 在 $[0, 2]$ 上的最小值和最大值分别是 $\dfrac{1}{\sqrt[4]{e}}$ 和 $e^2$, 即
+                \[
+                    \frac{1}{\sqrt[4]{e}} \leqslant e^{x^2-x} \leqslant e^2.  
+                \] 因此
+                \[
+                    \frac{2}{\sqrt[4]{e}} = \int_0^2 \frac{1}{\sqrt[4]{e}}\,\dif x \leqslant \int_0^2 e^{x^2-x}\,\dif x \leqslant \int_0^2 e^2\,\dif x = 2e^2.  
+                \]
+            \item % 6.3
+                {\heiti 证明}\quad
+            \item % 6.4
+                {\heiti 证明}\quad 令 $f(x) = x^m(1-x)^n\ (1 \leqslant x \leqslant 1)$, 那么 $f'(x) = x^{m-1}(1-x)^{n-1}(m(1-x) - nx)$. 再令 $f'(x) = 0$, 得到驻点
+                \[
+                    x_0 = 0, x_1 = \frac{m}{m+n}, x_2 = 1.    
+                \]
+                经过验证可知
+                \[
+                    f\left(\frac{m}{m+n}\right) = \frac{m^nn^n}{(m+n)^{m+n}}
+                \]
+                是 $f(x)$ 在 $[0, 1]$ 上的最大值. 因此
+                \[
+                    \int_0^1 x^m(1-x)^n\,\dif x \leqslant \int_0^1 \frac{m^nn^n}{(m+n)^{m+n}}\,\dif x = \frac{m^nn^n}{(m+n)^{m+n}}.  
+                \]
+        \end{enumerate}
+    \item % 7
+        \begin{enumerate}[(1)]
+            \item % 7.1
+                $\displaystyle{
+                    \lim_{n\to\infty}\frac1n\sum_{k=1}^{n}\sin\frac{k\pi}{n} = \int_0^\pi\sin x\,\dif x = 2
+                }$;
+            \item % 7.2
+                $\displaystyle{
+                    \lim_{n\to\infty}\left(\frac{1}{n+1} + \frac{1}{n+2} + \cdots + \frac{1}{n+n}\right) = \int_0^1\ln(1+x)\,\dif x = \ln2
+                }$;
+            \item % 7.3
+                $\displaystyle{
+                    \lim_{n\to\infty}\left(\frac{n}{n^2+1^2} + \frac{n}{n^2+2^2} + \cdots + \frac{n}{n^2+n^2}\right) = \int_0^1\frac{1}{1+x^2}\,\dif x = \frac{\pi}{4}
+                }$;
+            \item % 7.4
+                $\displaystyle{
+                    \lim_{n\to\infty}\frac{1^p + 2^p + \cdots + n^p}{n^{p+1}} = \int_0^1x^p\,\dif x = \frac{1}{p+1}
+                }$.
+        \end{enumerate}
+    \item % 8
+    \item % 9
+\end{enumerate}
+\end{document}
