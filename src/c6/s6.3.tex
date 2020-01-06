@@ -37,6 +37,27 @@
     \item % 4
     \item % 5
     \item % 6
+        根据积分的可加性, 则有
+        \[
+            \int_x^{x^2} f(t)\,\dif t = \int_x^1 f(t)\,\dif t + \int_1^{x^2} f(t)\,\dif t = \int_1^x f(t)\,\dif t,    
+        \]
+        进一步, 得到
+        \[
+            \int_1^{x^2} f(t)\,\dif t = 2\int_1^x f(t)\,\dif t.    
+        \]
+        对上式的两边求导, 得到
+        \[
+            xf(x^2) = f(x),    
+        \]
+        即 $x^2f(x^2) = xf(x)$. 令 $g(x) = xf(x)$, 那么
+        \[
+            g(x) = xf(x) = x^{\frac12}f(x^{\frac12}) = x^{\frac14}f(x^{\frac14}) = \cdots = x^{\frac{1}{2^n}}f(x^{\frac{1}{2^n}}).    
+        \]
+        令 $n \to \infty$, 得到
+        \[
+            g(x) = f(1) = c,    
+        \]
+        其中 $c$ 为常数. 因此 $f(x) = \dfrac{c}{x}$.
     \item % 7
         {\heiti 证明}\quad 利用 L'Hospital 法则, 那么
         \[

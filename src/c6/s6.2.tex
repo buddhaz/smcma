@@ -33,7 +33,7 @@
         \[
             \frac{2}{\pi} < \frac{\sin x}{x}\quad (0 < x < \pi/2).    
         \]
-        当 $R < 0$ 时, 则有
+        当 $R < 0$ 时, 有
         \[
             e^{-R\sin x} > e^{-R\frac{2x}{\pi}}\quad (0 < x < \pi/2),    
         \]
@@ -50,11 +50,23 @@
         \[
             \frac{\sin\left(n+\dfrac12\right)x}{\sin\dfrac{x}{2}} = 1 + 2\sum_{k=1}^n\cos kx,
         \]
-        那么
+        得到
         \[
             \int_0^\pi\frac{\sin\left(n+\dfrac12\right)x}{\sin\dfrac{x}{2}}\,\dif x = \int_0^\pi \left(1 + 2\sum_{k=1}^n\cos kx\right)\,\dif x = \pi.    
         \]
     \item % 7
+        {\heiti 证明}\quad 利用等式
+        \[
+            \frac{\sin^2\dfrac{nx}{2}}{\sin\dfrac{x}{2}} = \sum_{k=0}^{n-1}\sin\left(k + \frac12\right)x,    
+        \]
+        得到
+        \begin{align*}
+            \int_0^\pi \frac{\sin^2\dfrac{nx}{2}}{\sin^2\dfrac{x}{2}}\,\dif x = \int_0^\pi \frac{\displaystyle{\sum_{k=0}^{n-1}\sin\left(k + \frac12\right)x}}{\sin\dfrac{x}{2}}\,\dif x.  
+        \end{align*}
+        再利用第 6 题的结论, 即可得到
+        \[
+            \int_0^\pi \frac{\displaystyle{\sum_{k=0}^{n-1}\sin\left(k + \frac12\right)x}}{\sin\dfrac{x}{2}}\,\dif x = \underbrace{\pi + \pi + \cdots + \pi}_{\text{$n$ 个}} = n\pi.     
+        \]
     \item % 8
     \item % 9
     \item % 10
