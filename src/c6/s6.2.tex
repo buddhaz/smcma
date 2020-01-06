@@ -1,0 +1,62 @@
+% author: Shuning Zhang
+% creation date: 2019-01-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\newcommand{\dif}{\mathrm{d}}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        {\heiti 证明}\quad 令 $h(x) = g(x) - f(x)$, 那么 $h(x) \geqslant 0\ (\forall\,x \in [a, b])$. 又因
+        \[
+            \int_a^b g(x)\,\dif x - \int_a^b f(x)\,\dif x = \int_a^b (g(x) - f(x))\,\dif x = \int_a^b h(x)\,\dif x = 0,    
+        \]
+        所以 $h(x) = 0$. 因此 $f = g$.
+    \item % 2
+        {\heiti 证明}\quad 用反证法. 假设 $f \neq 0$, 令 $g(x) = 1/f(x)$, 那么
+        \[
+            \int_a^b f(x)g(x)\,\dif x = \int_a^b 1 \,\dif x = b - a,    
+        \]
+        这与题意 $\displaystyle{\int_a^b f(x)g(x)\,\dif x = 0}$ 相矛盾. 因此 $f = 0$.
+    \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+                $\displaystyle{\int_0^\pi\frac{\sin x}{x}\,\dif x > 0}$;
+            \item % 3.2
+                $\displaystyle{\int_{1/2}^1 e^x\ln^3x\,\dif x < 0}$.
+        \end{enumerate}
+    \item % 4
+        略.
+    \item % 5
+        {\heiti 证明}\quad 利用不等式
+        \[
+            \frac{2}{\pi} < \frac{\sin x}{x}\quad (0 < x < \pi/2).    
+        \]
+        当 $R < 0$ 时, 则有
+        \[
+            e^{-R\sin x} > e^{-R\frac{2x}{\pi}}\quad (0 < x < \pi/2),    
+        \]
+        因此
+        \[
+            \int_0^{\pi/2} e^{-R\sin x}\,\dif x > \int_0^{\pi/2} e^{-R\frac{2x}{\pi}}\,\dif x = \frac{\pi}{2R}(1 - e^{-R}).    
+        \]
+        同理, 当 $R > 0$ 时, 可得出
+        \[
+            \int_0^{\pi/2} e^{-R\sin x}\,\dif x < \frac{\pi}{2R}(1 - e^{-R}).    
+        \]
+    \item % 6
+        {\heiti 证明}\quad 利用等式
+        \[
+            \frac{\sin\left(n+\dfrac12\right)x}{\sin\dfrac{x}{2}} = 1 + 2\sum_{k=1}^n\cos kx,
+        \]
+        那么
+        \[
+            \int_0^\pi\frac{\sin\left(n+\dfrac12\right)x}{\sin\dfrac{x}{2}}\,\dif x = \int_0^\pi \left(1 + 2\sum_{k=1}^n\cos kx\right)\,\dif x = \pi.    
+        \]
+    \item % 7
+    \item % 8
+    \item % 9
+    \item % 10
+\end{enumerate}
+\end{document}
