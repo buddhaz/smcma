@@ -1,0 +1,46 @@
+% author: Shuning Zhang
+% creation date: 2019-01-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{amsmath, amssymb}
+\newcommand{\dif}{\mathrm{d}}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        {\heiti 证明}\quad 对 $\varphi$ 求导数, 则有
+        \begin{align*}
+            \varphi'(x) &= \frac{\displaystyle{xf(x)\int_0^x f(t)\,\dif t - f(x)\int_0^x tf(t)\,\dif t}}{\displaystyle{\left[\int_0^x f(t)\,\dif t\right]^2}} \\    
+                        &= f(x)\frac{\displaystyle{x\int_0^x f(t)\,\dif t - \int_0^x tf(t)\,\dif t}}{\displaystyle{\left[\int_0^x f(t)\,\dif t\right]^2}}.
+        \end{align*}
+        令 $\psi(x) = \displaystyle{x\int_0^x f(t)\,\dif t - \int_0^x tf(t)\,\dif t}$, 那么
+        \[
+            \psi'(x) = \displaystyle{\int_0^x f(t)\,\dif t} > 0\quad (x > 0).    
+        \]
+        因此, $\psi$ 是 $(0, +\infty)$ 上的严格递增函数, 即
+        \[
+            \psi(x) = \displaystyle{x\int_0^x f(t)\,\dif t - \int_0^x tf(t)\,\dif t} > \psi(0) = 0.    
+        \]
+        这样便证明了 $\varphi$ 是 $(0, +\infty)$ 上的严格递增函数.
+    \item % 3
+        {\heiti 证明}\quad 对等式的两边求导数, 得到
+        \[
+            f(x) = xf'(x).    
+        \]
+        进一步, 可得到
+        \[
+            f'(x) = f'(x) + xf''(x).    
+        \]
+        进而可得出 $f''(x) = 0$, 这表明 $f$ 的一阶导是一个常数, 即 $f'(x) = c$. 因此 $f(x) = cx$.
+    \item % 4
+    \item % 5
+    \item % 6
+    \item % 7
+        {\heiti 证明}\quad 利用 L'Hospital 法则, 那么
+        \[
+            \lim_{x\to+\infty}\frac{\displaystyle{\int_0^x f(t)\,\dif t}}{x} = \lim_{x\to+\infty} \frac{f(x)}{1} = a.    
+        \]
+\end{enumerate}
+\end{document}
