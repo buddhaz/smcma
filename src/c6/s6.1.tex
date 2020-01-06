@@ -56,6 +56,9 @@
                 $2-\dfrac\pi2$;
             \item % 4.2
             \item % 4.3
+                $\displaystyle{
+                    \frac{2}{\sqrt{1-\varepsilon^2}}\arctan\sqrt{\frac{1-\varepsilon}{1+\varepsilon}}
+                }$.
         \end{enumerate}
     \item % 5
         \begin{enumerate}[(1)]
@@ -69,8 +72,8 @@
                     \lim_{n\to\infty}\int_0^1\frac{x^n}{1+x}\,\dif x = 0.   
                 \]
             \item % 5.2
-                对 $e^{-nx^2}\ (a<x<b)$, 则有 \[
-                    e^{-nb^2} < e^{-nx^2} < e^{-na^2},
+                对 $e^{-nx^2}\ (a \leqslant x \leqslant b)$, 则有 \[
+                    e^{-nb^2} \leqslant e^{-nx^2} \leqslant e^{-na^2},
                 \] 并且 $\displaystyle{
                     \lim_{n\to\infty}\int_a^b e^{-nb^2}\,\dif x = \lim_{n\to\infty}\int_a^b e^{-na^2}\,\dif x = 0
                 }$. 因此
@@ -96,7 +99,7 @@
             \item % 6.3
                 {\heiti 证明}\quad
             \item % 6.4
-                {\heiti 证明}\quad 令 $f(x) = x^m(1-x)^n\ (1 \leqslant x \leqslant 1)$, 那么 $f'(x) = x^{m-1}(1-x)^{n-1}(m(1-x) - nx)$. 再令 $f'(x) = 0$, 得到驻点
+                {\heiti 证明}\quad 令 $f(x) = x^m(1-x)^n\ (0 \leqslant x \leqslant 1)$, 那么 $f'(x) = x^{m-1}(1-x)^{n-1}(m(1-x) - nx)$. 再令 $f'(x) = 0$, 得到驻点
                 \[
                     x_0 = 0, x_1 = \frac{m}{m+n}, x_2 = 1.    
                 \]
