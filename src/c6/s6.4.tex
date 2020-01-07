@@ -50,6 +50,13 @@
     \item % 7
     \item % 8
     \item % 9
+        {\heiti 证明}\quad 令 $\displaystyle{f(x) = \int_x^{2\pi} \frac{\sin t}{t}\,\dif t = -\int_{2\pi}^x\frac{\sin t}{t}\,\dif t}$, 那么
+        \begin{align*}
+            \int_0^{2\pi}\left(\int_x^{2\pi}\frac{\sin t}{t}\,\dif t\right)\,\dif x &= \int_0^{2\pi} f(x)\,\dif x \\
+                                                                                    &= xf(x)\,\bigg|_0^{2\pi} - \int_0^{2\pi} xf'(x)\,\dif x \\
+                                                                                    &= 2\pi\int_{2\pi}^{2\pi}\frac{\sin t}{t}\,\dif t + \int_0^{2\pi}\sin x\,\dif x \\
+                                                                                    &= 0.
+        \end{align*}
     \item % 10
     \item % 11
     \item % 12
