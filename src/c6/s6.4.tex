@@ -1,0 +1,59 @@
+% author: Shuning Zhang
+% creation date: 2019-01-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb}
+\newcommand{\dif}{\mathrm{d}}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{multicols}{4}
+            \begin{enumerate}[(1)]
+                \item % 1.1
+                \item % 1.2
+                    $-4\pi$;
+                \item % 1.3
+                    $5/3$;
+                \item % 1.4
+                    $\dfrac{4\pi - 3\sqrt3}{6}$;
+                \item % 1.5
+                \item % 1.6
+                    $2 - 2/e$;
+                \item % 1.7
+                \item % 1.8
+                    $\dfrac{a^4}{16}\pi$;
+                \item % 1.9
+                    $2 - \pi/2$;
+                \item % 1.10
+                \item % 1.11
+                \item % 1.12
+            \end{enumerate}
+        \end{multicols}
+    \item % 2
+        {\heiti 证明}\quad \begin{align*}
+            \int_{-a}^a f(x)\,\dif x &= \int_{-a}^0 f(x)\,\dif x + \int_0^a f(x)\,\dif x \\
+                                     &= \int_0^a f(-x)\,\dif x + \int_0^a f(x)\,\dif x \\
+                                     &= 2\int_0^a f(x)\,\dif x.
+        \end{align*}
+    \item % 3
+        {\heiti 证明}\quad \begin{align*}
+            \int_{-a}^a f(x)\,\dif x &= \int_{-a}^0 f(x)\,\dif x + \int_0^a f(x)\,\dif x \\
+                                     &= \int_0^a f(-x)\,\dif x + \int_0^a f(x)\,\dif x \\
+                                     &= -\int_0^a f(x)\,\dif x + \int_0^a f(x)\,\dif x \\
+                                     &= 0.
+        \end{align*}
+    \item % 4
+    \item % 5
+    \item % 6
+    \item % 7
+    \item % 8
+    \item % 9
+    \item % 10
+    \item % 11
+    \item % 12
+    \item % 13
+    \item % 14
+\end{enumerate}
+\end{document}
