@@ -1,0 +1,74 @@
+% % @author Shuning Zhang
+% % @date 2019-02-05
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        {\heiti 证明}\quad 因为
+        \[
+            \lim_{n\to\infty}\frac1n = 0, \lim_{n\to\infty}\sqrt[n]{n} = 1,    
+        \]
+        故 $\lim\limits_{n\to\infty}\boldsymbol{x}_n = (0, 1)$.
+    \item % 2
+        \begin{enumerate}[(1)]
+            \item % 2.1
+                {\heiti 证明}\quad 只证明 $\lim\limits_{k\to\infty}(\boldsymbol{x}_k + \boldsymbol{y}_k) = \boldsymbol{a} + \boldsymbol{b}$.
+                对任意的 $\varepsilon / 2 > 0$, 存在 $N \in \mathrm{N}^*$, 当 $k > N$ 时, 有
+                \[
+                    \| \boldsymbol{x}_k - a \| < \frac{\varepsilon}{2},\ \| \boldsymbol{y}_k - b \| < \frac{\varepsilon}{2}.    
+                \]
+                同时, 也有
+                \begin{align*}
+                    \| (\boldsymbol{x}_k + \boldsymbol{y}_k) - (\boldsymbol{a} + \boldsymbol{b}) \| &= \| (\boldsymbol{x}_k - \boldsymbol{a}) + (\boldsymbol{y}_k - \boldsymbol{b}) \| \\
+                    &\leqslant \| \boldsymbol{x}_k - \boldsymbol{a} \| + \| \boldsymbol{y}_k - \boldsymbol{b} \| \\
+                    &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+                \end{align*}
+                这样便证明了 $\lim\limits_{k\to\infty}(\boldsymbol{x}_k + \boldsymbol{y}_k) = \boldsymbol{a} + \boldsymbol{b}$.
+            \item % 2.2
+                {\heiti 证明}\quad 对任意的 $|\lambda|\varepsilon > 0$, 存在 $N \in \mathrm{N}^*$, 当 $k > N$ 时, 有
+                \[
+                    \| \lambda\boldsymbol{x}_k - \lambda\boldsymbol{a} \| = |\lambda|\| \boldsymbol{x}_k - \boldsymbol{a} \| < |\lambda|\varepsilon.    
+                \]
+        \end{enumerate}
+    \item % 3
+        {\heiti 证明}\quad 对 $\lim\limits_{k\to\infty}\boldsymbol{x}_k = \boldsymbol{l}$, 则有对任意的 $\varepsilon > 0$, 存在 $K \in \mathrm{N}^*$, 当 $k > K$ 时, 有
+        \[
+            \| \boldsymbol{x}_k - \boldsymbol{l} \| < \varepsilon,    
+        \]
+        即对于点列 $\{\boldsymbol{x}_k\}$ 对于 $k > K$ 的点都落在 $B_\varepsilon(\boldsymbol{l})$ 中了.
+        对于余下的 $\boldsymbol{x}_1$, $\boldsymbol{x}_2$, $\cdots$, $\boldsymbol{x}_K$ 这 $K$ 个点, 必定存在一个 $B_r(\boldsymbol{l})$, 使得它们都落入其中.
+        因此对于点列 $\{\boldsymbol{x}_k\}$ 所有的点都必定落入 $B_{\varepsilon + r}(\boldsymbol{l})$ 中, 即 $\{\boldsymbol{x}_k\}$ 有界.
+    \item % 4
+        {\heiti 证明}\quad 因为基本点列收敛, 而收敛的点列有界, 因此基本点列有界.
+    \item % 5
+        {\heiti 证明}\quad 级数收敛, 就是对应的部分和数列收敛, 即 $\lim\limits_{n\to\infty} \sum\limits_{k=1}^n \| \boldsymbol{x}_{k+1} - \boldsymbol{x}_k \| = l$.
+        那么对任意的 $\varepsilon > 0$, 存在 $N \in \mathrm{N}^*$, 当 $n>N$ 时, 有
+        \[
+            \left| \sum_{k=1}^n\| \boldsymbol{x}_{k+1} - \boldsymbol{x}_k \| - l \right| < \varepsilon.   
+        \]
+        对绝对值里面的部分, 有
+        \begin{align*}
+            \sum_{k=1}^n\| \boldsymbol{x}_{k+1} - \boldsymbol{x}_k \| - l &= \| \boldsymbol{x}_2 - \boldsymbol{x}_1 \| + \| \boldsymbol{x}_3 - \boldsymbol{x}_2 \| + \cdots + \| \boldsymbol{x}_{n+1} - \boldsymbol{x}_n \| - l \\
+            &\geqslant \| \boldsymbol{x}_2 - \boldsymbol{x}_1 + \boldsymbol{x}_3 - \boldsymbol{x}_2 + \cdots + \boldsymbol{x}_{n+1} - \boldsymbol{x}_n \| - l \\
+            &= \| \boldsymbol{x}_{n+1} - \boldsymbol{x}_1 \| - l \\
+            &\geqslant \| \boldsymbol{x}_{n+1} \| - \| \boldsymbol{x}_1 \| - l \\
+            &= \| \boldsymbol{x}_{n+1} - \boldsymbol{l} + \boldsymbol{l} \| - (l + \|\boldsymbol{x}_1\|) \\
+            &\geqslant \| \boldsymbol{x}_{n+1} - \boldsymbol{l} \| - \| \boldsymbol{l} \| - (l + \|\boldsymbol{x}_1\|) \\
+            &= \| \boldsymbol{x}_{n+1} - \boldsymbol{l} \| - (l + \|\boldsymbol{l}\| + \|\boldsymbol{x}_1\|).
+        \end{align*}
+        即
+        \begin{align*}
+            \| \boldsymbol{x}_{n+1} - \boldsymbol{l} \| - (l + \|\boldsymbol{l}\| + \|\boldsymbol{x}_1\|) &\leqslant \sum_{k=1}^n\| \boldsymbol{x}_{k+1} - \boldsymbol{x}_k \| - l \\
+            &\leqslant \left|\sum_{k=1}^n\| \boldsymbol{x}_{k+1} - \boldsymbol{x}_k \| - l\right| < \varepsilon.
+        \end{align*}
+        令 $A = l + \|\boldsymbol{l}\| + \|\boldsymbol{x}_1\|$, $A$ 是一个确切的数, 并将 $A$ 移到右边, 得到
+        \[
+            \| \boldsymbol{x}_{n+1} - \boldsymbol{l} \| < \varepsilon + A.     
+        \]
+        这便证明点列 $\{\boldsymbol{x}_i\}$ 收敛.
+\end{enumerate}
+% \end{document}
