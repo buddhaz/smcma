@@ -8,12 +8,66 @@
 \begin{document}
 \begin{enumerate}
     \item % 1
+        略.
     \item % 2
     \item % 3
     \item % 4
+        令级数的通项 $a_k = s_{k} - s_{k-1}\ (k = 1, 2, 3, \cdots)$, 且 $s_0 = 0$. 那么
+        \begin{gather*}
+            a_1 = s_1 - s_0 = 1 - 0, \\
+            a_2 = s_2 - s_1 = \frac12 - 1, \\
+            \cdots, \\
+            a_k = s_k - s_{k-1} = \frac{1}{k} - \frac{1}{k - 1},
+        \end{gather*}
+        即
+        \[
+            \sum_{k=1}^n a_k = a_1 + a_2 + \cdots + a_n = s_n = \frac{1}{n}.    
+        \]
     \item % 5
     \item % 6
+        提示: 证明通项的极限不为 $0$ 即可.
     \item % 7
+        {\heiti 证明}\quad 级数 $\sum\limits_{k=1}^\infty a_k$ 收敛, 而 $\sum\limits_{k=1}^\infty a_{k+1}$ 正是前者去掉第一项的级数, 因此也收敛.
+        故两者的和也收敛, 即
+        \[
+            \sum_{k=1}^\infty a_k + \sum_{k=1}^\infty a_{k+1} = \sum_{k=1}^\infty(a_k + a_{k+1})    
+        \]
+        收敛. 当 $a_k = (-1)^{k-1}$ 时, 即
+        \[
+            \sum_{k=1}^\infty(a_k + a_{k+1}) = \sum_{k=1}^\infty((-1)^{k-1} + (-1)^{k}) = 0.    
+        \]
+        但 $\sum\limits_{k=1}^\infty (-1)^{k-1}$ 不收敛.
+
+        若 $a_k > 0$, 则级数 $\sum\limits_{k=1}^\infty a_k$ 的部分和数列 $\{s_n\}$ 显然是一个严格递增的数列.
+        因此只需要证明 $\{s_n\}$ 有上界即可. 已知 $\sum\limits_{k=1}^\infty (a_k + a_{k+1})$ 收敛, 则其部分和数列
+        \[
+            \lim_{n\to\infty}\sum_{k=1}^n (a_k + a_{k+1}) = \lim_{n\to\infty} (a_1 + a_2 + \cdots + a_n) + (a_2 + a_3 + \cdots + a_{n+1}) = l.    
+        \]
+        收敛的数列有界, 即 $s_n = \sum\limits_{k=1}^n (a_k + a_{k+1})$ 有上界.
+        而 $\sum\limits_{k=1}^n a_k$ 是 $\sum\limits_{k=1}^n (a_k + a_{k+1})$ 的一部分, 显然也有上界.
+        这样便证明了级数 $\sum\limits_{k=1}^\infty a_k$ 的部分和数列有极限, 因此 $\sum\limits_{k=1}^\infty a_k$ 收敛.
     \item % 8
+        {\heiti 证明}\quad 根据级数收敛的必要条件, 则有
+        \[
+            \lim_{n\to\infty}n(a_n - a_{n+1}) = \lim_{n\to\infty}(na_n - na_{n+1}) = 0.
+        \]
+        因为数列 $\{na_n\}$ 极限存在, 因此 $\lim\limits_{n\to\infty}na_n = l = \lim\limits_{n\to\infty}na_{n+1}$, $l$ 为一常数.
+        写出级数的部分和数列
+        \begin{gather*}
+            s_1 = \sum_{k=1}^1 k(a_k - a_{k+1}) = a_1 - a_2, \\
+            s_2 = \sum_{k=1}^2 k(a_k - a_{k+1}) = a_1 - a_2 + 2(a_2 - a_3), \\
+            \cdots, \\
+            s_n = \sum_{k=1}^n k(a_k - a_{k+1}) = a_1 - a_2 + 2(a_2 - a_3) + \cdots + n(a_n - a_{n+1}) \\
+            \cdots.
+        \end{gather*}
+        即 $s_n = a_1 + a_2 + \cdots + a_n - na_{n+1}$. 级数收敛, 即部分和数列有极限, 那么
+        \[
+            \lim_{n\to\infty}s_n = \lim_{n\to\infty} (a_1 + a_2 + \cdots + a_n - na_{n+1}) = l'.    
+        \]
+        $l'$ 为一常数. 因为 $\lim\limits_{n\to\infty}na_{n+1} = l$, 故
+        \[
+            \lim_{n\to\infty} (a_1 + a_2 + \cdots + a_n) = l' + l.    
+        \]
+        这正是级数 $\sum\limits_{n=1}^\infty a_n$ 的部分和数列有极限, 即 $\sum\limits_{n=1}^\infty a_n$ 收敛.
 \end{enumerate}
 \end{document}
