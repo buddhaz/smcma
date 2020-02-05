@@ -1,0 +1,43 @@
+% % @author Shuning Zhang
+% % @date 2019-02-05
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        略.
+    \item % 3
+        略.
+    \item % 4
+        略.
+    \item % 5
+        {\heiti 证明}\quad 用反证法. 假设 $B_r(\boldsymbol{a}) \cap B_r(\boldsymbol{b}) \neq \varnothing$, 那么必存在一个元素 $\boldsymbol{c} \in B_r(\boldsymbol{a}) \cap B_r(\boldsymbol{b})$.
+        这表明 $\boldsymbol{c} \in B_r(\boldsymbol{a})$ 且 $\boldsymbol{c} \in B_r(\boldsymbol{b})$, 进一步, 有
+        \[
+            \| \boldsymbol{a} - \boldsymbol{c} \| < r, \| \boldsymbol{c} - \boldsymbol{b} \| < r. 
+        \]
+        再根据三角不等式, 则有
+        \begin{align*}
+            \| \boldsymbol{a} - \boldsymbol{b} \| \leqslant \| \boldsymbol{a} - \boldsymbol{c} \| + \| \boldsymbol{c} - \boldsymbol{b} \| < 2r.
+        \end{align*}
+        与 $\| \boldsymbol{a} - \boldsymbol{b} \| = 2r$ 矛盾. 因此 $B_r(\boldsymbol{a}) \cap B_r(\boldsymbol{b}) = \varnothing$.
+    \item % 6
+        提示: 证明左边的不等式时, 利用不等式
+        \[
+            \frac{x_1 + x_2 + \cdots + x_n}{n} \leqslant \sqrt{\frac{x_1^2 + x_2^2 + \cdots + x_n^2}{n}}.    
+        \]
+        右边的不等式两边平方即可得证.
+    \item % 7
+        {\heiti 证明}\quad 左边的不等式是显然的. 现在来证明右边的不等式, 对 $\| \boldsymbol{x} \|$ 进行放大处理, 则有
+        \begin{align*}
+            \| \boldsymbol{x} \| &= \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2} \\
+                                 &\leqslant \sqrt{\max(x_i^2) + \max(x_i^2) + \cdots + \max(x_i^2)} \\
+                                 &= \sqrt{n\max(x_i^2)} = \sqrt{n}\max|x_i| \leqslant n\max|x_i|.  
+        \end{align*}
+\end{enumerate}
+% \end{document}
