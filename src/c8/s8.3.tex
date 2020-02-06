@@ -8,8 +8,20 @@
 \begin{document}
 \begin{enumerate}
     \item % 1
+        \begin{enumerate}[(1)]
+            \item $A^\circ = \varnothing$, $\bar A = A \bigcup \{0\}$, $\partial A = A$;
+            \item $A^\circ = A$, $\bar A = \{(x, y) : 0 < y < x + 1\}$, $\partial A = \{(x, y) : y = 0\} \bigcup \{(x, y) : y = x + 1, y > 0\}$;
+            \item $A^\circ = \varnothing$, $\bar A = A$, $\partial A = A$.
+        \end{enumerate}
     \item % 2
+        $A^\circ = \varnothing$, $(A^c)^\circ = \varnothing$, $\partial A = \mathrm{R}^2$.
     \item % 3
+        {\heiti 证明}\quad 必要性. $\boldsymbol{p} \in \bar A = A \bigcup A'$, 也就是 $\boldsymbol{p} \in A$ 或者 $\boldsymbol{p} \in A'$ 或者同时属于二者.
+        当 $\boldsymbol{p} \in A$ 时, $B_r(\boldsymbol{p}) \bigcap A \neq \varnothing$ 显然成立. 当 $\boldsymbol{p} \in A'$ 时, 即 $\boldsymbol{p}$ 是 $A$ 的凝聚点,
+        故 $B_r(\boldsymbol{p}) \setminus \{\boldsymbol{p}\}$ 中必含有 $A$ 中的点, 因此 $B_r(\boldsymbol{p}) \bigcap A \neq \varnothing$.
+
+        充分性. 若 $\boldsymbol{p} \notin A$, 而 $B_r(\boldsymbol{p}) \bigcap A \neq \varnothing$, 说明 $\boldsymbol{p}$ 是 $A$ 的一个凝聚点, 因此 $\boldsymbol{p} \in A'$, 即 $\boldsymbol{p} \in \bar{A}$.
+        若 $\boldsymbol{p} \in A$, $\boldsymbol{p} \in \bar A$ 自然成立. 
     \item % 4
         {\heiti 证明}\quad 因为
         \[
@@ -27,8 +39,28 @@
     \item % 8
     \item % 9
     \item % 10
+        {\heiti 证明}\quad 只需证明 $(\partial{E})^c$ 是开集即可. 因为 $\mathrm{R}^n = E^\circ \bigcup \partial{E} \bigcup (E^c)^\circ$,
+        故 $(\partial{E})^c = E^\circ \bigcup (E^c)^\circ$. 因为 $E^\circ$ 和 $(E^c)^\circ$ 都是开集, 故 $E^\circ \bigcup (E^c)^\circ$ 也是开集,
+        即 $(\partial{E})^c$ 是开集.
     \item % 11
+        {\heiti 证明}\quad 用反证法. 若 $G_1 \bigcap \overline{G_2} \neq \varnothing$, 任取 $\boldsymbol{x} \in G_1 \bigcap \overline{G_2}$, 因为 $G_1 \bigcap G_2 = \varnothing$,
+        故 $\boldsymbol{x} \in G_1 \bigcap G_2'$, 这表明 $\boldsymbol{x}$ 即是 $G_2$ 的凝聚点, 也是 $G_1$ 中的点.
+        因为 $\boldsymbol{x}$ 是 $G_2'$ 的凝聚点, 故 $B_{r_1}(\check{\boldsymbol{x}})$ 中含有 $G_2$ 中的点, 而 $\boldsymbol{x}$ 又是 $G_1$ 中的点,
+        且 $G_1$ 是开集, 因此 $B_{r_2}(\boldsymbol{x}) \subset G_1$. 再取 $r = \min\{r_1, r_2\}$, 显然 $B_r(\check{\boldsymbol{x}})$ 中即含有 $G_1$ 中的点, 也含有 $G_2$ 中的点,
+        即 $G_1 \bigcap G_2 \neq \varnothing$, 与题意矛盾, 因此 $G_1 \bigcap \overline{G_2} = \varnothing$.
+
+        同理可证 $\overline{G_1} \bigcap G_2 = \varnothing$.
     \item % 12
+        {\heiti 证明}\quad 因 $E$ 是开集, 任取 $\boldsymbol{x} \in E$, 则有 $B_r(\boldsymbol{x}) \in E$,
+        那么 $P(B_r(\boldsymbol{x}))$ 将会投影为 $R$ 上的一个开区间 $I$, 开区间是开集, 显然 $I \in P(E)$, 因此 $P(E)$ 由无穷个开集的并组成.
+        无穷个开集的并也是开集, 因此 $P(E)$ 是开集.
     \item % 13
+        {\heiti 证明}\quad 必要性. 因为 $E$ 是闭集, 故 $E^c$ 是开集. 任取 $\boldsymbol{x} \in \partial{E}$, 若 $\boldsymbol{x} \notin E$,
+        则 $\boldsymbol{x} \in E^c$ 中, 因 $E^c$ 是开集, 则 $B_r(\boldsymbol{x}) \subset E^c$, 即 $B_r(\boldsymbol{x})$ 中不含 $E$ 中的点,
+        这与 $\boldsymbol{x}$ 是边界点相矛盾, 因此 $\boldsymbol{x} \in E$. 即 $\partial{E} \subset E$.
+        
+        充分性. 任取 $\boldsymbol{x} \in E^c$, 则 $\boldsymbol{x} \notin E$, 进一步有 $\boldsymbol{x} \notin \partial{E}$.
+        作球 $B_r(\boldsymbol{x})$, 因为 $\boldsymbol{x}$ 不是边界点, 因此 $B_r(\boldsymbol{x})$ 中不含 $E$ 中的点, 即 $B_r(\boldsymbol{x}) \subset E^c$,
+        因此 $E^c$ 是开集, 所以 $E$ 是闭集.
 \end{enumerate}
 \end{document}
