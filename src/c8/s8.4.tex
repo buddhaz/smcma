@@ -1,0 +1,50 @@
+% @author Shuning Zhang
+% @date 2019-02-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        {\heiti 证明}\quad 因为 $A$ 是紧致集, 故 $A$ 是有界闭集. 根据练习题 8.3 中的第 13 题的结论,
+        可知 $P(A)$ 也是有界闭集, 因此 $P(A)$ 也是紧致集.
+    \item % 2
+        {\heiti 证明}\quad 必要性. 因为 $A \times B$ 是紧致集, 故存在一开集族 $\bigcup_{i \in I}C_i$, 从中选出有限个, 使得
+        \[
+            A \times B \subset \bigcup_{i}^{n}C_i.    
+        \]
+        另一方面, 有 $A \subset A \times B$, $B \subset A \times B$, 因此
+        \[
+            A \subset \bigcup_{i}^{n}C_i,\ B \subset \bigcup_{i}^{n}C_i,   
+        \]
+        这表明 $A$, $B$ 也被这有限个开集所覆盖, 因此 $A$, $B$ 也是紧致集.
+
+        充分性. 因为 $A$ 和 $B$ 都是紧致集, 即 $A$ 和 $B$ 都是有界闭集. $A \times B$ 显然也有界, 现在只需证 $A \times B$ 是闭集即可.
+        显然 $\partial(A \times B) \subset (A \times B)$, 根据练习题 8.3 的第 13 题, 即可知 $A \times B$ 是闭集. 因此 $A \times B$ 也是紧致集.
+    \item % 3
+        {\heiti 证明}\quad 利用 De Morgan 律. 因为 $\displaystyle{A \bigcap \Bigl(\bigcap_{\alpha}A_\alpha\Bigr) = \varnothing}$, 那么
+        \[
+            A \subset \Bigl(\bigcap_{\alpha}A_\alpha\Bigr)^c = \bigcup_{\alpha}A_\alpha^c,
+        \]
+        即 $A$ 被 $\displaystyle{\bigcup_{\alpha}A_\alpha^c}$ 覆盖. 同理, 可得
+        \[
+            A \subset \Bigl(\bigcap_{i=1}^kA_\alpha\Bigr)^c =  \bigcup_{i=1}^kA_i^c,   
+        \]
+        即 $A$ 被 $\displaystyle{\bigcup_{\alpha}A_\alpha^c}$ 中有限个开集覆盖. 因此 $A$ 是紧致集.
+
+    \item % 4
+    \item % 5
+        令 $F_i = \mathrm{R}^n \setminus B_i(\boldsymbol{0})$, 显然 $F_i$ 是闭集, 且 $F_{i+1} \subset F_i$, 并有
+        \[
+            \bigcap_{i=1}^{\infty}F_i = \bigcap_{i=1}^{\infty}\left(\mathrm{R}^n \setminus B_i(\boldsymbol{0})\right) = \varnothing.    
+        \]
+        
+        若 $F_i\ (i = 1, 2, \cdots)$ 为紧致集, 假设 $\displaystyle{\bigcap_{i=1}^{\infty}F_i = \varnothing}$.
+        那么 $\displaystyle{\Bigl(\bigcap_{i=1}^{\infty}F_i\Bigr)^c = \bigcup_{i=1}^{\infty}F_i^c = \varnothing^c = \mathrm{R}^n}$, 并对每一个 $F_i$ 取补集, 并令 $E_i = F_i^c$.
+        则有 $E_i \subset E_{i+1}$, 且每一个 $E_i$ 都是开集. 考虑 $E_1$, 显然 $E_1 \subset \bigcup_{i=1}^{\infty}F_i^c$, 即 $\bigcup_{i=1}^{\infty}F_i^c$ 是 $E_1$ 的开覆盖,
+        从 $\bigcup_{i=1}^{\infty}F_i^c$ 中选出 $E_2$, $E_1 \subset E_2$, 即从中选出一个开集就能覆盖 $E_1$, 说明 $E_1$ 是紧致集, 即 $E_1$ 是有界闭集, 这每一个 $E_i$ 都是开集相矛盾.
+        因此 $\displaystyle{\bigcap_{i=1}^{\infty}F_i \neq \varnothing}$.
+\end{enumerate}
+\end{document}
