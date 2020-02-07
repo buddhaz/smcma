@@ -2,6 +2,7 @@
 % @date 2019-02-06
 \documentclass[a4paper, 11pt]{ctexart}
 \usepackage{amsfonts, amsmath, amssymb}
+\usepackage{color}
 \usepackage{enumerate}
 \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
 \usepackage{multicol}
@@ -34,10 +35,72 @@
         
         同理可得 $\displaystyle{\Bigl(\bigcap_i E_i\Bigr)^c = \bigcup_i E_i^c}$.
     \item % 5
+        {\heiti 证明}\quad 因为
+        \begin{align*}
+            \boldsymbol{x} \in \partial{A} &\Rightarrow{} \boldsymbol{x} \notin A^\circ \cup (A^c)^\circ \\
+            &\Rightarrow{} \boldsymbol{x} \notin A^\circ\ \text{或}\ \boldsymbol{x} \notin (A^c)^\circ \\
+            &\Rightarrow{} \boldsymbol{x} \in (A^\circ)^c\ \text{且}\ \boldsymbol{x} \in \overline{A} \\
+            &\Rightarrow{} \boldsymbol{x} \in (A^\circ)^c \cap \overline{A},
+        \end{align*}
+        故 $\partial{A} \subset ((A^\circ)^c \cap \overline{A})$. 反之, 则有 $((A^\circ)^c \cap \overline{A}) \subset \partial{A}$. 因此 $\partial{A} = (A^\circ)^c \cap \overline{A}$.
     \item % 6
+        {\heiti 证明}\quad 因为
+        \begin{align*}
+            \boldsymbol{x} \in A^\circ &\Rightarrow \boldsymbol{x} \notin (A^\circ)^c \\
+            &\Rightarrow \boldsymbol{x} \notin \overline{A^c} \\
+            &\Rightarrow \boldsymbol{x} \in (\overline{A^c})^c,
+        \end{align*}
+        故 $A^\circ \subset (\overline{A^c})^c$. 反之, 则有 $(\overline{A^c})^c \subset A^\circ$. 因为 $A^\circ = (\overline{A^c})^c$.
     \item % 7
+        \begin{enumerate}[(1)]
+            \item % (1)
+                {\heiti 证明}\quad 因为
+                \begin{align*}
+                    \boldsymbol{x} \in (A \cap B)^\circ &\Rightarrow B_r(\boldsymbol{x}) \subset (A \cap B) \\
+                    &\Rightarrow B_r(\boldsymbol{x}) \subset A\ \text{且}\ B_r(\boldsymbol{x}) \subset B \\
+                    &\Rightarrow \boldsymbol{x} \in A^\circ\ \text{且}\ \boldsymbol{x} \in B^\circ \\
+                    &\Rightarrow \boldsymbol{x} \in A^\circ \cap B^\circ,
+                \end{align*}
+                故 $(A \cap B)^\circ \subset (A^\circ \cap B^\circ)$. 反之, 则有 $(A^\circ \cap B^\circ) \subset (A \cap B)^\circ$. 因此 $(A \cap B)^\circ = A^\circ \cap B^\circ$.
+            \item % (2)
+                {\heiti 证明}\quad 因为
+                \begin{align*}
+                    \boldsymbol{x} \in \overline{A \cup B} &\Rightarrow \boldsymbol{x} \in (A \cup B) \cup (A \cup B)' \\
+                    &\Rightarrow \boldsymbol{x} \in A \cup B \cup A' \cup B' \\
+                    &\Rightarrow \boldsymbol{x} \in (A \cup A') \cup (B \cup B') \\
+                    &\Rightarrow \boldsymbol{x} \in \overline{A} \cup \overline{B},
+                \end{align*}
+                故 $\overline{A \cup B} \subset (\overline{A} \cup \overline{B})$, 反之, 则有 $(\overline{A} \cup \overline{B}) \subset \overline{A \cup B}$. 因此 $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+        \end{enumerate}
     \item % 8
+        {\color{red} remained wrong}
+        \begin{enumerate}[(1)]
+            \item % 8.1
+                $\displaystyle{F_i = \overline{B}_{\frac{i}{i+1}}(\boldsymbol{0})\ (i = 1, 2, \cdots)}$.
+            \item % 8.2
+        \end{enumerate}
     \item % 9
+        {\color{red} remained unfinished}
+        \begin{enumerate}[(1)]
+            \item % 9.1
+                {\heiti 证明}\quad 因为
+                \begin{align*}
+                    \boldsymbol{x} \in \overline{\bigcap_{\alpha \in I}A_\alpha} &\Rightarrow \boldsymbol{x} \in \Bigl(\bigcap_{\alpha \in I}A_\alpha\Bigr) \bigcup \Bigl(\bigcap_{\alpha \in I}A_\alpha\Bigr)' \\
+                    &\Rightarrow \boldsymbol{x} \in \Bigl(\bigcap_{\alpha \in I}A_\alpha\Bigr) \bigcup \Bigl(\bigcap_{\alpha \in I}A_\alpha'\Bigr) \\
+                    &\Rightarrow \boldsymbol{x} \in \bigcap_{\alpha \in I}\Bigl(A_\alpha \bigcup A_\alpha'\Bigr) \\
+                    &\Rightarrow \boldsymbol{x} \in \bigcap_{\alpha \in I}\overline{A_\alpha},
+                \end{align*}
+                所以 $\displaystyle{\overline{\bigcap_{\alpha \in I}A_\alpha} \subset \bigcap_{\alpha \in I}\overline{A_\alpha}}$.
+            \item % 9.2
+                {\heiti 证明}\quad 因为
+                \begin{align*}
+                    \boldsymbol{x} \in \bigcup_{\alpha \in I}A_\alpha^\circ &\Rightarrow \text{存在}\ \beta \in I, \text{使得}\ \boldsymbol{x} \in A_\beta^\circ \\
+                    &\Rightarrow B_r(\boldsymbol{x}) \subset A_\beta \\
+                    &\Rightarrow B_r(\boldsymbol{x}) \subset \bigcup_{\alpha \in I}A_\alpha \\
+                    &\Rightarrow \boldsymbol{x} \in \Bigl(\bigcup_{\alpha \in I}A_\alpha\Bigr)^\circ, 
+                \end{align*}
+                所以 $\displaystyle{\bigcup_{\alpha \in I}A_\alpha^\circ \subset \Bigl(\bigcup_{\alpha \in I}A_\alpha\Bigr)^\circ}$.
+        \end{enumerate}
     \item % 10
         {\heiti 证明}\quad 只需证明 $(\partial{E})^c$ 是开集即可. 因为 $\mathrm{R}^n = E^\circ \bigcup \partial{E} \bigcup (E^c)^\circ$,
         故 $(\partial{E})^c = E^\circ \bigcup (E^c)^\circ$. 因为 $E^\circ$ 和 $(E^c)^\circ$ 都是开集, 故 $E^\circ \bigcup (E^c)^\circ$ 也是开集,
