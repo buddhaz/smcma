@@ -1,11 +1,12 @@
-% @author Shuning Zhang
-% @date 2019-02-06
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2019-02-06
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         {\heiti 证明}\quad 因为 $A$ 是紧致集, 故 $A$ 是有界闭集. 根据练习题 8.3 中的第 13 题的结论,
@@ -34,8 +35,9 @@
         \]
         即 $A$ 被 $\displaystyle{\bigcup_{\alpha}A_\alpha^c}$ 中有限个开集覆盖. 因此 $A$ 是紧致集.
     \item % 4
-        {\heiti 证明}\quad 先证明 $A$ 是闭集, 对于此题, 证明 $E' \subset E$ 即可, 即证明 $E$ 的全体凝聚点都在 $E$ 中.
+        {\heiti\color{red} remained}{\heiti 证明}\quad 先证明 $A$ 是闭集, 对于此题, 证明 $E' \subset E$ 即可, 即证明 $E$ 的全体凝聚点都在 $E$ 中.
         根据题意, $E$ 的每一个凝聚点都在 $E$ 的无穷子集中. 显然将这些无穷子集的并依然是 $E$ 的子集, 即所有凝聚点都在 $E$ 中 ($E' \subset E$), 因此 $E$ 是闭集.
+        在证明 $A$ 是有界的, 若 $A$ 无界, 
     \item % 5
         令 $F_i = \mathrm{R}^n \setminus B_i(\boldsymbol{0})$, 显然 $F_i$ 是闭集, 且 $F_{i+1} \subset F_i$, 并有
         \[
@@ -48,4 +50,4 @@
         从 $\bigcup_{i=1}^{\infty}F_i^c$ 中选出 $E_2$, $E_1 \subset E_2$, 即从中选出一个开集就能覆盖 $E_1$, 说明 $E_1$ 是紧致集, 即 $E_1$ 是有界闭集, 这每一个 $E_i$ 都是开集相矛盾.
         因此 $\displaystyle{\bigcap_{i=1}^{\infty}F_i \neq \varnothing}$.
 \end{enumerate}
-\end{document}
+% \end{document}
