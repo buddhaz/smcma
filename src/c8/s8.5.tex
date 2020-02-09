@@ -1,0 +1,30 @@
+% % @author Shuning Zhang
+% % @date 2019-02-10
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        {\heiti 证明}\quad 只需证明连通的开集 $E$ 是道路连通的即可. 任取 $\boldsymbol{p} \in E$, 令
+        \begin{gather*}
+            A = \{\boldsymbol{x} \in E : \text{$\boldsymbol{x}$ 与 $\boldsymbol{p}$ 能用连续曲线连接}\}, \\
+            B = \{\boldsymbol{x} \in E : \text{$\boldsymbol{x}$ 与 $\boldsymbol{p}$ 不能用连续曲线相连}\}.
+        \end{gather*}
+        那么 $E = A \cup B$. 任取 $\boldsymbol{a} \in A$, 作球 $B_r(\boldsymbol{a})$. 因为 $\boldsymbol{a}$ 与 $\boldsymbol{p}$ 能用连续曲线连接, 而 $B_r(\boldsymbol{a})$ 中的任一点又可以与 $\boldsymbol{a}$ 用连续曲线连接,
+        因此 $B_r(\boldsymbol{a})$ 中的任一点都能与 $\boldsymbol{p}$ 相连, 即 $B_r(a) \subset A$. 因此 $\boldsymbol{a}$ 是 $A$ 的一个内点, 那么 $A$ 是开集.
+
+        再证明 $B$ 也是开集. 任取 $\boldsymbol{b} \in B$, 若 $B_r(\boldsymbol{b})$ 中存在一点 $\boldsymbol{x}$ 可与 $\boldsymbol{p}$ 相连, 而 $\boldsymbol{x}$ 又可与 $\boldsymbol{b}$ 相连, 那么 $\boldsymbol{b}$ 就可与 $\boldsymbol{p}$ 相连, 产生矛盾,
+        因此 $B_r(\boldsymbol{b})$ 中的任一点都不能与 $\boldsymbol{p}$ 相连, 因此 $B_r(\boldsymbol{b}) \subset B$, 即 $B$ 也是开集.
+        
+        根据定理 8.5.1 可知连通的开集不能分解成两个非空开集之并. 而 $A$ 显然不空 (至少存在一点 $\boldsymbol{p}$), 因此只能 $B = \varnothing$, 即 $E$ 不存在任意两点不能相连.
+    \item % 2
+        {\heiti 证明}\quad 先证明 $R^n$ 是连通集. 因为 $R^n$ 是道路连通集, 故 $R^n$ 是连通集.
+        
+        对非空的 $A \subsetneqq R^n$, 则有 $A \cup A^c = R^n$, 且 $A \cap A^c = \varnothing$. 若 $A$ 是既是开集又是集, 那么 $A^c$ 也既是开集又是闭集.
+        从开集的角度考虑, 即 $R^n$ 分解成为两个非空开集之并, 与定理 8.5.1 相悖, 因此 $A$ 不可能既是开集又是闭集.
+\end{enumerate}
+% \end{document}
