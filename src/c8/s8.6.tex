@@ -7,5 +7,48 @@
 \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
 \usepackage{multicol}
 \begin{document}
-
+    \begin{enumerate}
+        \item % 1
+            略.
+        \item % 2
+            略.
+        \item % 3
+        \item % 4
+            \begin{enumerate}[(1)]
+                \item % 4.1
+                    {\heiti 证明}\quad \begin{align*}
+                        |(f(\boldsymbol{x}) \pm g(\boldsymbol{x})) - (l \pm m)| &= |(f(\boldsymbol{x}) - l) \pm (g(\boldsymbol{x}) - m)| \\
+                        &\leqslant |f(\boldsymbol{x}) - l| + |g(\boldsymbol{x}) - m| \\
+                        &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+                    \end{align*}
+                \item % 4.2
+                    {\heiti 证明}\quad \begin{align*}
+                        |f(\boldsymbol{x})g(\boldsymbol{x}) - lm| &= |f(\boldsymbol{x})g(\boldsymbol{x}) - f(\boldsymbol{x})m + f(\boldsymbol{x})m - lm| \\
+                        &= |f(\boldsymbol{x})(g(\boldsymbol{x}) - m) + m(f(\boldsymbol{x}) - l)| \\
+                        &\leqslant |f(\boldsymbol{x})||g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
+                        &\leqslant M|g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
+                        &< M\frac{\varepsilon}{2M} + |m|\frac{\varepsilon}{2|m|} = \varepsilon.
+                    \end{align*}
+                \item % 4.3
+                    {\heiti 证明}\quad 
+                    \begin{align*}
+                        \left| \frac{f(\boldsymbol{x})}{g(\boldsymbol{x})} - \frac{l}{m} \right| &= \left| \frac{mf(\boldsymbol{x}) - lg(\boldsymbol{x})}{mg(\boldsymbol{x})} \right| \\
+                        &= \frac{|mf(\boldsymbol{x}) - ml + ml - lg(\boldsymbol{x})|}{|m||g(\boldsymbol{x})|} \\
+                        &\leqslant \frac{|m||f(\boldsymbol{x}) - l| + |l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
+                        &= \frac{|f(\boldsymbol{x}) - l|}{|g(\boldsymbol{x})|} + \frac{|l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
+                        &\leqslant \frac{|f(\boldsymbol{x}) - l|}{M} + \frac{|l||g(\boldsymbol{x}) - m|}{|m|M}.
+                    \end{align*}
+            \end{enumerate}
+        \item % 5
+            略.
+        \item % 6
+            {\color{red} remained unfinished}{\heiti 证明}\quad 两个累次极限显然不存在, 直接证明, 则有
+            \begin{align*}
+                \left| (x+y)\sin\frac1x\sin\frac1y - 0 \right| &= \left| x + y \right|\left|\sin\frac1x\right|\left|\sin\frac1y\right| \\
+                &\leqslant |x+y| \\
+                &\leqslant |x| + |y|
+            \end{align*}
+        \item % 7
+        \item % 8
+    \end{enumerate}
 \end{document}
