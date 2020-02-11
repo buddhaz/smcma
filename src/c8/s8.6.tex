@@ -1,54 +1,76 @@
-% @author Shuning Zhang
-% @date 2019-02-10
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
-    \begin{enumerate}
-        \item % 1
-            略.
-        \item % 2
-            略.
-        \item % 3
-        \item % 4
-            \begin{enumerate}[(1)]
-                \item % 4.1
-                    {\heiti 证明}\quad \begin{align*}
-                        |(f(\boldsymbol{x}) \pm g(\boldsymbol{x})) - (l \pm m)| &= |(f(\boldsymbol{x}) - l) \pm (g(\boldsymbol{x}) - m)| \\
-                        &\leqslant |f(\boldsymbol{x}) - l| + |g(\boldsymbol{x}) - m| \\
-                        &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
-                    \end{align*}
-                \item % 4.2
-                    {\heiti 证明}\quad \begin{align*}
-                        |f(\boldsymbol{x})g(\boldsymbol{x}) - lm| &= |f(\boldsymbol{x})g(\boldsymbol{x}) - f(\boldsymbol{x})m + f(\boldsymbol{x})m - lm| \\
-                        &= |f(\boldsymbol{x})(g(\boldsymbol{x}) - m) + m(f(\boldsymbol{x}) - l)| \\
-                        &\leqslant |f(\boldsymbol{x})||g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
-                        &\leqslant M|g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
-                        &< M\frac{\varepsilon}{2M} + |m|\frac{\varepsilon}{2|m|} = \varepsilon.
-                    \end{align*}
-                \item % 4.3
-                    {\heiti 证明}\quad 
-                    \begin{align*}
-                        \left| \frac{f(\boldsymbol{x})}{g(\boldsymbol{x})} - \frac{l}{m} \right| &= \left| \frac{mf(\boldsymbol{x}) - lg(\boldsymbol{x})}{mg(\boldsymbol{x})} \right| \\
-                        &= \frac{|mf(\boldsymbol{x}) - ml + ml - lg(\boldsymbol{x})|}{|m||g(\boldsymbol{x})|} \\
-                        &\leqslant \frac{|m||f(\boldsymbol{x}) - l| + |l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
-                        &= \frac{|f(\boldsymbol{x}) - l|}{|g(\boldsymbol{x})|} + \frac{|l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
-                        &\leqslant \frac{|f(\boldsymbol{x}) - l|}{M} + \frac{|l||g(\boldsymbol{x}) - m|}{|m|M}.
-                    \end{align*}
-            \end{enumerate}
-        \item % 5
-            略.
-        \item % 6
-            {\color{red} remained unfinished}{\heiti 证明}\quad 两个累次极限显然不存在, 直接证明, 则有
-            \begin{align*}
-                \left| (x+y)\sin\frac1x\sin\frac1y - 0 \right| &= \left| x + y \right|\left|\sin\frac1x\right|\left|\sin\frac1y\right| \\
-                &\leqslant |x+y| \\
-                &\leqslant |x| + |y|
-            \end{align*}
-        \item % 7
-        \item % 8
-    \end{enumerate}
-\end{document}
+% % @author Shuning Zhang
+% % @date 2019-02-10
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        略.
+    \item % 3
+        略.
+    \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                {\heiti 证明}\quad \begin{align*}
+                    |(f(\boldsymbol{x}) \pm g(\boldsymbol{x})) - (l \pm m)| &= |(f(\boldsymbol{x}) - l) \pm (g(\boldsymbol{x}) - m)| \\
+                    &\leqslant |f(\boldsymbol{x}) - l| + |g(\boldsymbol{x}) - m| \\
+                    &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+                \end{align*}
+            \item % 4.2
+                {\heiti 证明}\quad \begin{align*}
+                    |f(\boldsymbol{x})g(\boldsymbol{x}) - lm| &= |f(\boldsymbol{x})g(\boldsymbol{x}) - f(\boldsymbol{x})m + f(\boldsymbol{x})m - lm| \\
+                    &= |f(\boldsymbol{x})(g(\boldsymbol{x}) - m) + m(f(\boldsymbol{x}) - l)| \\
+                    &\leqslant |f(\boldsymbol{x})||g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
+                    &\leqslant M|g(\boldsymbol{x}) - m| + |m||f(\boldsymbol{x}) - l| \\
+                    &< M\frac{\varepsilon}{2M} + |m|\frac{\varepsilon}{2|m|} = \varepsilon.
+                \end{align*}
+            \item % 4.3
+                {\heiti 证明}\quad 
+                \begin{align*}
+                    \left| \frac{f(\boldsymbol{x})}{g(\boldsymbol{x})} - \frac{l}{m} \right| &= \left| \frac{mf(\boldsymbol{x}) - lg(\boldsymbol{x})}{mg(\boldsymbol{x})} \right| \\
+                    &= \frac{|mf(\boldsymbol{x}) - ml + ml - lg(\boldsymbol{x})|}{|m||g(\boldsymbol{x})|} \\
+                    &\leqslant \frac{|m||f(\boldsymbol{x}) - l| + |l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
+                    &= \frac{|f(\boldsymbol{x}) - l|}{|g(\boldsymbol{x})|} + \frac{|l||g(\boldsymbol{x}) - m|}{|m||g(\boldsymbol{x})|} \\
+                    &\leqslant \frac{|f(\boldsymbol{x}) - l|}{M} + \frac{|l||g(\boldsymbol{x}) - m|}{|m|M}.
+                \end{align*}
+        \end{enumerate}
+    \item % 5
+        略.
+    \item % 6
+        {\heiti 证明}\quad 只证明
+        \[
+            \lim_{x \to 0}\lim_{y \to 0}(x+y)\sin\frac1x\sin\frac1y    
+        \]
+        不存在.
+        固定 $x$ (即将 $x$ 看作一个常数), 那么
+        \[
+            \lim_{y\to 0}(x + y)\sin\frac1x\sin\frac1y = \sin\frac1x\lim_{y\to 0}(x + y)\sin\frac1y,   
+        \]
+        其中 $\sin\frac1x$ 是常数, $\sin\frac1y$ 是有界量, 但 $x + y \to x\ (y \to 0)$, 因此极限不存在.
+        
+        现在来证明 $f(\boldsymbol{x})$ 在趋于 $(0, 0)$ 的极限是 $\boldsymbol{0}$, 那么
+        \begin{align*}
+            \left| (x+y)\sin\frac1x\sin\frac1y - 0 \right| &= \left| x + y \right|\left|\sin\frac1x\right|\left|\sin\frac1y\right| \\
+            &\leqslant |x+y| \\
+            &\leqslant |x| + |y|
+        \end{align*}
+        $0 < \|\boldsymbol{x} - \boldsymbol{0}\| = \|\boldsymbol{x}\| = \sqrt{x^2 + y^2} < \delta = \varepsilon/\sqrt{2}$ 时则上式成立. 因为
+        \[
+            |x| + |y| \leqslant \sqrt{2}\sqrt{x^2 + y^2} < \sqrt{2}\delta = \varepsilon.    
+        \]
+        其中 $|x| + |y| \leqslant \sqrt{2}\sqrt{x^2 + y^2}$ 在练习题 8.1 中已经证明过.
+    \item % 7
+        {\color{red} remained}{\heiti 证明}\quad $\lim\limits_{(x,y)\to(x_0,y_0)}f(x,y) = a$ 存在, 那么对任意的 $\varepsilon > 0$, 存在 $\delta > 0$, 当 $\boldsymbol{x} \in D$ 且 $0 < \|\boldsymbol{x} - \boldsymbol{x}_0\| < \delta\ (\boldsymbol{x}_0 = (x_0, y_0))$ 时, 有
+        \[
+            |f(\boldsymbol{x}) - a| < \varepsilon.    
+        \]
+    \item % 8
+        {\color{red} remained}
+\end{enumerate}
+% \end{document}
