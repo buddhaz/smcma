@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2019-02-12
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2019-02-12
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{enumerate}[(1)]
@@ -22,50 +22,66 @@
                 而 $\lim_{(x,y)\to(x,0)}x\sin\frac1y\ (x \neq 0)$ 不存在, 故间断点集为 $\{(x,0) : x \neq 0\}$.
         \end{enumerate}
     \item % 2
-        {\heiti 证明} 
+        {\color{red} remained}
     \item % 3
         \begin{enumerate}[(1)]
             \item % 3.1
-                {\heiti 证明}\quad 由距离的定义可知 $\mathrm{R}^n = \rho(\boldsymbol{x}, A) \geqslant 0$, 考虑 $B = \{\boldsymbol{x} \in \mathrm{R}^n : \rho(\boldsymbol{x}, A) > 0\}$,
-                因为 $B$ 是由到 $A$ 的距离大于 $0$ 的点组成, 故 $\boldsymbol{x} \notin A$, 即 $\boldsymbol{x} \in A^c$. 另外
+                {\heiti 证明}\quad 考虑集合 $E = \{\boldsymbol{p} \in \mathrm{R}^n : \rho(\boldsymbol{p}, A) > 0\}$, 任取 $\boldsymbol{x} \in E$, 令
                 \[
-                    \rho(\boldsymbol{x}, A) > \rho(\boldsymbol{x}, A) / 2 > 0.    
+                    r = \frac{\rho(\boldsymbol{x}, A)}{2} > 0,    
                 \]
-                令 $r = \rho(\boldsymbol{x}, A) / 2$, 显然 $B_r(\boldsymbol{x}) \subset B$, 即 $B$ 是全体内点组成, 因此 $B = (A^c)^\circ$, 即
+                显然 $B_r(\boldsymbol{x}) \subset E$, 故 $\boldsymbol{x}$ 是 $E$ 的内点, 即 $E$ 是一个开集. 另外
                 \[
-                    \{\boldsymbol{x} : \rho(\boldsymbol{x}, A) = 0\} = \mathrm{R}^n \setminus \{\boldsymbol{x} : \rho(\boldsymbol{x}, A) > 0\} = \mathrm{R}^n \setminus (A^c)^\circ = \overline{A}.     
+                    E = \mathrm{R}^n \setminus \{\boldsymbol{p} \in \mathrm{R}^n : \rho(\boldsymbol{p}, A) = 0\} = (A^c)^\circ.    
                 \]
+                因此 $\{\boldsymbol{p} \in \mathrm{R}^n : \rho(\boldsymbol{p}, A) = 0\} = \overline{A}$.
             \item % 3.2
-                {\heiti 证明}\quad 令 $f(\boldsymbol{x}) = \rho(\boldsymbol{x}, A)\ (\boldsymbol{x} \in \mathrm{R}^n)$, 对任意的 $\boldsymbol{p}, \boldsymbol{q} \in \mathrm{R}^n$, 有
-                \[
-                    |f(\boldsymbol{p}) - f(\boldsymbol{q})| = |\rho(\boldsymbol{p}, A) - \rho(\boldsymbol{q}, A)| \leqslant \|\boldsymbol{p} - \boldsymbol{q}\|.    
-                \]
-                取 $\delta = \varepsilon$, 当 $\|\boldsymbol{p} - \boldsymbol{q}\| < \delta$ 时, 则有
-                \[
-                    |f(\boldsymbol{p}) - f(\boldsymbol{q})| < \varepsilon,    
-                \]
-                即 $f(\boldsymbol{x})$ 在 $\mathrm{R}^n$ 上一致连续, 因此 $f(\boldsymbol{x})$ 在 $\mathrm{R}^n$ 上连续.
+                {\color{red} remained unfinished}{\heiti 证明}\quad 对任意的 $\boldsymbol{x} \in A$, 有
+                \begin{align*}
+                    \|\boldsymbol{p} - \boldsymbol{q}\| &= \|\boldsymbol{p} - \boldsymbol{x} + \boldsymbol{x} - \boldsymbol{q}\| \\
+                    &\geqslant \|\boldsymbol{p} - \boldsymbol{x}\| - \|\boldsymbol{q} - \boldsymbol{x}\|.
+                \end{align*}
+                而
+                \begin{align*}
+                    |\|\boldsymbol{p} - \boldsymbol{x}\| - \|\boldsymbol{q} - \boldsymbol{x}\|| &\geqslant |\inf_{a\in A}\|\boldsymbol{p} - \boldsymbol{a}\| - \inf_{a\in A}\|\boldsymbol{q} - \boldsymbol{a}\|| \\
+                    &= |\rho(\boldsymbol{p}, A) - \rho(\boldsymbol{q}, A)|{\color{red} ?}
+                \end{align*}
         \end{enumerate}
     \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                {\heiti 证明}\quad 令 $f(\boldsymbol{x}) = \rho(\boldsymbol{x}, B)$, 由第 3 题的 (2) 可知 $f(\boldsymbol{x})$ 是 $A$ 上的连续函数.
+                而 $A$ 又是紧集, 故存在一点 $\boldsymbol{a}$, 使得
+                \[
+                    f(\boldsymbol{a}) = \inf{f(A)} = \rho(A, B).    
+                \]
+            \item % 4.2
+                {\heiti 证明}\quad 由 (1) 已经知道存在一点 $\boldsymbol{a} \in A$, 使得 $\rho(\boldsymbol{a}, B) = \rho(A, B)$.
+                再考虑函数 $g(\boldsymbol{x}) = \rho(\{\boldsymbol{a}\}, \boldsymbol{x})$, 此时将 $\{\boldsymbol{a}\}$ 是一个独点集, 根据 (1) 的结论, 则
+                存在一点 $b \in B$, 使得
+                \[
+                    g(\boldsymbol{b}) = \inf{g(B)} = \rho(A, B).     
+                \]
+                合起来, 正是
+                \[
+                    \rho(\{\boldsymbol{a}\}, \{\boldsymbol{b}\}) = \|\boldsymbol{a} - \boldsymbol{b}\| = \rho(A, B).    
+                \]
+            \item % 4.3
+                {\color{red} remained}
+        \end{enumerate}
     \item % 5
         令 $A = \mathrm{R}^n$, $B = \varnothing$, $A$, $B$ 是闭集, 且 $A \cap B = \varnothing$, 那么
         \[
             \rho(A, B) = \inf\{\|\boldsymbol{b}\|: \boldsymbol{b} \in B\} = \|\boldsymbol{0}\| = 0.  
         \]
     \item % 6
-        {\heiti 证明}\quad 令 $d = c + 1$, 先证明 $E = \{\boldsymbol{a} : \rho(\boldsymbol{a}, A) < d\}$ 是开集. 任取 $\boldsymbol{x} \in E$,
-        令
+        {\heiti 证明}\quad 令 $E = \{\boldsymbol{p} : \rho(\boldsymbol{p}, A) \leqslant c\}$. 因为 $A$ 有界, 故 $E$ 有界.
+        那么只需证明 $E$ 是闭集即可. 考虑 $E^c = \{\boldsymbol{q} : \rho(\boldsymbol{q}, A) > c\}$, 任取 $\boldsymbol{x} \in E^c$, 令
         \[
-            r = \frac{\min\{\rho(\boldsymbol{x}, A), d - \rho(\boldsymbol{x}, A)\}}{2},   
+            r = \frac{\rho(\boldsymbol{x}, A) - c}{2} > \frac{c - c}{2} = 0,    
         \]
-        显然 $B_r(\boldsymbol{x}) \subset E$, 因此 $E$ 是开集. 考虑这样一个开集族的并
-        \[
-            F = \bigcup_{i\in[c, d]}\{\boldsymbol{x} : \rho(\boldsymbol{x}, A) < i\}.
-        \]
-        显然 $F$ 是 $\{\boldsymbol{p} : \rho(\boldsymbol{p}, A) < c\}$ 的一个开覆盖. 自然可以从中选出
-        \[
-            \left\{\boldsymbol{x} : \rho(\boldsymbol{x}, A) < \frac{c + d}{2}\right\}.    
-        \] 显然也可以将其覆盖. 因此 $\{\boldsymbol{p} : \rho(\boldsymbol{p}, A) < c\}$ 是紧集. 
+        显然 $B_r(\boldsymbol{x}) \subset E^c$, 即 $\boldsymbol{x}$ 是 $E^c$ 的一个内点. 因此 $E^c$ 是开集, 故 $E$ 是闭集.
+        这样便证明了 $E$ 是有界闭集, 即 $E$ 是紧集 (compact set).
     \item % 7
         {\heiti 证明}\quad 将 $E$ 分解成 $E = A \cup B$, 其中
         \begin{align*}
@@ -75,4 +91,4 @@
         显然 $A \neq \varnothing$, $B \neq \varnothing$, $A \cap B = \varnothing$. 若 $A$ 中存在极限点 $\boldsymbol{x}$, 则必有 $\boldsymbol{x} \leqslant 0$,
         但 $\boldsymbol{x} \notin B$, 即 $A' \cap B = \varnothing$. 同理也有 $A \cap B' = \varnothing$. 因此 $E$ 是非连通集.
 \end{enumerate}
-\end{document}
+% \end{document}
