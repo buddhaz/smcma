@@ -1,17 +1,45 @@
-% @author Shuning Zhang
-% @date 2019-02-14
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2019-02-14
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
+        略.
     \item % 2
+        $\left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)$,
+        $\left(\dfrac{\sqrt{2}}{2}, -\dfrac{\sqrt{2}}{2}\right)$.
     \item % 3
+        $(1,0)$, $(0,1)$, $(-1,0)$, $(0,-1)$.
     \item % 4
+        空间中 $\boldsymbol{u} = (\sin\theta\cos\varphi, \sin\theta\sin\varphi, \cos\theta)$, 其中 $0 \leqslant \theta \leqslant \pi$, $0 \leqslant \varphi < 2\pi$.
+        设 $\boldsymbol{p}_0 = (x_0, y_0, z_0)$ 是平面上一点, 即 $x_0 + y_0 + z_0 = 0$, 那么
+        \[
+            \boldsymbol{p}_0 + t\boldsymbol{u} = (x_0 + t\sin\theta\cos\varphi, y_0 + t\sin\theta\sin\varphi, z_0 + t\cos\theta).    
+        \]
+        进一步, 则有
+        \begin{align*}
+            f(\boldsymbol{p}_0 + t\boldsymbol{u}) &= |(x_0 + t\sin\theta\cos\varphi) + (y_0 + t\sin\theta\sin\varphi) + (z_0 + t\cos\theta)| \\
+            &= |t||\sin\theta\cos\varphi + \sin\theta\sin\varphi + \cos\theta|.    
+        \end{align*}
+        由方向导数的定义, 则有
+        \[
+            \lim_{t\to0}\frac{f(\boldsymbol{p}_0 + t\boldsymbol{u}) - f(\boldsymbol{p}_0)}{t}
+            =
+            \lim_{t\to0}\frac{|t||\sin\theta\cos\varphi + \sin\theta\sin\varphi + \cos\theta|}{t}.    
+        \]
+        要使上面的极限存在, 那么 $|\sin\theta\cos\varphi + \sin\theta\sin\varphi + \cos\theta| = 0$. 解得
+        \[
+            \theta = \frac{\pi}{2}, \varphi = \frac{3\pi}{4}\ \text{或}\ \theta = \frac{\pi}{2}, \varphi = \frac{7\pi}{4}.    
+        \]
+        那么方向则为
+        \[
+            \left(-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, 0\right), \left(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}, 0\right).    
+        \]
     \item % 5
         \begin{enumerate}[(1)]
             \item % 5.1
@@ -68,4 +96,4 @@
                 $\dfrac{\partial{u}}{\partial{x_i}} = \dfrac{2x_i}{\sqrt{1 - (x_1^2 + x_2^2 + \cdots + x_n^2)^2}}$.
         \end{enumerate}
 \end{enumerate}
-\end{document}
+% \end{document}
