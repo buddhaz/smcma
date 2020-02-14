@@ -6,12 +6,43 @@
 \usepackage{enumerate}
 \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
 \usepackage{multicol}
+\newcommand{\diff}{\mathrm{d}}
 \begin{document}
 \begin{enumerate}
     \item % 1
     \item % 2
     \item % 3
+        {\heiti 证明}\quad 任取 $\boldsymbol{x} = (x_1, x_2), \boldsymbol{h} = (h_1, h_2) \in \mathrm{R}^2$, 则有
+        \begin{align*}
+            f(\boldsymbol{x} + \boldsymbol{h}) - f(\boldsymbol{x}) &= (x_1 + h_1)(x_2 + h_2) - x_1x_2 \\
+            &= x_1h_2 + x_2h_1 + h_1h_2 \\
+            &= \lambda_1h_1 + \lambda_2h_2 + h_1h_2 \\
+            &= \sum_{i=1}^2\lambda_ih_i + h_1h_2,   
+        \end{align*}
+        其中 $\lambda_1 = x_2$, $\lambda_2 = x_1$. 只需证明 $h_1h_2 = o(\|\boldsymbol{h}\|)\ (\|\boldsymbol{h}\|\to0)$ 即可, 即证明如下极限:
+        \[
+            \lim_{\|\boldsymbol{h}\|\to0}\frac{h_1h_2}{\|\boldsymbol{h}\|} = \lim_{(h_1, h_2) \to (0, 0)}\frac{h_1h_2}{\sqrt{h_1^2 + h_2^2}} = 0.    
+        \]
+        对任意的 $\varepsilon > 0$, 取 $\delta = \varepsilon$, 当 $0 < |\|\boldsymbol{h}\| - 0| = \sqrt{h_1^2 + h_2^2} < \delta$ 时, 则有
+        \[
+            \left| \frac{h_1h_2}{\sqrt{h_1^2+h_2^2}} - 0 \right| = \frac{|h_1||h_2|}{\sqrt{h_1^2+h_2^2}} \leqslant \sqrt{h_1^2 + h_2^2} < \delta = \varepsilon.   
+        \]
+        因此便有
+        \[
+            f(\boldsymbol{x} + \boldsymbol{h}) - f(\boldsymbol{x}) = \sum_{i=1}^2\lambda_ih_i + o(\|\boldsymbol{h}\|)\quad (\|\boldsymbol{h}\| \to 0).
+        \]
+        这样便证明了 $f(x, y) = xy$ 在 $\mathrm{R}^2$ 上每一点可微.
     \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                $\diff{f(1, 2)} = 6\diff{x} - 2\diff{y}$;
+            \item % 4.2
+                $\diff{f(1, 2, 1)} = (1/2 + e^3\sin1)\diff x + (1/2 + e^3\sin1)\diff y + (-1/2 + e^3\cos1)\diff z$;
+            \item % 4.3
+                $\diff f(t_1, t_2, \cdots, t_n) = \displaystyle{\sum_{i=1}^n}\frac{t_i}{\sqrt{t_1^2 + t_2^2 + \cdots + t_n^2}}\diff x_i$;
+            \item % 4.4
+                $\diff f(x_1, x_2, \cdots, x_n) = \cos(x_1 + x_2^2 + \cdots + x_n^n)\displaystyle{\sum_{i=1}^nix_i^{i-1}\diff x_i}$.
+        \end{enumerate}
     \item % 5
         \begin{enumerate}[(1)]
             \item % 5.1
