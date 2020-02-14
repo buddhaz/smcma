@@ -1,0 +1,71 @@
+% @author Shuning Zhang
+% @date 2019-02-14
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+    \item % 2
+    \item % 3
+    \item % 4
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+                $\dfrac{\partial{f}}{\partial{x}}(0,1) = 2$,
+                $\dfrac{\partial{f}}{\partial{y}}(0,1) = 2$,
+                $\dfrac{\partial{f}}{\partial{x}}(1,2) = \dfrac{5 + \sqrt{5}}{5}$,
+                $\dfrac{\partial{f}}{\partial{y}}(1,2) = \dfrac{5 + 2\sqrt{5}}{5}$;
+            \item % 5.2
+                $\dfrac{\partial{f}}{\partial{x}}(1,2) = \dfrac23$,
+                $\dfrac{\partial{f}}{\partial{y}}(1,2) = \dfrac13$;
+            \item % 5.3
+                $\dfrac{\partial{f}}{\partial{x}}(1,1) = e^2 + 2\cos{1}$,
+                $\dfrac{\partial{f}}{\partial{y}}(1,1) = 2e^2 + \cos{1}$.
+        \end{enumerate}
+    \item % 6
+        \begin{enumerate}[(1)]
+            \item % 6.1
+                $\dfrac{\partial{z}}{\partial{x}} = y + \dfrac1y$,
+                $\dfrac{\partial{z}}{\partial{y}} = x - \dfrac{x}{y^2}$;
+            \item % 6.2
+                $\dfrac{\partial{z}}{\partial{x}} = \dfrac{2x}{y}\sec^2\dfrac{x^2}{y}$,
+                $\dfrac{\partial{z}}{\partial{y}} = -\dfrac{x^2}{y^2}\sec^2\dfrac{x^2}{y}$;
+            \item % 6.3
+                $\dfrac{\partial{z}}{\partial{x}} = yx^{y-1}$,
+                $\dfrac{\partial{z}}{\partial{y}} = x^y\ln{x}$;
+            \item % 6.4
+                $\dfrac{\partial{z}}{\partial{x}} = \dfrac{1}{x + y^2}$,
+                $\dfrac{\partial{z}}{\partial{y}} = \dfrac{2y}{x + y^2}$;
+            \item % 6.5
+                $\dfrac{\partial{z}}{\partial{x}} = -\dfrac{y}{x^2 + y^2}$,
+                $\dfrac{\partial{z}}{\partial{y}} = \dfrac{x}{x^2 + y^2}$;
+            \item % 6.6
+                $\dfrac{\partial{z}}{\partial{x}} = y\cos{xy}$,
+                $\dfrac{\partial{z}}{\partial{y}} = x\cos{xy}$;
+            \item % 6.7
+                $\dfrac{\partial{u}}{\partial{x}} = (3x^2+y^2+z^2)e^{x(x^2+y^2+z^2)}$,
+                $\dfrac{\partial{u}}{\partial{y}} = 2xye^{x(x^2+y^2+z^2)}$,
+                $\dfrac{\partial{u}}{\partial{z}} = 2xze^{x(x^2+y^2+z^2)}$;
+            \item % 6.8
+                $\dfrac{\partial{u}}{\partial{x}}=yze^{xyz}$,
+                $\dfrac{\partial{u}}{\partial{y}}=xze^{xyz}$,
+                $\dfrac{\partial{u}}{\partial{z}}=xye^{xyz}$;
+            \item % 6.9
+                $\dfrac{\partial{u}}{\partial{x}} = (yz)x^{yz-1}$,
+                $\dfrac{\partial{u}}{\partial{y}} = (z\ln{x})x^{yz}$,
+                $\dfrac{\partial{u}}{\partial{z}} = (y\ln{x})x^{yz}$;
+            \item % 6.10
+                $\dfrac{\partial{u}}{\partial{x}} = \dfrac{1}{x+y^2+z^3}$,
+                $\dfrac{\partial{u}}{\partial{y}} = \dfrac{2y}{x+y^2+z^3}$,
+                $\dfrac{\partial{u}}{\partial{z}} = \dfrac{3z^2}{x+y^2+z^3}$;
+            \item % 6.11
+                $\dfrac{\partial{u}}{\partial{x_i}} = \dfrac{1}{x_1 + x_2 + \cdots + x_n}$;
+            \item % 6.12
+                $\dfrac{\partial{u}}{\partial{x_i}} = \dfrac{2x_i}{\sqrt{1 - (x_1^2 + x_2^2 + \cdots + x_n^2)^2}}$.
+        \end{enumerate}
+\end{enumerate}
+\end{document}
