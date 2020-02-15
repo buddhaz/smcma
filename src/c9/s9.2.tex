@@ -1,13 +1,13 @@
-% @author Shuning Zhang
-% @date 2019-02-14
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\newcommand{\diff}{\mathrm{d}}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2019-02-14
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \newcommand{\diff}{\mathrm{d}}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         {\heiti 证明}\quad 先证明 $f(\boldsymbol{x})$ 在 $(0, 0)$ 各个方向 $(\cos\theta, \sin\theta)$ 的方向导数都存在. 根据方向导数的定义, 则有
@@ -24,6 +24,14 @@
         \end{gather*}
         因此 $f(\boldsymbol{x})$ 在 $(0, 0)$ 不连续, 故不可微.
     \item % 2
+        {\heiti 证明}\quad 根据微分的定义, 那么
+        \[
+            f(\boldsymbol{0} + \boldsymbol{h}) - f(\boldsymbol{x}) = \sqrt{|h_1h_2|},    
+        \] 那么
+        \[
+            \lim_{\|\boldsymbol{h}\|\to0}\frac{\sqrt{|h_1h_2|}}{\|\boldsymbol{h}\|} = \lim_{(h_1,h_2)\to(0,0)}\sqrt{\frac{|h_1h_2|}{x^2+y^2}},   
+        \]
+        由 8.2 节的例 2 可知上述极限不存在, 因此 $\sqrt{|h_1h_2|} \neq o(\|\boldsymbol{h}\|)\ (\|\boldsymbol{h}\|\to0)$, 所以 $f(\boldsymbol{x})$ 在 $(0,0)$ 不可微.
     \item % 3
         {\heiti 证明}\quad 任取 $\boldsymbol{x} = (x_1, x_2), \boldsymbol{h} = (h_1, h_2) \in \mathrm{R}^2$, 则有
         \begin{align*}
@@ -96,4 +104,4 @@
         \]
         因此 $\frac{\partial f}{\partial x}$ 在 $(0, 0)$ 处的极限不存在, 故不连续.
 \end{enumerate}
-\end{document}
+% \end{document}
