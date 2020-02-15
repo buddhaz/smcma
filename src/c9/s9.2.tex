@@ -10,6 +10,19 @@
 \begin{document}
 \begin{enumerate}
     \item % 1
+        {\heiti 证明}\quad 先证明 $f(\boldsymbol{x})$ 在 $(0, 0)$ 各个方向 $(\cos\theta, \sin\theta)$ 的方向导数都存在. 根据方向导数的定义, 则有
+        \[
+            \lim_{t \to 0}\frac{f(\boldsymbol{0} + t\boldsymbol{u}) - f(\boldsymbol{0})}{t} = \lim_{t\to 0}\frac{t\sin\theta\cos^2\theta}{\sin^2\theta + t^2\cos^2\theta} = 0,    
+        \]
+        即 $f(\boldsymbol{x})$ 在 $(0, 0)$ 处各方向导数为 0.
+
+        再证明 $f(\boldsymbol{x})$ 在 $(0, 0)$ 处不可微, 证明 $f(\boldsymbol{x})$ 不连续即可. 考虑 $\displaystyle{\left(\frac1i, \frac1i\right)}$ 和 $\displaystyle{\left(\frac1i, \frac{1}{i^2}\right)}$ 两个点列.
+        则有
+        \begin{gather*}
+            \lim_{i\to\infty}\frac{\frac{1}{i^3}}{\frac{1}{i^4} + \frac{1}{i^2}} = 0, \\
+            \lim_{i\to\infty}\frac{\frac{1}{i^4}}{\frac{1}{i^4} + \frac{1}{i^4}} = \frac12.   
+        \end{gather*}
+        因此 $f(\boldsymbol{x})$ 在 $(0, 0)$ 不连续, 故不可微.
     \item % 2
     \item % 3
         {\heiti 证明}\quad 任取 $\boldsymbol{x} = (x_1, x_2), \boldsymbol{h} = (h_1, h_2) \in \mathrm{R}^2$, 则有
@@ -59,5 +72,28 @@
                 $\dfrac{1}{\|\boldsymbol{x}\|}(x_1, x_2, \cdots, x_n)$.
         \end{enumerate}
     \item % 6
+        {\heiti 证明}\quad 先证明 $f(\boldsymbol{x})$ 在 $\boldsymbol{0} = (0,0)$ 处可微. 根据微分的定义, 那么
+        \begin{align*}
+            f(\boldsymbol{0} - \boldsymbol{h}) - f(\boldsymbol{0}) &= (h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2} \\
+            &= 0h_1 + 0h_2 + (h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2} \\
+            &= \sum_{i=1}^2\lambda_ih_i + (h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2},   
+        \end{align*}
+        其中 $\lambda_1 = \lambda_2 = 0$. 只需证明 $(h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2} = o(\|\boldsymbol{h}\|)\ (\|\boldsymbol{h}\|\to0)$ 即可.
+        对任意的 $\varepsilon > 0$, 取 $\delta = \varepsilon$, 当 $0 < |\|\boldsymbol{h}\| - 0| = \|\boldsymbol{h}\| = \sqrt{h_1^2 + h_2^2} < \delta = \varepsilon$, 则有
+        \begin{align*}
+            \left| \frac{(h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2}}{\|\boldsymbol{h}\|} - 0 \right| &= \frac{(h_1^2 + h_2^2)|\sin\frac{1}{h_1^2 + h_2^2}|}{\sqrt{h_1^2 + h_2^2}} \\
+            &\leqslant \sqrt{h_1^2 + h_2^2} < \delta = \varepsilon.    
+        \end{align*}
+        这样便证明 $(h_1^2 + h_2^2)\sin\frac{1}{h_1^2 + h_2^2} = o(\|\boldsymbol{h}\|)\ (\|\boldsymbol{h}\|\to0)$.
+
+        证明 $\frac{\partial f}{\partial x}$ 在 $(0, 0)$ 处不连续即可, 另一个同理. 先求出偏导数, 则有
+        \[
+            \frac{\partial f}{\partial x} = 2x\left(\sin\frac{1}{x^2+y^2} - \frac{1}{x^2+y^2}\cos\frac{1}{x^2+y^2}\right).   
+        \]
+        考虑点列 $\displaystyle{\left(\frac{1}{\sqrt{2k\pi}}, \frac{1}{\sqrt{2k\pi}}\right) \to (0,0)\ (k\to\infty)}$, 那么
+        \[
+            \lim_{k\to\infty} \frac{\partial f}{\partial x}\left(\frac{1}{\sqrt{2k\pi}}, \frac{1}{\sqrt{2k\pi}}\right) = \lim_{k\to\infty}\frac{2}{\sqrt{2k\pi}}((-1)^{k+1}k\pi) = \lim_{k\to\infty}(-1)^{k+1}\sqrt{2k\pi} = +\infty.   
+        \]
+        因此 $\frac{\partial f}{\partial x}$ 在 $(0, 0)$ 处的极限不存在, 故不连续.
 \end{enumerate}
 \end{document}
