@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2019-02-16
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2019-02-16
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{enumerate}[(1)]
@@ -62,15 +62,17 @@
         略.
     \item % 4
         \begin{proof}
-            \[
-                \boldsymbol{f}(t) = \boldsymbol{x} = (x_1, x_2, \cdots, x_n) =
-                \begin{cases}
-                    f_1(t) = x_1, \\
-                    f_2(t) = x_2, \\
-                    \cdots, \\
-                    f_n(t) = x_n
-                \end{cases}    
-            \]
+            \begin{align*}
+                \|\boldsymbol{f}(t)\| = c
+                &\Leftrightarrow
+                f_1^2(t) + f_2^2(t) + \cdots + f_n^2(t) = c^2 \\
+                &\Leftrightarrow
+                2f_1(t)f_1'(t) + 2f_2(t)f_2'(t) + \cdots + 2f_n(t)f_n'(t) = 0 \\
+                &\Leftrightarrow
+                f_1(t)f_1'(t) + f_2(t)f_2'(t) + \cdots + f_n(t)f_n'(t) = 0 \\
+                &\Leftrightarrow
+                <J\boldsymbol{f}, \boldsymbol{f}> = 0. \qedhere
+            \end{align*}
         \end{proof}
     \item % 5
         $\boldsymbol{f}(x, y, z) = \left(\dfrac12\alpha^2(x), \dfrac12\beta^2(y), \dfrac12\gamma^2(z)\right)$.
@@ -126,4 +128,4 @@
             \]
         \end{proof}
 \end{enumerate}
-\end{document}
+% \end{document}
