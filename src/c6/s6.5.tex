@@ -1,0 +1,59 @@
+% % @author Shuning Zhang
+% % @date 2019-02-29
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{proof}
+            已知 $f$ 在 $[a, b]$ 上可积, 对任给的 $\varepsilon > 0$, 必存在 $\delta > 0$, 当 $\|\pi\| < \delta$ 时, 有
+            \[
+                \left| \sum_{i = 1}^nf(\xi_i)\Delta x_i - \int_a^b f\,\mathrm{d}x \right| < \varepsilon.    
+            \]
+            对这个分割 $\pi$, $p$ 取由每个小区间 $f$ 的下确界组成, $q$ 取由每个小区间 $f$ 的上确界组成, 显然有
+            \[
+                p \leq f \leq q.
+            \]
+            由定理 6.5.3 则有
+            \[
+                \lim_{\|\pi\|\to0}\sum_{i=1}^n\omega_i\Delta x_i = \lim_{\|\pi\|\to0}\sum_{i=1}^n(q_i-p_i)\Delta x_i= 0.   
+            \]
+            这正是
+            \[
+                \int_a^b(q(x) - p(x))\,\mathrm{d}x < \varepsilon. \qedhere   
+            \]
+        \end{proof}
+    \item % 2
+        {\color{red}unfinished}\begin{proof}
+            若 $f$ 是 $[a, b]$ 上的连续函数, 记 $p = f - \varepsilon/3(b-a)$, $q = f + \varepsilon/3(b-a)$, 显然
+            \[
+                p \leq f \leq q.    
+            \]
+            而且
+            \[
+                \int_a^b (q - p)\,\mathrm{d}x = \frac{2\varepsilon}{3(b-a)}\int_a^b\,\mathrm{d}x = \frac23\varepsilon < \varepsilon. \qedhere   
+            \]
+        \end{proof}
+    \item % 3
+        提示: 洛必达法则.
+    \item % 4
+        \begin{proof}
+            对区间 $[a, b]$ 作分割, 记每个小区间的上确界为 $M_i$, 则有
+            \[
+                \sum_{i=1}^n\sigma\Delta x_i \leq \sum_{i=1}^nM_i\Delta_i,    
+            \]
+            不等式的左边即是 $\sigma(b-a)$, 考察右边的和式, 由定理 6.5.2 即可得
+            \[
+                \lim_{\|\pi\|\to0}\sum_{i=1}^nM_i\Delta_i = \overline{I}.   
+            \]
+            而 $f$ 又是 $[a, b]$ 上的可积函数, 再由定理 6.5.3 可知 $\overline{I} = I$, 即
+            \[
+                \int_a^b f(x)\,\mathrm{d}x = I \geq \sigma(b - a). \qedhere    
+            \]
+        \end{proof}
+\end{enumerate}
+% \end{document}
