@@ -1,0 +1,65 @@
+% @author Shuning Zhang
+% @date 2019-03-10
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{proof}
+            点列 $\{\boldsymbol{p}_n\}$ 有极限, 即对任意的 $\varepsilon > 0$, 存在 $N > 0$, 当 $n > N$ 时, 有
+            \[
+                \|\boldsymbol{p}_n - \boldsymbol{l}\| < \varepsilon.    
+            \]
+            对于 $\{\boldsymbol{p}_1,\cdots,\boldsymbol{p}_N\}$ 这些点组成一个有限集, 因此是一个零面积集.
+            对于 $n>N$ 的点, 显然落入开圆 $N_\varepsilon(\boldsymbol{l})$, 且开圆的面积是任意小的.
+            因此所有的 $\boldsymbol{p}_n$ 组成一个零面积集. 
+        \end{proof}
+    \item % 2
+        \begin{proof}
+            $B$ 可以分解为 $B$ 的部分零聚点和 $B$ 的孤立点的并, 而 $B$ 有界, 故 $B$ 的孤立点是一个至多可数集, 即零面积集. 又 $B'$ 也是零面积集,
+            因此 $\bar{B} = B \cup B'$, 也是零面积集.
+        \end{proof}
+    \item % 3
+        \begin{proof}
+            $[0, 1]^2$ 上的有理点是一个可数集, 可数集是零测集.
+        \end{proof}
+    \item % 4
+        \begin{proof}
+            $f$ 在 $I$ 上可积, 即 $f$ 在 $I$ 上的 $D(f)$ 是一个零测集. 又 $J \subset I$, 故 $f$ 在 $J$ 上的 $D(f)$ 是 $I$ 上的 $D(f)$ 的子集,
+            即 $f$ 在 $J$ 上的 $D(f)$ 也是零测集. 因此 $f$ 在 $J$ 上也可积.
+        \end{proof}
+    \item % 5
+        \begin{proof}
+            $I$ 不是零面积集, 根据定理 10.2.3 即可知 $\displaystyle{\int_I f\,\mathrm{d}\sigma > 0}$.
+        \end{proof}
+    \item % 6
+        提示: 运用定理 10.2.4.
+    \item % 7
+        \begin{proof}
+            由 $f$ 的定义可知 $f$ 在 $I \setminus B$ 上连续, 在 $B$ 上不连续, 又 $B$ 是一个可数集, 即 $B$ 是一个零测集, 因此 $f$ 在 $I$ 上可积.
+        \end{proof}
+    \item % 8
+        \begin{proof}
+            因为 $D(fg) \subset D(f) \cup D(g)$, 所以 $fg$ 在 $I$ 上也可积. 同理 $f/g$ 也在 $I$ 上可积.
+        \end{proof}
+    \item % 9
+        \begin{proof}
+            因为 $D(|f|) \subset D(f)$, 因此 $|f|$ 在 $I$ 上也可积. 因为
+            \[
+                -|f| \leq f \leq |f|,    
+            \]
+            故
+            \[
+                -\int_I|f|\,\mathrm{d}\sigma \leq \int_I f \,\mathrm{d}\sigma \leq \int_I|f|\,\mathrm{d}\sigma.    
+            \]
+            合起来便是
+            \[
+                \left|\int_If\,\mathrm{d}\sigma\right| \leq \int_I|f|\,\mathrm{d}\sigma. \qedhere    
+            \]
+        \end{proof}
+\end{enumerate}
+\end{document}
