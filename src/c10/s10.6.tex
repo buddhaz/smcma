@@ -1,0 +1,59 @@
+% @author Shuning Zhang
+% @date 2019-03-14
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{multicols}{2}
+            \begin{enumerate}[(1)]
+                \item % 1.1
+                    $0$;
+                \item % 1.2
+            \end{enumerate}
+        \end{multicols}
+    \item % 2
+    \item % 3
+        \begin{proof}
+            令 $x+y=u$, $-x+y=v$, 那么 $-1 \leq u \leq 1$, $-1 \leq v \leq 1$, 而且
+            \[
+                \left|\frac{\partial(x,y)}{\partial(u,v)}\right| = \frac12.    
+            \]
+            因此
+            \[
+                \iint\limits_{|x|+|y|\leq1}f(x+y)\,\mathrm{d}x\mathrm{d}y = \frac12\int_{-1}^{1}f(u)\,\mathrm{d}u\int_{-1}^1\,\mathrm{d}v = \int_{-1}^{1}f(u)\,\mathrm{d}u.   
+            \]
+            再把积分变元 $u$ 换为 $t$ 即可.
+        \end{proof}
+    \item % 4
+        \begin{proof}
+            令 $xy=u$, $y/x=v$, 那么 $1\leq u\leq 2$, $1 \leq v \leq 4$, 而且
+            \[
+                \left|\frac{\partial(x,y)}{\partial(u,v)}\right| = \frac{1}{2v}.    
+            \]
+            故
+            \[
+                \iint\limits_{D}f(xy)\,\mathrm{d}x\mathrm{d}y = \frac12\int_1^2f(u)\,\mathrm{d}u\int_1^4\frac1v\,\mathrm{d}v = \ln2\int_1^2f(u)\,\mathrm{d}u.    
+            \]
+            再把积分变元 $u$ 换为 $t$ 即可.
+        \end{proof}
+    \item % 5
+        \begin{multicols}{2}
+            \begin{enumerate}[(1)]
+                \item % 5.1
+                    $-6\pi$;
+                \item % 5.2
+                \item % 5.3
+                \item % 5.4
+            \end{enumerate}
+        \end{multicols}
+    \item % 6
+        略.
+    \item % 7
+        $\dfrac{\pi}{6}ab$.
+\end{enumerate}
+\end{document}
