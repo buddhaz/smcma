@@ -1,0 +1,59 @@
+% % @author Shuning Zhang
+% % @date 2020-03-22
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                $2\pi$;
+            \item % 1.2
+                $0$;
+            \item % 1.3
+                $-\dfrac{14}{15}$;
+            \item % 1.4
+                $\dfrac{1}{4}$;
+            \item % 1.5
+                $24$.
+        \end{enumerate}
+    \item % 2
+        {\color{red}remained}
+    \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+                $\dfrac{91}{120}$;
+            \item % 3.2
+                $0$.
+        \end{enumerate}
+    \item % 4
+        $-4$.
+    \item % 5
+        \begin{proof}
+            根据第一型和第二型曲线积分的关系可知
+            \[
+                \int_{\Gamma}\boldsymbol{F} \cdot \mathrm{d}\boldsymbol{r} = \int_{\Gamma} \boldsymbol{F}\cdot \boldsymbol{t}\,\mathrm{d}s.    
+            \]
+            其中 $\|\boldsymbol{F}\cdot\boldsymbol{t}\| = \|\boldsymbol{F}\|$. 又因
+            \[
+                -\|\boldsymbol{F}\| \leq \boldsymbol{F} \leq \|\boldsymbol{F}\|,    
+            \]
+            故
+            \[
+                -\int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s \leq \int_{\Gamma}\boldsymbol{F}\,\mathrm{d}s \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.  
+            \]
+            因此
+            \[
+                \left|\int_{\Gamma}\boldsymbol{F}\,\mathrm{d}s\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.   
+            \]
+            这正是
+            \[
+                \left|\int_{\Gamma}\boldsymbol{F} \cdot \mathrm{d}\boldsymbol{r}\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s. \qedhere
+            \]
+        \end{proof}
+\end{enumerate}
+% \end{document}
