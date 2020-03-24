@@ -38,22 +38,23 @@
             \[
                 \int_{\Gamma}\boldsymbol{F} \cdot \mathrm{d}\boldsymbol{r} = \int_{\Gamma} \boldsymbol{F}\cdot \boldsymbol{t}\,\mathrm{d}s.    
             \]
-            其中 $\|\boldsymbol{F}\cdot\boldsymbol{t}\| = \|\boldsymbol{F}\|$. 又因
+            其中 $\boldsymbol{F}\cdot\boldsymbol{t} = \|\boldsymbol{F}\|\|\boldsymbol{t}\|\cos\theta = \|\boldsymbol{F}\|\cos\theta$. 由此得出
             \[
-                -\|\boldsymbol{F}\| \leq \boldsymbol{F} \leq \|\boldsymbol{F}\|,    
+                -\|\boldsymbol{F}\| \leq \boldsymbol{F}\cdot\boldsymbol{t} \leq \|\boldsymbol{F}\|,    
             \]
-            故
+            进一步, 有
             \[
-                -\int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s \leq \int_{\Gamma}\boldsymbol{F}\,\mathrm{d}s \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.  
+                -\int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s \leq \int_{\Gamma}\boldsymbol{F}\cdot\boldsymbol{t}\,\mathrm{d}s \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.   
             \]
-            因此
+            改为绝对值的形式, 则有
             \[
-                \left|\int_{\Gamma}\boldsymbol{F}\,\mathrm{d}s\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.   
+                \left|\int_{\Gamma}\boldsymbol{F}\cdot\boldsymbol{t}\,\mathrm{d}s\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s.   
             \]
             这正是
             \[
-                \left|\int_{\Gamma}\boldsymbol{F} \cdot \mathrm{d}\boldsymbol{r}\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s. \qedhere
+                \left|\int_{\Gamma}\boldsymbol{F} \cdot \mathrm{d}\boldsymbol{r}\right| \leq \int_{\Gamma}\|\boldsymbol{F}\|\,\mathrm{d}s. \qedhere  
             \]
+            
         \end{proof}
 \end{enumerate}
 % \end{document}
