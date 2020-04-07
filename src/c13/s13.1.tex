@@ -1,0 +1,25 @@
+% @author Shuning Zhang
+% @date 2020-03-31
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{proof}
+            \begin{align*}
+                \nabla\frac{f}{g} &= \left(\frac{\partial}{\partial{x}}\frac{f}{g}, \frac{\partial}{\partial{y}}\frac{f}{g}, \frac{\partial}{\partial{z}}\frac{f}{g}\right) \\
+                &= \frac{1}{g^2}\left(\frac{\partial{f}}{\partial{x}}g - f\frac{\partial{g}}{\partial{x}}, \frac{\partial{f}}{\partial{y}}g - f\frac{\partial{g}}{\partial{y}}, \frac{\partial{f}}{\partial{z}}g - f\frac{\partial{g}}{\partial{z}}\right) \\
+                &= \frac{1}{g^2}\left[g\left(\frac{\partial{f}}{\partial{x}}, \frac{\partial{f}}{\partial{y}}, \frac{\partial{f}}{\partial{z}}\right) - f\left(\frac{\partial{g}}{\partial{x}}, \frac{\partial{g}}{\partial{y}}, \frac{\partial{g}}{\partial{z}}\right)\right] \\
+                &= \frac{1}{g^2}\left(g\nabla{f} - f\nabla{g}\right). \qedhere
+            \end{align*}
+        \end{proof}
+    \item % 2
+    \item 3
+    \item 4
+    \item 5
+\end{enumerate}
+\end{document}
