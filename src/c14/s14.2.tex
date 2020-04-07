@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2020-04-06
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-04-06
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         不能. 举例: $a_n = -1/n$, $b_n = 1/n^2$.
@@ -50,6 +50,17 @@
             那么 $\sum\sqrt{a_na_{n+1}} = 0$, 但显然 $\sum a_n$ 不收敛.
         \end{proof}
     \item % 6
+        \begin{proof}
+            显然有不等式
+            \[
+                \ln(n!) = \ln1 + \ln2 + \cdots + \ln{n} \leq n\ln{n},    
+            \]
+            因此
+            \[
+                \frac{1}{n\ln{n}} < \frac{1}{\ln{n!}},    
+            \]
+            又 $\sum\dfrac{1}{n\ln{n}}$ 可由 Cauchy 积分判别法知道是发散的, 故 $\sum\dfrac{1}{\ln{n!}}$ 也是发散的.
+        \end{proof}
     \item % 7
         \begin{proof}
             因为
@@ -59,6 +70,7 @@
             发散, 故由 Cauchy 积分判别法可知 $\sum\limits_{n=3}^\infty\dfrac{1}{n\ln n\ln\ln n}$ 发散.
         \end{proof}
     \item % 8
+        {\color{red}remained}
     \item % 9
         \begin{proof}
             因为
@@ -120,5 +132,16 @@
             不论此极限趋于 $0$ 还是有限数都可以表明 $\sum\dfrac{a_n}{1 + n^2a_n}$ 收敛.
         \end{proof}
     \item % 12
+        {\color{red}remained}
+        \begin{proof}
+            先证明 $\sum{a_n^{\alpha+\beta}}$ 收敛, 因为
+            \[
+                \lim_{n\to\infty}\frac{a_n^{\alpha+\beta}}{a_n} = \lim_{n\to\infty}a_n^{\alpha+\beta-1} = 0.    
+            \]
+            再证明 $\sum\dfrac{a_n^{\alpha+\beta}}{n^{\alpha+\beta}}$ 收敛, 因为
+            \[
+                \left.\lim_{n\to\infty}\frac{a_n^{\alpha+\beta}}{n^{\alpha+\beta}} \right/ \frac{1}{n^{\alpha+\beta}} = \lim_{n\to\infty}a_n^{\alpha+\beta} = 0. \qedhere    
+            \]
+        \end{proof}
 \end{enumerate}
-\end{document}
+% \end{document}
