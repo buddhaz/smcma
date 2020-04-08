@@ -1,0 +1,65 @@
+% @author Shuning Zhang
+% @date 2020-04-08
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{multicols}{4}
+            \begin{enumerate}[(1)]
+                \item % 1.1
+                    收敛;
+                \item % 1.2
+                    收敛;
+                \item % 1.3
+                \item % 1.4
+                    发散;
+                \item % 1.5
+                    发散;
+                \item % 1.6
+                    收敛;
+                \item % 1.7
+                    收敛;
+                \item % 1.8
+            \end{enumerate}
+        \end{multicols}
+    \item % 2
+    \item % 3
+        \begin{proof}
+            设
+            \[
+                \liminf_{n\to\infty}\frac{a_{n+1}}{a_n} = q > 0.    
+            \]
+            存在 $\varepsilon > 0$, 使得 $q - \varepsilon > 0$, 对这个 $\varepsilon$, 必存在 $N \in \mathrm{N}^*$, 当 $n \geq N$ 时, 有
+            \[
+                q - \varepsilon < \frac{a_{N+1}}{a_N},\ q - \varepsilon < \frac{a_{N+2}}{a_{N+1}},\ \cdots,\ q - \varepsilon < \frac{a_{N+k}}{a_{N+k-1}},    
+            \]
+            将这些不等式乘起来, 则有
+            \[
+                (q - \varepsilon)^k < \frac{a_{N+k}}{a_N},    
+            \]
+            令 $n = N+k$, 那么
+            \[
+                (q - \varepsilon)^{n-N} < \frac{a_n}{a_N},    
+            \]
+            也就是
+            \[
+                \frac{(q - \varepsilon)^n}{(q - \varepsilon)^N}a_N < a_n,    
+            \]
+            两边同时开 $n$ 次方, 再取下极限, 则有
+            \[
+                \liminf_{n\to\infty}\sqrt[n]{a_n} \geq q - \varepsilon.
+            \]
+            再令 $\varepsilon \to 0$, 即可得
+            \[
+                \liminf_{n\to\infty}\sqrt[n]{a_n} \geq \liminf_{n\to\infty}\frac{a_{n+1}}{a_n}. \qedhere    
+            \]
+        \end{proof}
+    \item % 4
+    \item % 5
+\end{enumerate}
+\end{document}
