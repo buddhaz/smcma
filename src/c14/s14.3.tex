@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2020-04-08
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-04-08
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{multicols}{4}
@@ -16,6 +16,7 @@
                 \item % 1.2
                     收敛;
                 \item % 1.3
+                    收敛;
                 \item % 1.4
                     发散;
                 \item % 1.5
@@ -25,9 +26,16 @@
                 \item % 1.7
                     收敛;
                 \item % 1.8
+                    收敛.
             \end{enumerate}
         \end{multicols}
     \item % 2
+        \begin{enumerate}[(1)]
+            \item % 2.1
+                收敛;
+            \item % 2.2
+                $p + q > 1$ 时收敛, $p + q \leq 1$ 时发散.
+        \end{enumerate}
     \item % 3
         \begin{proof}
             设
@@ -60,6 +68,52 @@
             \]
         \end{proof}
     \item % 4
+        \begin{proof}
+            当 $l > 1$ 时. 对任意的 $\varepsilon > 0$, 存在 $N \in \mathrm{N}^*$, 当 $n > N$ 时, 有
+            \[
+                \left|n\left(\frac{a_n}{a_{n+1}} - 1\right) - l\right| < \varepsilon,    
+            \]
+            即
+            \[
+                \frac{a_n}{a_{n+1}} < \frac{l + \varepsilon}{n} + 1.   
+            \]
+            再考虑极限
+            \[
+                \lim_{n\to\infty}\frac{\left(1 + \frac1n\right)^\sigma - 1}{\frac1n} = \sigma,    
+            \]
+            其中 $\sigma > l + \varepsilon > 1$. 当 $n$ 充分大时, 则有
+            \[
+                \left(1 + \frac1n\right)^\sigma > \frac{l + \varepsilon}{n} + 1 > \frac{a_n}{a_{n+1}},    
+            \]
+            也即是
+            \[
+                \frac{a_{n+1}}{a_n} < \frac{\frac{1}{(n+1)^\sigma}}{\frac{1}{n^\sigma}}.    
+            \]
+            故级数 $\sum a_n$ 收敛.
+
+            当 $l < 1$ 时. 当 $n$ 充分大, 则有
+            \[
+                n\left(\frac{a_n}{a_{n+1}} - 1\right) < 1,    
+            \]
+            也就是
+            \[
+                \frac{a_n}{a_{n+1}} < \frac{1}{n} + 1 = \frac{n+1}{n},    
+            \]
+            即
+            \[
+                \frac{a_{n+1}}{a_n} > \frac{n}{n+1} = \frac{\frac{1}{n+1}}{\frac{1}{n}}.    
+            \]
+            当 $n = 1$ 时, 取 $a_n = \frac{1}{n(\ln n)^\alpha}$ 即可 (书中的例子).
+        \end{proof}
     \item % 5
+        考虑
+        \[
+            \frac{a_n}{a_{n+1}} = 1 + \frac{q - p + 1}{n} + o\left(\frac1n\right)    
+        \]
+        当 $p = q$ 时, 即
+        \[
+            \frac{a_n}{a_{n+1}} = 1 + \frac1n + o\left(\frac1n\right) = 1 + \frac1n + \frac{0}{n\ln{n}} + o\left(\frac{1}{n\ln{n}}\right).    
+        \]
+        即 Gauss 判别法中 $\beta = 0$, 故原级数发散.
 \end{enumerate}
-\end{document}
+% \end{document}
