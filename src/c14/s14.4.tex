@@ -1,14 +1,26 @@
-% @author Shuning Zhang
-% @date 2020-04-27
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-04-27
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
+        \begin{multicols}{4}
+            \begin{enumerate}[(1)]
+                \item % 1.1
+                    发散;
+                \item % 1.2
+                    收敛;
+                \item % 1.3
+                    收敛;
+                \item % 1.4
+                    收敛.
+            \end{enumerate}
+        \end{multicols}
     \item % 2
         \begin{proof}
             \begin{align*}
@@ -20,10 +32,12 @@
     \item % 3
         提示: $0 \leq c_n - a_n \leq b_n - a_n$. 若$\sum a_n$, $\sum b_n$ 都发散, 则无法判别 $\sum c_n$ 的敛散性.
     \item % 4
+        {\color{red}remained}
     \item % 5
-        \begin{multicols}{2}
+        \begin{multicols}{4}
             \begin{enumerate}[(1)]
                 \item % 5.1
+                    收敛;
                 \item % 5.2
                     发散;
                 \item % 5.3
@@ -35,6 +49,7 @@
     \item % 6
         提示: Dirichlet 判别法.
     \item % 7
+        {\color{red}remained}
     \item % 8
         \begin{proof}
             已知 $\sum a_k$ 收敛, 即 $\lim\limits_{n\to\infty}\sum\limits_{k=1}^na_k = \lim\limits_{n\to\infty}S_n = l$.
@@ -68,6 +83,15 @@
     \item % 11
         \begin{enumerate}[(1)]
             \item % 11.1
+                对通项进行化简, 有
+                \begin{align*}
+                    \sin(\sqrt{n^2+1}\pi) &= \sin(\sqrt{n^2+1}\pi - n\pi + n\pi) \\
+                    &= \sin(\sqrt{n^2+1}-n)\pi\cos{n\pi} + \cos(\sqrt{n^2+1}-n)\pi\sin{n\pi} \\
+                    &= \sin(\sqrt{n^2+1}-n)\pi\cos{n\pi} \\
+                    &= (-1)^n\sin(\sqrt{n^2+1}-n)\pi \\
+                    &= (-1)^n\sin\frac{\pi}{\sqrt{n^2+1}+n},
+                \end{align*}
+                显然这是一个 Leibniz 级数, 因此 $\sum\sin(\pi\sqrt{n^2+1})$ 收敛.
             \item % 11.2
                 令
                 \[
@@ -85,5 +109,6 @@
                 显然分子分母都是大于 $0$ 的, 即 $a_n > a_{n+1}$, 这便证明了 $a_n$ 单调趋于 $0$.
         \end{enumerate}
     \item % 12
+        {\color{red}remained}
 \end{enumerate}
-\end{document}
+% \end{document}
