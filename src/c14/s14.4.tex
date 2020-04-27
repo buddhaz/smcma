@@ -1,0 +1,89 @@
+% @author Shuning Zhang
+% @date 2020-04-27
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+    \item % 2
+        \begin{proof}
+            \begin{align*}
+                |(-1)^{n}a_{n+1} + \cdots + (-1)^{n+p-1}a_{n+p}| &\leq |a_{n+1}| + \cdots |a_{n+p}| \\
+                &\leq pa_n < p\varepsilon.  
+            \end{align*}
+            利用 $a_n \to 0\ (n \to \infty)$.
+        \end{proof}
+    \item % 3
+        提示: $0 \leq c_n - a_n \leq b_n - a_n$. 若$\sum a_n$, $\sum b_n$ 都发散, 则无法判别 $\sum c_n$ 的敛散性.
+    \item % 4
+    \item % 5
+        \begin{multicols}{2}
+            \begin{enumerate}[(1)]
+                \item % 5.1
+                \item % 5.2
+                    发散;
+                \item % 5.3
+                    收敛;
+                \item % 5.4 
+                    收敛.
+            \end{enumerate}
+        \end{multicols}
+    \item % 6
+        提示: Dirichlet 判别法.
+    \item % 7
+    \item % 8
+        \begin{proof}
+            已知 $\sum a_k$ 收敛, 即 $\lim\limits_{n\to\infty}\sum\limits_{k=1}^na_k = \lim\limits_{n\to\infty}S_n = l$.
+            \begin{align*}
+                \frac{a_1 + 2a_2 + \cdots + na_n}{n} &= \frac1n\left(\sum_{k=1}^na_k \cdot k\right) \\
+                &= \frac1n\left(\sum_{k=1}^{n-1}S_k(k - (k+1)) + S_n\cdot n\right) \\
+                &= -\frac1n\sum_{k=1}^{n-1}S_k + S_n \\
+                &= -\frac{n-1}{n}\frac{1}{n-1}\sum_{k=1}^{n-1}S_k + S_n \\
+                &= S_n - \left(1-\frac1n\right)\frac{S_{1} + S_2 + \cdots + S_{n-1}}{n-1} 
+            \end{align*}
+            令 $n\to\infty$, 显然等式右边趋于 $0$. 这里用到了 $\lim\limits_{n\to\infty}a_n = l$ 有 $\lim\limits_{n\to\infty}\dfrac{a_1 + a_2 + \cdots + a_n}{n} = l$ 这个事实.
+        \end{proof}
+    \item % 9
+        \begin{proof}
+            因为 $\dfrac{a_n}{n^\beta} = \dfrac{1}{n^{\beta-\alpha}}\dfrac{a_n}{n^\alpha}$, 又 $\sum\dfrac{a_n}{n^\alpha}$ 收敛, 根据 Abel 判别法的条件, 只需证明 $\{1/n^{\beta-\alpha}\}$ 单调有界即可.
+            令 $\gamma = \beta - \alpha > 0$, $\dfrac{1}{n^\gamma}\ (\gamma > 0)$ 单调是显然的, 又
+            \[
+                \lim_{n\to\infty}\frac{1}{n^\gamma} = 0,
+            \]
+            由极限的性质 (有极限就有界) 可知 $\{1/n^\gamma\}$ 有界. 因此 $\sum\dfrac{a_n}{n^\beta}$ 收敛.
+        \end{proof}
+    \item % 10
+        \begin{proof}
+            将级数写为
+            \[
+                (\underbrace{a_1+\cdots+a_p}_{p\ \text{项}})-(\underbrace{a_{p+1}+\cdots+a_{2p}}_{p\ \text{项}})+(\underbrace{a_{2p+1}+\cdots+a_{3p}}_{p\ \text{项}})-\cdots,    
+            \]
+            每个括号内的 $p$ 项看作一项, 显然这个级数满足 Leibniz 判别法的条件, 故级数收敛.
+            再根据级数的性质, 括号内的项符号相同, 去掉括号级数也收敛. 因此原级数收敛.
+        \end{proof}
+    \item % 11
+        \begin{enumerate}[(1)]
+            \item % 11.1
+            \item % 11.2
+                令
+                \[
+                    a_n = \frac{1 + \cdots + \frac1n}{n},\ b_n = \sin nx.    
+                \]
+                当 $x = 2k\pi$ 时, $b_n = 0$, 故 $\sum a_nb_n = 0$ 收敛.
+                当 $x \neq 2k\pi$ 时, $\sum_{n=1}^N\sin nx$ 有界, 因此只要 $a_n$ 单调趋于 $0$ 即可满足 Dirichlet 判别法的条件.
+                $a_n$ 趋于 $0$ 是显然的, 现在来证明 $a_n$ 是单调递减的. 考虑 $a_n - a_{n+1}$, 有
+                \begin{align*}
+                    \frac{1 + \cdots + \frac1n}{n} - \frac{1 + \cdots + \frac{1}{n+1}}{n+1} &= \frac{(n+1)(1+\cdots+\frac1n)-n(1+\cdots+\frac{1}{n+1})}{n(n+1)} \\
+                    &= \frac{n(1+\cdots+\frac1n)+(1+\cdots+\frac1n)-n(1+\cdots+\frac1n)-\frac{n}{n+1}}{n(n+1)} \\
+                    &= \frac{(1+\cdots+\frac1n)-\frac{n}{n+1}}{n(n+1)} \\
+                    &= \frac{(1-\frac{1}{n+1})+(\frac12-\frac{1}{n+1})+\cdots+(\frac1n-\frac{1}{n+1})}{n(n+1)}.  
+                \end{align*}
+                显然分子分母都是大于 $0$ 的, 即 $a_n > a_{n+1}$, 这便证明了 $a_n$ 单调趋于 $0$.
+        \end{enumerate}
+    \item % 12
+\end{enumerate}
+\end{document}
