@@ -1,0 +1,43 @@
+% % @author Shuning Zhang
+% % @date 2020-04-29
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{proof}
+            因 $\sum\limits_{n=1}^\infty{q^n}$ 绝对收敛, 按 Cauchy 乘积相加, 则有
+            \begin{align*}
+                c_n &= \sum_{i+j=n+1}a_ib_j = \sum_{i+j=n+1}q^iq^j \\
+                &= \sum_{i+j=n+1}q^{i+j} = \sum_{i+j=n+1}q^{n+1} = nq^{n+1},
+            \end{align*}
+            因此 $\sum\limits_{n=1}^\infty{c_n} = \sum\limits_{n=1}^\infty{nq^{n+1}} = \sum\limits_{n=0}^\infty{(n+1)q^n}$.
+        \end{proof}
+    \item % 2
+        \begin{proof}
+            按 Cauchy 乘积相加, 则有
+            \begin{align*}
+                c_n &= \sum_{k=0}^na_kx^{k}b_{n-k}x^{n-k} \\
+                &= \sum_{k=0}^na_kb_{n-k}x^n = x^n\sum_{k=0}^na_kb_{n-k},
+            \end{align*}
+            因此 $\sum\limits_{n=0}^\infty{c_n} = \sum\limits_{n=0}^\infty\left(\sum\limits_{k=0}^na_kb_{n-k}\right)x^n$.
+        \end{proof}
+    \item % 3  
+        {\color{red}remained}
+        \begin{proof}
+            对 $S(x)$ 和 $C(x)$ 作 Cauchy 乘积, 则有
+            \begin{align*}
+                c_n &= (-1)^nx^{2n+1}\sum_{k=0}^n\frac{1}{k!(2n+1-k)!} \\
+                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!} \\
+                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!}1^{k}1^{2n+1-k} \\
+                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}(1+1)^{2n+1} \\
+                &= (-1)^n\frac{(2x)^{2n+1}}{(2n+1)!}.
+            \end{align*}
+            这正是 $S(2x)$ 的通项, 因此 $S(2x) = 2S(x)C(x)$.
+        \end{proof}
+\end{enumerate}
+% \end{document}
