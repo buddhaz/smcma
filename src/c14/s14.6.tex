@@ -26,14 +26,13 @@
             \end{align*}
             因此 $\sum\limits_{n=0}^\infty{c_n} = \sum\limits_{n=0}^\infty\left(\sum\limits_{k=0}^na_kb_{n-k}\right)x^n$.
         \end{proof}
-    \item % 3  
-        {\color{red}remained}
+    \item % 3
         \begin{proof}
-            对 $S(x)$ 和 $C(x)$ 作 Cauchy 乘积, 则有
+            考虑 $2S(x)C(x)$ 的 Cauchy 乘积, 则有
             \begin{align*}
-                c_n &= (-1)^nx^{2n+1}\sum_{k=0}^n\frac{1}{k!(2n+1-k)!} \\
-                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!} \\
-                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!}1^{k}1^{2n+1-k} \\
+                2c_n &= 2(-1)^nx^{2n+1}\sum_{k=0}^n\frac{1}{k!(2n+1-k)!} \\
+                &= 2(-1)^n\frac{x^{2n+1}}{(2n+1)!}\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!} \\
+                &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}2\left(\sum_{k=0}^n\frac{(2n+1)!}{k!(2n+1-k)!}1^{k}1^{2n+1-k}\right) \\
                 &= (-1)^n\frac{x^{2n+1}}{(2n+1)!}(1+1)^{2n+1} \\
                 &= (-1)^n\frac{(2x)^{2n+1}}{(2n+1)!}.
             \end{align*}
