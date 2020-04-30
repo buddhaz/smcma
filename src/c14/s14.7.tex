@@ -1,0 +1,61 @@
+% % @author Shuning Zhang
+% % @date 2020-04-30
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+    \item % 2
+    \item % 3
+        \begin{enumerate}[(1)]
+            \item % 3.1
+                \begin{proof}
+                    对通项进行化简, 有
+                    \begin{align*}
+                        a_n &= \frac{4n^2 - 1}{4n^2} \\
+                        &= \frac{(2n+1)(2n-1)}{(2n)^2} \\
+                        &= \left(\frac{(2n)^2}{(2n-1)(2n+1)}\right)^{-1},
+                    \end{align*}
+                    这正是 Wallis 公式通项的倒数.
+                \end{proof}
+            \item % 3.2
+                \begin{proof}
+                    在等式的两边同时乘以 $2$, 则有
+                    \begin{align*}
+                        2\prod_{n=1}^\infty\left(1-\frac{1}{(2n+1)^2}\right) &= 2\prod_{n=1}^\infty\frac{(2n+1)^2-1}{(2n+1)^2} \\
+                        &= 2\prod_{n=1}^\infty\frac{4n^2+4n}{(2n+1)^2} \\
+                        &= 2\prod_{n=1}^\infty\frac{(2n)(2n+2)}{(2n+1)^2} \\
+                        &= 2\prod_{n=1}^\infty\frac{2n}{2n+1}\frac{2n+2}{2n+1} \\
+                        &= 2\left(\frac23\cdot\frac43\right)\left(\frac45\cdot\frac65\right)\cdots \\
+                        &= \left(2\cdot\frac23\right)\left(\frac43\cdot\frac45\right)\left(\frac65\cdot\frac67\right)\cdots
+                    \end{align*}
+                    这正是 Wallis 公式的展开.
+                \end{proof}
+        \end{enumerate}
+    \item % 4
+        \begin{enumerate}[(1)]
+            \item % 4.1
+                发散, 因为 $\lim\limits_{n\to\infty}1/n = 0 \neq 1$.
+            \item % 4.2
+                \begin{align*}
+                    \lim_{N\to\infty}\prod_{n=1}^N\frac{(n+1)^2}{n(n+2)} &= \lim_{N\to\infty}\left(\frac21\cdot\frac23\right)\left(\frac32\cdot\frac34\right)\cdots\left(\frac{N+1}{N}\cdot\frac{N+1}{N+2}\right) \\
+                    &= 2\lim_{N\to\infty}\frac{N+1}{N+2} = 2,  
+                \end{align*}
+                因此级数收敛.
+            \item % 4.3
+                考察 $\sum\limits_{k=1}^\infty\dfrac1k\ln\left(1+\dfrac1k\right)$ 的敛散性. 因
+                \[
+                    \sum_{k=1}^\infty\frac1k\ln\left(1+\frac1k\right) = \sum_{k=1}^\infty\dfrac{1}{k^2}\ln\left(1+\frac1k\right)^k,
+                \]
+                又 $\sum\dfrac{1}{k^2}$ 收敛, $\left\{\ln\left(1+\dfrac1k\right)^k\right\}$ 单调有界 (极限为 $1$), 由 Abel 判别法可知级数收敛.
+                因此 $\prod\sqrt[n]{1+\dfrac1k}$ 收敛.
+        \end{enumerate}
+    \item % 5
+    \item % 6
+    \item % 7
+\end{enumerate}
+% \end{document}
