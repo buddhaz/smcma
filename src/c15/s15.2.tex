@@ -1,0 +1,114 @@
+% @author Shuning Zhang
+% @date 2020-05-03
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1
+                显然 $f_n(x)$ 的极限函数 $f(x) = 0$. 当 $x\in(0, +\infty)$ 时, 有
+                \[
+                    \beta_n \geq \left| f_n\left(\frac1n\right) - f\left(\frac1n\right) \right| = \frac12.   
+                \]
+                当 $x \in (\lambda, +\infty)$ 时, 有
+                \[
+                    \left| f_n(x) - f(x) \right| = \frac{1}{1+nx} < \frac{1}{1+n\lambda} < \frac{1}{n\lambda} < \varepsilon.    
+                \]
+                因此只要 $n > \left[\dfrac{1}{\lambda\varepsilon}\right]$ 即可.
+            \item % 2
+                当 $0 \leq x \leq 1 - \lambda$ 时, 显然极限函数 $f(x) = 0$, 那么
+                \[
+                    \beta_n \geq |f_n(\sqrt[n]{1-\lambda}) - f(\sqrt[n]{1-\lambda})| = \frac{1-\lambda}{2-\lambda} \not\to 0.
+                \]
+                
+                当 $1-\lambda \leq x \leq 1+\lambda$ 时, 若 $\lambda = 0$ 或者 $\lambda = 1$, 函数列不收敛. 若 $0 < \lambda < 1$, 取 $x_0 = 1$,
+                显然 $1-\lambda < x_0 < 1 + \lambda$, 然而 $\{f_n(x_0)\}$ 不收敛. 因此函数列在 $[1-\lambda, 1+\lambda]$ 上不收敛.
+
+                当 $1+\lambda \leq x < +\infty$ 时, 其极限函数为 $f(x) = 1$. 那么
+                \begin{align*}
+                    \left|\frac{x^n}{1+x^n} - 1\right| = \frac{1}{1+x^n} \leq \frac{1}{1+(1+\lambda)^n} < \frac{1}{(1+\lambda)^n} < \varepsilon.
+                \end{align*}
+                只要 $n > \left[\dfrac{\ln(1/\varepsilon)}{\ln(1+\lambda)}\right]$ 即可. 因此在 $[1+\lambda, +\infty)$ 上函数列收敛.
+            \item % 3
+                {\color{red}remained}
+        \end{enumerate}
+    \item % 2
+        \begin{enumerate}[(1)]
+            \item % 1
+                根据 Cauchy 收敛原理, 则有
+                \begin{align*}
+                    \left| \sum_{k=n+1}^{n+p}\left(\frac{1}{x+k} - \frac{1}{x+k+1}\right) \right| &= \left|\frac{1}{x+n+1} - \frac{1}{x+n+p+1}\right| \\
+                    &= \frac{p}{(x+n+1)(x+n+p+1)} \\
+                    &< \frac{p}{(x+n)^2} = \frac{p}{n^2 + 2nx + x^2} \\
+                    &< \frac{p}{n^2} < \varepsilon.
+                \end{align*}
+                只要 $n > [\sqrt{p/\varepsilon}]$ 即可.
+            \item % 2
+            \item % 3
+            \item % 4
+                根据 Weierstrass 判别法, 则有
+                \[
+                    |f_n(x)| = \left| \frac{\sin(n+1/2)x}{\sqrt[3]{n^4+x^4}} \right| \leq \frac{1}{\sqrt[3]{n^4+x^4}} \leq \frac{1}{\sqrt[3]{n^4}}.    
+                \]
+                已知 $\sum\dfrac{1}{\sqrt[3]{n^4}}$ 收敛, 故 $\sum{f_n(x)}$ 在 $(-\infty, +\infty)$ 上一致收敛.
+            \item % 5
+            \item % 6
+                令 $a_n(x) = (-1)^n$, $b_n(x) = \dfrac{1}{n+\sin{x}}$, 显然部分和 $\sum{a_n(x)}$ 在 $[0, 2\pi]$ 上一致有界,
+                又 $\{b_n(x)\}$ 对固定的 $x$ 是单调的, 且一致趋于 $0$. 由 Dirichlet 判别法可知 $\sum{a_n(x)b_n(x)}$ 一致收敛.
+            \item % 7
+        \end{enumerate}
+    \item % 3
+        \begin{proof}
+            因 $1 \leq e^x\ (x \in [0, +\infty))$, 故 $0 < 1/e^x \leq 1$, 因此 $(1/e^x)^n$ 单调且一致有界.
+            由 Abel 判别法可知 $\sum{a_ne^{-nx}}$ 一致收敛.
+        \end{proof}
+    \item % 4
+        \begin{proof}
+            因 $u_n(x)$ 是 $[a, b]$ 上的单调函数, 故 $u_n(a)$ 或 $u_n(b)$ 是 $[a, b]$ 上的最大值, 不妨设 $u_n(a)$ 为其最大值.
+            已知 $\sum{u_n(a)}$ 绝对收敛, 由 Cauchy 收敛原理, 有
+            \begin{align*}
+                |u_{n+1}(x) + \cdots + u_{n+p}(x)| &\leq |u_{n+1}(x)| + \cdots + |u_{n+p}(x)| \\
+                &\leq |u_{n+1}(a)| + \cdots + |u_{n+p}(a)| \\
+                &< \varepsilon.
+            \end{align*}
+            因此 $\sum{u_n(x)}$ 绝对且一致收敛.
+        \end{proof}
+    \item % 5
+        {\color{red}remained}
+        \begin{proof}
+            当 $x=0$ 或 $x=1$ 时, 级数显然收敛. 当 $0 < x < 1$ 时, 有 $\sum|f_n(x)| = (1-x)\sum{x^n}$ 显然收敛.
+            故级数绝对收敛.
+            
+            再考察其一致收敛性, 令 $a_n(x) = (-1)^n$, $b_n(x) = x^n(1-x)$, 部分和 $\sum a_n(x)$ 显然有界. 对固定的 $x$, 数列 $\{x^n(1-x)\}$ 显然是单调的,
+            通过 $b'_n(x) = 0$ 可知 $b_n(x)$ 在 $x_0 = \dfrac{n}{n+1}$ 取得最大值, 即
+            \[
+                b_n(x) \leq b_n\left(\frac{n}{n+1}\right) = \left(1+\frac1n\right)^{-n}\left(\frac{1}{n+1}\right) \to 0.    
+            \]
+            因此 $b_n(x)$ 是一致趋于 $0$ 的, 由 Dirichlet 判别法可知 $\sum(-1)^nx^n(1-x)$ 一致收敛.
+
+            再证明 $\sum\limits_{n=0}^\infty x^n(1-x)$ 在 $(0, 1)$ 上非一致收敛.
+        \end{proof}
+    \item % 6
+    \item % 7
+    \item % 8
+        \begin{proof}
+            充分性. 因
+            \[
+                |f_n(x)| = |a_n\cos{nx}| \leq |a_n| = a_n,    
+            \]
+            又 $\sum{a_n}$ 收敛, 故由 Weierstrass 判别法可知 $\sum{a_n\cos{nx}}$ 一致收敛.
+
+            必要性. 用反证法. 若 $\sum{a_n}$ 发散, 又
+        \end{proof}
+    \item % 9
+    \item % 10
+    \item % 11
+    \item % 12
+    \item % 13
+\end{enumerate}
+\end{document}
