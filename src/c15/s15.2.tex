@@ -1,12 +1,12 @@
-% @author Shuning Zhang
-% @date 2020-05-03
-\documentclass[a4paper, 11pt]{ctexart}
-\usepackage{amsfonts, amsmath, amssymb, amsthm}
-\usepackage{color}
-\usepackage{enumerate}
-\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
-\usepackage{multicol}
-\begin{document}
+% % @author Shuning Zhang
+% % @date 2020-05-03
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
 \begin{enumerate}
     \item % 1
         \begin{enumerate}[(1)]
@@ -61,6 +61,19 @@
                 令 $a_n(x) = (-1)^n$, $b_n(x) = \dfrac{1}{n+\sin{x}}$, 显然部分和 $\sum{a_n(x)}$ 在 $[0, 2\pi]$ 上一致有界,
                 又 $\{b_n(x)\}$ 对固定的 $x$ 是单调的, 且一致趋于 $0$. 由 Dirichlet 判别法可知 $\sum{a_n(x)b_n(x)}$ 一致收敛.
             \item % 7
+                考虑级数的通项, 有
+                \[
+                    \lim_{n\to\infty}2^n\sin\frac{1}{3^nx} = \frac1x\lim_{n\to\infty}\left(\frac23\right)^n\frac{\sin\frac{1}{3^nx}}{\frac{1}{3^nx}} = 0.    
+                \]
+                那么
+                \[
+                    \beta_n \geq |u_n(x) - u(x)| = 2^n\left|\sin\frac{1}{3^nx}\right|,    
+                \]
+                取 $x = \dfrac{2}{3^n\pi}$, 则有
+                \[
+                    \beta_n \geq 2^n \not\to 0,    
+                \]
+                因此通项不能一致趋于 $0$, 由函数项级数一致收敛的必要条件可知 $\sum{2^n\sin\dfrac{1}{3^nx}}$ 在 $(0, +\infty)$ 上不一致收敛.
         \end{enumerate}
     \item % 3
         \begin{proof}
@@ -94,6 +107,27 @@
             再证明 $\sum\limits_{n=0}^\infty x^n(1-x)$ 在 $(0, 1)$ 上非一致收敛.
         \end{proof}
     \item % 6
+        \begin{proof}
+            注意到 $u_n(x)$ 只 $[0, 1]$ 在 $1/n$ 这点取非零值, 其余点都取 $0$, 因此有不等式
+            \[
+                0 \leq u_n(x) \leq \frac1n    
+            \]
+            成立. 根据柯西收敛原理则有
+            \[
+                u_{n+1}(x) + u_{n+2}(x) + \cdots + u_{n+p}(x) \leq \frac{p}{n+p} \leq \frac{p}{n} < \varepsilon,   
+            \]
+            因此只要 $n > \left[\frac{p}{\varepsilon}\right]$ 即能满足上式. 故 $\sum{u_n(x)}$ 一致收敛.
+
+            再考虑 $\sum{u_n(x)}$ 是否存在优级数, 用反证法. 假设 $\sum{u_n(x)}$ 存在优级数, 则有
+            \[
+                u_n(x) \leq a_n    
+            \]
+            对一切 $x \in [0, 1]$ 都成立. 现取 $x = \frac{1}{n}$, 即
+            \[
+                \frac1n = u_n\left(\frac1n\right) \leq a_n.    
+            \]
+            由正项级数的比较判别法可知 $\sum{a_n}$ 发散, 与优级数的定义相悖, 因此级数 $\sum{u_n(x)}$ 不存在优级数. 
+        \end{proof}
     \item % 7
     \item % 8
         \begin{proof}
@@ -103,12 +137,22 @@
             \]
             又 $\sum{a_n}$ 收敛, 故由 Weierstrass 判别法可知 $\sum{a_n\cos{nx}}$ 一致收敛.
 
-            必要性. 用反证法. 若 $\sum{a_n}$ 发散, 又
+            必要性. 级数 $\sum{a_n\cos{nx}}$ 在 $(-\infty, +\infty)$ 上一致收敛, 在 $x = 0$ 这点自然也收敛, 当 $x = 0$ 时, 原级数变为 $\sum{a_n}$, 这正是 $\sum\limits_{n=0}^\infty{a_n} < +\infty$ 
         \end{proof}
     \item % 9
+        \begin{proof}
+            只要 $x$ 不是 $2\pi$ 的整数倍, 由数项级数的 Dirichlet 判别法可知级数 $\sum\dfrac{\cos{nx}}{n\ln{n}}$ 收敛, 因此在 $(0, \pi]$ 上该级数收敛.
+            考虑在 $x = 0$ 这一点, 当 $x = 0$ 时, 原级数即为 $\sum\dfrac{1}{n\ln{n}}$, 由 Cauchy 积分判别法即可知该级数发散. 再由第 7 题的结论, 级数在 $(0, \pi]$ 上每一点收敛,
+            但在 $0$ 这点发散, 因此 $\sum\dfrac{\cos{nx}}{n\ln{n}}$ 在 $(0, \pi]$ 上不一致收敛.
+        \end{proof}
     \item % 10
+        \begin{proof}
+            根据题意, 显然开区间族 $\bigcup\limits_{x\in[a,b]}I_x$ 就是 $[a, b]$ 的一个开覆盖, 且 $\{f_n\}$ 在这个开区间族里的每一个开区间上都一致收敛.
+            根据有限覆盖定理, 可从这个开区间族中选出有限个开区间, 记为 $\bigcup\limits_{i=1}^nI_i$, 且 $[a, b] \subset \bigcup\limits_{i=1}^nI_i$,
+            显然 $\{f_n\}$ 在 $\bigcup\limits_{i=1}^nI_i$ 上一致收敛, 也即是在 $[a, b]$ 上一致收敛.
+        \end{proof}
     \item % 11
     \item % 12
     \item % 13
 \end{enumerate}
-\end{document}
+% \end{document}

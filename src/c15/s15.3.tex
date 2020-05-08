@@ -1,0 +1,78 @@
+% % @author Shuning Zhang
+% % @date 2020-05-08
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        略.
+    \item % 2
+        \begin{proof}
+            考察 $f(x)$ 是否满足定理 15.3.8 的 3 个条件, 显然 $\dfrac{\cos{nx}}{n^4}$ 在 $(-\infty, +\infty)$ 上有连续的导函数.
+            且 $\sum u'(x) = -\sum{\dfrac{\sin{nx}}{n^3}}$ 一致收敛到某个函数, $\sum{\dfrac{\cos{nx}}{n^4}}$ 在 $(-\infty, +\infty)$ 也是一致收敛.
+            那么
+            \[
+                f'(x) = \left(\sum_{n=1}^\infty{\frac{\cos{nx}}{n^3}}\right)' = \sum{u'(x)} = -\sum{\dfrac{\sin{nx}}{n^3}}.   
+            \]
+            同理可得
+            \[
+                f''(x) = -\sum{\frac{\cos{nx}}{n^2}}. \qedhere    
+            \]
+        \end{proof}
+    \item % 3
+        \begin{proof}
+            设 $\delta > 1$, 考虑在 $[\delta, +\infty)$ 上的敛散性, 当 $\delta \leq x$ 时, 有
+            \[
+                \frac{1}{n^x} \leq \frac{1}{n^\delta},    
+            \]
+            由 Weierstrass 判别法可知 $\sum\dfrac{1}{n^x}$ 在 $[\delta, +\infty)$ 上一致收敛.
+            又 $\dfrac{1}{n^x}$ 在 $[\delta, +\infty)$ 上连续, 因此 $\zeta$ 函数在 $[\delta, +\infty)$ 上连续, 也即是在 $(1, +\infty)$ 上连续.
+        \end{proof}
+    \item % 4
+        由例 15.2.6 可知 $\sum{ne^{-nx}}$ 在 $[\ln2, \ln3]$ 上一致收敛, 且 $ne^{-nx}$ 在 $[\ln2, \ln3]$ 上可积, 由定理 15.3.6 可得
+        \[
+            \int_{\ln2}^{\ln3}f(x)\,\mathrm{d}x = \sum_{n=1}^\infty\int_{\ln2}^{\ln3}ne^{-nx}\,\mathrm{d}x = \sum_{n=1}^\infty\left(\frac{1}{2^n} - \frac{1}{3^n}\right) = \frac12.   
+        \]
+    \item % 5
+        \begin{proof}
+            只需证明 $\sum{\dfrac{(-1)^{n-1}}{n^x}}$ 在 $[1, +\infty)$ 上一致收敛即可. 由 Weierstrass 判别法容易证明 $\sum{\dfrac{(-1)^{n-1}}{n^x}}$ 在 $(1, +\infty)$ 上一致收敛.
+            又 $x = 1$ 时, 级数 $\sum{\dfrac{(-1)^{n-1}}{n}}$ 收敛, 故在 $[1, +\infty)$ 上一致收敛. 设级数的和函数为 $f(x)$, 由定理 15.3.2 可知 $f(x)$ 在 $[1, +\infty)$ 上连续, 因此
+            \[
+                \lim_{x\to1}f(x) = f(1) = \ln2. \qedhere    
+            \]
+        \end{proof}
+    \item % 6
+        {\color{red}remained}
+    \item % 7
+        考虑 $f$ 在 $[1, +\infty)$ 上的连续性, 当 $x \geq 1$ 时, 那么
+        \[
+            \left|u_n(x)\right| \leq \left(\frac{x}{1+2x}\right)^n < \left(\frac{x}{2x}\right)^n = \frac{1}{2^n},    
+        \]
+        由 Weierstrass 判别法可知原级数在 $[1, +\infty)$ 上一致收敛, 且级数的每一项都在 $[1, +\infty)$ 上连续, 故和函数 $f$ 也在 $[1, +\infty)$ 上连续, 那么
+        \begin{align*}
+            \lim_{x\to1}f(x) &= f(1) = \sum_{n=1}^\infty(-1)^n\frac{1}{3^n} = \frac34, \\
+            \lim_{x\to+\infty}f(x) &= \lim_{x\to+\infty}\sum_{n=1}^\infty\left(\frac{x}{1+2x}\right)^n\cos\frac{n\pi}{x} \\
+            &= \lim_{x\to+\infty}\left(\lim_{n\to\infty}\sum_{k=1}^n\left(\frac{x}{1+2x}\right)^k\cos\frac{k\pi}{x}\right) \\
+            &= \lim_{n\to\infty}\left(\lim_{x\to+\infty}\sum_{k=1}^n\left(\frac{x}{1+2x}\right)^k\cos\frac{k\pi}{x}\right) \\
+            &= \sum_{n=1}^\infty\frac{1}{2^n} = 2.   
+        \end{align*}
+    \item % 8
+        \begin{proof}
+            考虑级数在 $[1, \delta]$ 上是否一致收敛, 其中 $\delta > 1$. 那么
+            \begin{align*}
+                |u_n(x)| &= \frac{x^n(x-1)}{n((x^n)^2-1)} = \frac{x^n(x-1)}{n(x^n+1)(x^n-1)} \\
+                &< \frac{x-1}{n(x^n - 1)} \\
+                &= \frac{1}{n(x^{n-1} + x^{n-2} + \cdots + 1)} \\
+                &\leq \frac{1}{n(1 + 1 + \cdots + 1)} = \frac{1}{n^2},   
+            \end{align*}
+            由 Weierstrass 判别法可知级数在 $[1, \delta]$ 上一致收敛. 又级数的每一项在 $[1, \delta]$ 上连续, 因此和函数也在 $[1, \delta]$ 上连续, 那么
+            \[
+                \lim_{x\to1}f(x) = f(1) = \frac12\sum_{n=1}^\infty\frac{1}{n^2}. \qedhere    
+            \]
+        \end{proof}
+\end{enumerate}
+% \end{document}
