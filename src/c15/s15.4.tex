@@ -1,0 +1,68 @@
+% % @author Shuning Zhang
+% % @date 2020-05-10
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        \begin{enumerate}[(1)]
+            \item % 1.1
+                $1/e$, 级数在 $x = \pm1/e$ 处发散.
+            \item % 1.2
+                $1$, 级数在 $x = \pm1$ 处发散.
+            \item % 1.3
+            \item % 1.4
+                $0$.
+        \end{enumerate}
+    \item % 2
+        \begin{multicols}{3}
+            \begin{enumerate}[(1)]
+                \item % 2.1
+                    $(0, +\infty)$;
+                \item % 2.2
+                    $(-1, +\infty)$;
+                \item % 2.3
+                    $\{x: x \not=0\}$.
+            \end{enumerate}
+        \end{multicols}
+    \item % 3
+    \item % 4
+        \begin{multicols}{3}
+            \begin{enumerate}[(1)]
+                \item % 4.1
+                    $\frac{1}{2}\ln(1-x^2)$;
+                \item % 4.2
+                    $-\arctan{x}$;
+                \item % 4.3
+            \end{enumerate}
+        \end{multicols}
+    \item % 5
+        \begin{enumerate}[(1)]
+            \item % 5.1
+            \item % 5.2
+                \begin{proof}
+                    由例 8 可知
+                    \[
+                        \sum_{n=1}^\infty\frac{(n+1)(n+2)}{2}x^n = \frac{1}{(1-x)^3}.    
+                    \]
+                    对上式等号两边求导, 左边
+                    \[
+                        \left(\sum_{n=1}^\infty\frac{(n+1)(n+2)}{2}x^n\right)' = \sum_{n=0}^\infty\frac{(n+1)(n+2)(n+3)}{2}x^n.    
+                    \]
+                    右边
+                    \[
+                        \left(\frac{1}{(1-x)^3}\right)' = \frac{3}{(1-x)^4}.    
+                    \]
+                    再把上式分子中的 $3$ 除到左边, 即可得要证的等式.
+                \end{proof}
+        \end{enumerate}
+    \item % 6
+        提示: 定理 14.3.5.
+    \item % 7
+    \item % 8
+\end{enumerate}
+% \end{document}
