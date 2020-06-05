@@ -1,0 +1,52 @@
+% @author Shuning Zhang
+% @date 2020-06-06
+\documentclass[a4paper, 11pt]{ctexart}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+\usepackage{multicol}
+\begin{document}
+\begin{enumerate}
+    \item % 1
+    \item % 2
+    \item % 3
+        
+        {\color{red}wrong}
+    \begin{proof}
+            因为 $\displaystyle{\int_a^{+\infty}f(t)\,\mathrm{d}t}$ 收敛, 根据 Cauchy 收敛原理, 对任意的 $\varepsilon > 0$, 存在 $X > a$, 当 $x_2 \geq x_1 > X$ 时, 有
+            \[
+                \int_{x_1}^{x_2}f(t)\,\mathrm{d}t < \varepsilon.    
+            \]
+            又 $f(x)$ 递减, 故 $f(x_2) \leq f(t) \leq f(x_1)$, 对前一个不等式作积分, 有
+            \[
+                f(x_2)(x_2 - x_1) = \int_{x_1}^{x_2}f(x_2)\,\mathrm{d}t < \int_{x_1}^{x_2}f(t)\,\mathrm{d}t.
+            \]
+            又 $f(x_1) \geq f(x_2) \geq 0$, 故
+            \[
+                f(x_2)(x_2 - x_1) = x_2f(x_2) - x_1f(x_2) \geq x_2f(x_2) - x_1f(x_1),  
+            \] 
+            因此
+            \[
+                x_2f(x_2) - x_1f(x_1) < \int_{x_1}^{x_2}f(t)\,\mathrm{d}t < \varepsilon.   
+            \]
+            这就是 $\lim\limits_{x\to+\infty}xf(x) = 0$ 的 Cauchy 收敛原理的表述.
+        \end{proof}
+    \item % 4
+    \item % 5
+    \item % 6
+    \item % 7
+        {\color{red}unfinished}
+        \begin{proof}
+            因为 $\displaystyle{\int_a^{+\infty}f(x)\,\mathrm{d}x}$ 收敛, 根据 Cauchy 收敛原理, 对 $\forall \varepsilon > 0$, $\exists A_0 > a$,
+            当 $A_1, A_2 > A_0$ 时, 有
+            \[
+                \varepsilon > \left|\int_{A_1}^{A_2}f'(x)\,\mathrm{d}x\right| = |f(A_2) - f(A_1)|,   
+            \]
+            这表明 $\lim\limits_{x\to+\infty}f(x)$ 极限存在. 若 $\lim\limits_{x\to+\infty}f(x)=l$, $l \neq 0$, 那么
+            \[
+                \int_{a}^{+\infty}f(x)\,\mathrm{d}x = \int_{a}^{+\infty}(f(x)-l+l)\,\mathrm{d}x = \int_{a}^{+\infty}(f(x)-l)\,\mathrm{d}x   
+            \]
+        \end{proof}
+\end{enumerate}
+\end{document}
