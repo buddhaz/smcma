@@ -33,20 +33,38 @@
             这就是 $\lim\limits_{x\to+\infty}xf(x) = 0$ 的 Cauchy 收敛原理的表述.
         \end{proof}
     \item % 4
+        \begin{proof}
+            由题意可知 $f(x) \geq 0$, 并且有不等式
+            \[
+                0 \leq \int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x \leq \int_a^{+\infty}f(x)\,\mathrm{d}x.    
+            \]
+            若 $\displaystyle{\int_a^{+\infty}f(x)\,\mathrm{d}x}$ 收敛, $\displaystyle{\int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x}$ 显然收敛.
+            若 $\displaystyle{\int_a^{+\infty}f(x)\,\mathrm{d}x}$ 发散, 而
+            \begin{align*}
+                \int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x &= \int_a^{+\infty}f(x)\left(\frac{1-\cos{2x}}{2}\right)\,\mathrm{d}x \\
+                &= \frac12\left(\int_a^{+\infty}f(x)\,\mathrm{d}x + \int_a^{+\infty}f(x)\cos{2x}\,\mathrm{d}x\right).  
+            \end{align*}
+            由 Dirichlet 判别法可知 $\displaystyle{\int_a^{+\infty}f(x)\cos{2x}\,\mathrm{d}x}$ 收敛, 故 $\displaystyle{\int_a^{+\infty}f(x)\sin^2x\,\mathrm{d}x}$ 发散.
+        \end{proof}
     \item % 5
     \item % 6
     \item % 7
-        {\color{red}unfinished}
         \begin{proof}
             因为 $\displaystyle{\int_a^{+\infty}f(x)\,\mathrm{d}x}$ 收敛, 根据 Cauchy 收敛原理, 对 $\forall \varepsilon > 0$, $\exists A_0 > a$,
             当 $A_1, A_2 > A_0$ 时, 有
             \[
                 \varepsilon > \left|\int_{A_1}^{A_2}f'(x)\,\mathrm{d}x\right| = |f(A_2) - f(A_1)|,   
             \]
-            这表明 $\lim\limits_{x\to+\infty}f(x)$ 极限存在. 若 $\lim\limits_{x\to+\infty}f(x)=l$, $l \neq 0$, 那么
+            这表明 $\lim\limits_{x\to+\infty}f(x)$ 极限存在. 若 $\lim\limits_{x\to+\infty}f(x)=l$, $l \neq 0$, 不妨设 $l > 0$, 那么对 $\dfrac{l}{2} > 0$, $\exists X > 0$,
+            当 $x > X$ 时, 有
             \[
-                \int_{a}^{+\infty}f(x)\,\mathrm{d}x = \int_{a}^{+\infty}(f(x)-l+l)\,\mathrm{d}x = \int_{a}^{+\infty}(f(x)-l)\,\mathrm{d}x   
+                |f(x) - l| < \frac{l}{2},    
             \]
+            也即是 $\dfrac{l}{2} < f(x) < \dfrac{3l}{2}$. 对前面已经找到的 $X$, 对任意的 $\varepsilon > 0$, 存在 $A_0 > a$ 且 $A_0 > X$, 当 $A_2 > A_1 > A_0$ 时, 有
+            \[
+                0 < \frac{l}{2}(A_2 - A_1) = \int_{A_1}^{A_2}\dfrac{l}{2}\,\mathrm{d}x < \int_{A_1}^{A_2}f(x)\,\mathrm{d}x < \varepsilon,  
+            \]   
+            而 $\dfrac{l}{2}(A_2 - A_1)$ 是不可能任意小的, 故出现矛盾, 因此 $l = 0$.
         \end{proof}
 \end{enumerate}
 \end{document}
