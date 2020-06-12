@@ -1,0 +1,44 @@
+% % @author Shuning Zhang
+% % @date 2020-06-12
+% \documentclass[a4paper, 11pt]{ctexart}
+% \usepackage{amsfonts, amsmath, amssymb, amsthm}
+% \usepackage{color}
+% \usepackage{enumerate}
+% \usepackage[bottom=2cm, left=2.5cm, right=2.5cm, top=2cm]{geometry}
+% \usepackage{multicol}
+% \begin{document}
+\begin{enumerate}
+    \item % 1
+        略
+    \item % 2
+        {\color{red}unfinished}
+    \item % 3
+        \begin{proof}
+            已知
+            \[
+                f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty(a_n\cos{nt} + b_n\sin{nt}),    
+            \]
+            令 $t = x + h$, 那么
+            \begin{align*}
+                f(x+h) &= \frac{a_0}{2} + \sum_{n=1}^\infty(a_n\cos{n(x+h)} + b_n\sin{n(x+h)}) \\
+                &= \frac{a_0}{2} + \sum_{n=1}^\infty(a_n(\cos{nx}\cos{nh} - \sin{nx}\sin{nh}) + b_n(\sin{nx}\cos{nh} + \cos{nx}\sin{nh})) \\
+                &= \frac{a_0}{2} + \sum_{n=1}^\infty((a_n\cos{nh}+b_n\sin{nh})\cos{nx} + (b_n\cos{nh} - a_n\sin{nh})\sin{nx}). \qedhere
+            \end{align*}
+        \end{proof}
+    \item % 4
+        提示: Weierstrass 判别法.
+    \item % 5
+        提示: Riemann-Lebesgue 引理.
+    \item % 6
+        \begin{proof}
+            因 $f'$ 在 $[-\pi, \pi]$ 上可积且绝对可积, 由 Riemann-Lebesgue 引理则有
+            \begin{align*}
+                0 &= \lim_{n\to\infty}\frac{1}{\pi}\int_{-\pi}^{\pi}f'(x)\cos{nx}\,\mathrm{d}x \\
+                &= \lim_{n\to\infty}\frac{1}{\pi}\int_{-\pi}^{\pi}\cos{nx}\,\mathrm{d}(f(x)) \\
+                &= \lim_{n\to\infty}\frac{1}{\pi}\left(f(x)\cos{nx}|_{-\pi}^{\pi}+n\int_{-\pi}^{\pi}f(x)\sin{nx}\,\mathrm{d}x\right) \\
+                &= \lim_{n\to\infty}n\left(\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin{nx}\,\mathrm{d}x\right) = \lim_{n\to\infty}nb_n. 
+            \end{align*}
+            同理可证 $\lim\limits_{n\to\infty}na_n = 0$.
+        \end{proof}
+\end{enumerate}
+% \end{document}
